@@ -1,4 +1,11 @@
-.eslintrc.js
+node_modules
 commitlint.config.js
 prettier.config.js
 postcss.config.js
+tailwind.config.ts
+
+.eslintrc.js
+
+**/**/node_modules
+**/**/.next
+**/**/public
