@@ -9,6 +9,11 @@ module.exports = {
   semi: true,
   tabWidth: 2,
   trailingComma: "es5",
+  importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
+  importOrderMergeDuplicateImports: true,
+  importOrderCombineTypeAndValueImports: true,
+  tailwindAttributes: ["tw"],
+  tailwindFunctions: ["cva"],
   plugins: [
     "@ianvs/prettier-plugin-sort-imports",
     /**

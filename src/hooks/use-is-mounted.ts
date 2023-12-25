@@ -1,40 +1,38 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Custom React hook to check if a component is currently mounted.
  * This can be useful to prevent setting state on an unmounted component,
  * which can lead to memory leaks.
  *
+ * @returns {boolean} - Returns true if the component is currently mounted, and false otherwise.
+ *
  * @example
  * ```tsx
- * const MyComponent = () => {
+ * const Component = () => {
  *   const isMounted = useIsMounted();
  *
  *   useEffect(() => {
- *     fetchSomeData().then((data) => {
- *       if (isMounted) {
- *         setState(data);
- *       }
- *     });
+ *     if (isMounted) {
+ *       // Execute code only when the component is mounted
+ *     }
  *   }, []);
  *
  *   // ...
  * };
  * ```
- *
- * @returns {boolean} - A function that returns true if the component is currently mounted, and false otherwise.
  */
 const useIsMounted = (): boolean => {
-  const mountedRef = useRef(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    mountedRef.current = true;
+    setIsMounted(true);
     return () => {
-      mountedRef.current = false;
+      setIsMounted(false);
     };
   }, []);
 
-  return mountedRef.current;
+  return isMounted;
 };
 
 export default useIsMounted;

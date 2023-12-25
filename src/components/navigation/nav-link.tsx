@@ -2,20 +2,23 @@ import Link from "next/link";
 import { memo } from "react";
 
 interface Props {
-  navLink: {
+  item: {
     name: string;
     path: string;
   };
 }
 
-const NavLink = ({ navLink }: Props) => {
-  const { name, path } = navLink;
-  return (
-    <Link className="p-2 text-neutral-50 hover:text-neutral-300" key={name} href={path}>
+const NavLink = ({ item: { name, path } }: Props) => (
+  <li className="p-2 first:pl-0">
+    <Link
+      key={name}
+      href={path}
+      className="text-neutral-950 hover:text-neutral-300 dark:text-neutral-50"
+      aria-label={name}>
       {name}
     </Link>
-  );
-};
+  </li>
+);
 
 NavLink.displayName = "NavLink";
 
