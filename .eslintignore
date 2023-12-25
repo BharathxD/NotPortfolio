@@ -1,3 +1,4 @@
-.eslintrc.cjs
+.eslintrc.js
 commitlint.config.js
-prettier.config.cjs
+prettier.config.js
+postcss.config.js
