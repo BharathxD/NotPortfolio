@@ -1,0 +1,19 @@
+import { siteConfig } from "~/lib/config";
+import Image from "next/image";
+import Link from "next/link";
+
+interface Props extends React.HTMLAttributes<HTMLAnchorElement> {}
+
+const Logo = ({ ...rest }: Props) => (
+  <Link href="/" {...rest}>
+    <Image
+      width={35}
+      height={35}
+      alt="Logo"
+      src={siteConfig.logoUrl}
+      className="mask-effect rounded-sm border"
+    />
+  </Link>
+);
+
+export default Logo;

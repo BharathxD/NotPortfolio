@@ -13,7 +13,7 @@ const NavLink = ({ item: { name, path } }: Props) => (
     <Link
       key={name}
       href={path}
-      className="text-neutral-950 hover:text-neutral-300 dark:text-neutral-50"
+      className="bg-gradient-to-tr from-neutral-800 to-neutral-950 bg-clip-text leading-tight tracking-tighter text-transparent transition-colors duration-500 hover:text-neutral-500 dark:from-neutral-200 dark:to-neutral-400 dark:hover:text-neutral-50"
       aria-label={name}>
       {name}
     </Link>
