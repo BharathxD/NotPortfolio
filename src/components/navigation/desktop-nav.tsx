@@ -1,6 +1,5 @@
-import { memo } from "react";
 import { NAVBAR_LINKS } from "~/lib/constants";
-
+import { memo } from "react";
 import NavItemDesktop from "./nav-item-desktop";
 
 const DesktopNav = () => (

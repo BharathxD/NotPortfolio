@@ -1,7 +1,7 @@
-import { memo } from "react";
+import { siteConfig } from "~/lib/config";
 import Image from "next/image";
 import Link from "next/link";
-import { siteConfig } from "~/lib/config";
+import { memo } from "react";
 
 interface Props extends React.HTMLAttributes<HTMLAnchorElement> {}
 

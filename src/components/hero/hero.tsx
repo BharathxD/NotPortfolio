@@ -2,7 +2,6 @@
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { motion } from "framer-motion";
-
 import HighlightedSpan from "../ui/highlighted-span";
 
 const Hero = () => (

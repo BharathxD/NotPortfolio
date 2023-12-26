@@ -1,7 +1,7 @@
-import { memo } from "react";
-import Link from "next/link";
 import type { Project as ProjectMetdata } from "~/types";
 import { Dot } from "lucide-react";
+import Link from "next/link";
+import { memo } from "react";
 
 interface Props {
   project: ProjectMetdata;

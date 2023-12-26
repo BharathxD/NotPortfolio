@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-
 import "~/styles/globals.css";
-
-import localFont from "next/font/local";
 import Navbar from "~/components/navigation/navbar";
 import { cn } from "~/lib/utils";
 import ThemeProvider from "~/providers/theme-provider";
+import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: "Bharath Lakshman Kumar",
