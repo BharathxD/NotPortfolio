@@ -1,4 +1,4 @@
-const NAVBAR_LINKS = [
+const NAVBAR_LINKS: { name: string; path: string }[] = [
   {
     name: "Projects",
     path: "/projects",

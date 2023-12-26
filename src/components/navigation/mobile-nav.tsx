@@ -11,16 +11,10 @@ const MobileNav = () => (
     </SheetTrigger>
     <SheetContent className="flex max-h-dvh min-w-[100vw] flex-col justify-between bg-neutral-900 p-0">
       <ul className="flex flex-col" role="list">
-        {[
-          ...[
-            {
-              name: "Home",
-              path: "/",
-            },
-            ...NAVBAR_LINKS,
-          ],
-        ]
-          .toReversed()
+        {[{ name: "Home", path: "/" }]
+          .concat(NAVBAR_LINKS)
+          .slice()
+          .reverse()
           .map((item) => (
             <NavItemMobile key={item.name} item={item} />
           ))}
