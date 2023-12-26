@@ -1,9 +1,9 @@
 "use client";
 
+import { useCallback, useMemo } from "react";
 import useIsMounted from "~/hooks/use-is-mounted";
 import { Loader, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useCallback, useMemo } from "react";
 
 const ThemeSwitcher = () => {
   const isMounted = useIsMounted();

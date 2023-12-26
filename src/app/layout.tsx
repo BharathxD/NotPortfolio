@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+
 import "~/styles/globals.css";
+
+import localFont from "next/font/local";
 import Navbar from "~/components/navigation/navbar";
 import { cn } from "~/lib/utils";
 import ThemeProvider from "~/providers/theme-provider";
-import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: "Bharath Lakshman Kumar",
@@ -28,19 +30,16 @@ const RootLayout = ({ children }: Props) => {
   return (
     <html
       lang="en"
-      className={cn(
-        "bg-neutral-50 text-neutral-900 antialiased dark:bg-[#111010] dark:text-neutral-50",
-        clash.className
-      )}
+      className={cn("bg-black text-neutral-900 antialiased dark:text-neutral-50", clash.className)}
       suppressHydrationWarning>
-      <body className="dark:bg-spotlight-farthest md:dark:bg-spotlight-closest relative scrollbar-none">
+      <body className="relative scrollbar-none dark:bg-spotlight-farthest md:dark:bg-spotlight-closest">
         <ThemeProvider>
-          <div className="bg-mask pointer-events-auto absolute inset-0 z-0 bg-[length:200px] bg-left-top opacity-60 mix-blend-overlay md:opacity-20" />
-          <div className="bg-spotlight-linear absolute inset-x-0 top-0 z-0 hidden h-[10dvh] dark:block" />
-          <header className="relative z-50 mx-auto h-[10dvh] max-w-4xl p-5 md:p-10">
+          <div className="pointer-events-auto absolute inset-0 z-0 bg-mask bg-[length:200px] bg-left-top opacity-60 mix-blend-overlay md:opacity-20" />
+          <div className="absolute inset-x-0 top-0 z-0 hidden h-[10dvh] bg-spotlight-linear dark:block" />
+          <header className="relative z-50 m-auto h-[10dvh] max-w-4xl">
             <Navbar />
           </header>
-          <main className="relative z-50 mx-auto h-[90dvh] max-w-4xl p-5 md:p-10">{children}</main>
+          <main className="relative z-50 mx-auto min-h-[90dvh] max-w-4xl">{children}</main>
         </ThemeProvider>
       </body>
     </html>
