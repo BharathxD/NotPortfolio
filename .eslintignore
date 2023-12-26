@@ -4,7 +4,7 @@ prettier.config.js
 postcss.config.js
 tailwind.config.ts
 
-.eslintrc.js
+.eslintrc.cjs
 
 **/**/node_modules
 **/**/.next

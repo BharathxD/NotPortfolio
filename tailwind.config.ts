@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config = {
   darkMode: ["class"],
@@ -18,6 +19,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        default: ["var(--font-clash)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -53,10 +57,26 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      textShadow: {
+        sm: "0 5px 15px rgba(0, 87, 255, .1), 0 -5px 15px rgba(255, 90, 0, .08), 0 0 30px rgba(255, 255, 255, .2)",
+        lg: "0 8px 16px rgba(0, 87, 255, .1), 0 -8px 16px rgba(255, 90, 0, .08), 0 0 40px rgba(255, 255, 255, .2)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "spotlight-closest":
+          "radial-gradient(circle closest-corner at 50% 0, rgba(242, 242, 242, .15), rgba(0, 0, 0, 0))",
+        "spotlight-farthest":
+          "radial-gradient(circle farthest-side at 50% 0, rgba(242, 242, 242, .25), rgba(0, 0, 0, 0) 80%)",
+        "spotlight-linear": "linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0))",
+        mask: "url(/mask.png)",
+        highlight: "linear-gradient(to bottom, var(#f5f5f5) 50%, transparent 90%)",
+      },
+      boxShadow: {
+        text: "0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 -5px 25px rgba(255, 255, 255, .3)",
       },
       keyframes: {
         "accordion-down": {
@@ -86,6 +106,16 @@ const config = {
     require("@tailwindcss/typography"),
     require("tailwind-scrollbar")({ nocompatible: true }),
     require("@tailwindcss/typography"),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      );
+    }),
   ],
 } satisfies Config;
 
