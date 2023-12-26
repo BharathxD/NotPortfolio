@@ -29,7 +29,7 @@ const ProjectCard = ({ project }: Props) => (
       </div>
       <div className="absolute inset-0 z-0 bg-card opacity-0 transition-all duration-500 group-hover:opacity-100" />
       <Image
-        src={`/${project.name}.webp`}
+        src={`/${project.name.toLowerCase()}.webp`}
         alt={project.tagline}
         sizes="(max-width: 767px) 75vw, (max-width: 991px) 73vw, (max-width: 1439px) 727.78125px, (max-width: 1919px) 866.375px, 1193.9896240234375px"
         className="z-10 object-contain transition-transform duration-700 group-hover:-translate-y-2"
