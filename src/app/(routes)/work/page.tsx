@@ -1,5 +1,5 @@
-const WorkPage = () => {
-  return <h1>Work Page</h1>;
-};
+import EmptyPage from "~/components/empty-page";
+
+const WorkPage = () => <EmptyPage />;
 
 export default WorkPage;

@@ -74,6 +74,9 @@ const config = {
         "spotlight-linear": "linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0))",
         mask: "url(/mask.png)",
         highlight: "linear-gradient(to bottom, var(#f5f5f5) 50%, transparent 90%)",
+        card: "radial-gradient(circle at 50% 0, rgba(255, 255, 255, .3), rgba(0, 0, 0, 0))",
+        glare:
+          "linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, .8) 35%, #fff 50%, rgba(255, 255, 255, .8) 65%, rgba(0, 0, 0, 0) 95%)",
       },
       boxShadow: {
         text: "0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 -5px 25px rgba(255, 255, 255, .3)",

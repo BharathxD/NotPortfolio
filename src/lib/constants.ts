@@ -1,19 +1,19 @@
 const NAVBAR_LINKS = [
   {
-    name: "About",
-    path: "/",
+    name: "Projects",
+    path: "/projects",
   },
   {
     name: "Work",
     path: "/work",
   },
   {
-    name: "Projects",
-    path: "/projects",
-  },
-  {
     name: "Blog",
     path: "/blog",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
   },
 ];
 

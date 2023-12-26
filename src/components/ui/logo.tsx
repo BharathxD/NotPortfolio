@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "~/lib/config";
@@ -16,4 +17,6 @@ const Logo = ({ ...rest }: Props) => (
   </Link>
 );
 
-export default Logo;
+Logo.displayName = "Logo";
+
+export default memo(Logo);

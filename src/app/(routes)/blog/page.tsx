@@ -1,5 +1,5 @@
-const BlogPage = () => {
-  return <h1>Blog Page</h1>;
-};
+import EmptyPage from "~/components/empty-page";
+
+const BlogPage = () => <EmptyPage />;
 
 export default BlogPage;

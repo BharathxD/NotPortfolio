@@ -8,7 +8,7 @@ interface Props {
   };
 }
 
-const NavItem = ({ item: { name, path } }: Props) => (
+const NavItemDesktop = ({ item: { name, path } }: Props) => (
   <li className="p-2 first:pl-0">
     <Link
       key={name}
@@ -20,6 +20,6 @@ const NavItem = ({ item: { name, path } }: Props) => (
   </li>
 );
 
-NavItem.displayName = "NavLink";
+NavItemDesktop.displayName = "NavLink";
 
-export default memo(NavItem);
+export default memo(NavItemDesktop);
