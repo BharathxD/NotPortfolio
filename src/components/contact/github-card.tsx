@@ -5,11 +5,13 @@ import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 const GithubCard = () => {
   return (
-    <motion.div
+    <motion.a
+      href={biography.socialProfiles.find((profile) => profile.platform === "Github")!.url}
+      target="_blank"
+      referrerPolicy="no-referrer"
       initial="hidden"
       whileInView="show"
       variants={FADE_DOWN_ANIMATION_VARIANTS}
@@ -24,21 +26,17 @@ const GithubCard = () => {
           width={600}
         />
       </div>
-      <Link
-        href={biography.socialProfiles.find((profile) => profile.platform === "Github")!.url}
-        target="_blank"
-        referrerPolicy="no-referrer"
-        className="relative z-10 flex size-full flex-col items-center justify-center gap-2 px-10">
+      <div className="relative z-10 flex size-full flex-col items-center justify-center gap-2 px-10">
         <div className="inline-flex items-center justify-center">
           <h4 className="text-4xl">Github</h4>
           <ArrowUpRight size={40} />
         </div>
         <p className="text-center">300+ days streak with over 3000 commits</p>
-      </Link>
+      </div>
       <div className="absolute inset-0 z-0 bg-card opacity-0 transition-all duration-500 group-hover:opacity-100" />
       <div className="absolute inset-x-0 top-0 z-20 h-px bg-glare opacity-40" />
       <div className="absolute inset-x-0 bottom-0 z-20 h-px bg-glare opacity-40" />
-    </motion.div>
+    </motion.a>
   );
 };
 
