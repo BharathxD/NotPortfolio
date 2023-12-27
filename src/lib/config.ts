@@ -44,7 +44,7 @@ const biography: Biography = {
       url: "https://www.github.com/bharathxd",
     },
     {
-      platform: "UrledIn",
+      platform: "LinkedIn",
       url: "https://www.linkedin.com/in/bharath-bandi/",
     },
     {

@@ -1,5 +1,6 @@
 "use client";
 
+import { biography } from "~/lib/config";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -24,7 +25,7 @@ const GithubCard = () => {
         />
       </div>
       <Link
-        href="#"
+        href={biography.socialProfiles.find((profile) => profile.platform === "Github")!.url}
         target="_blank"
         referrerPolicy="no-referrer"
         className="relative z-10 flex size-full flex-col items-center justify-center gap-2 px-10">
