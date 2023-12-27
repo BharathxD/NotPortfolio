@@ -10,14 +10,16 @@ const CustomCard = ({
   return (
     <div
       className={cn(
-        "group relative aspect-square size-full h-full rounded-lg border border-neutral-700 bg-neutral-800",
+        "relative rounded-3xl border border-neutral-700 bg-gradient-to-b from-neutral-900 to-neutral-950 p-2 shadow-lg",
         className
       )}
       {...rest}>
-      {children}
+      <div className="absolute inset-x-0 -top-px bottom-[auto] z-20 h-px bg-glare opacity-80" />
+      <div className="absolute inset-x-0 top-2 z-20 h-px bg-glare opacity-80" />
+      <div className="relative aspect-square size-full rounded-xl border">{children}</div>
       <Link
         href="#"
-        className="absolute bottom-2.5 right-2.5 hidden size-10 items-center justify-center rounded-full border border-neutral-600 bg-neutral-950 transition-all group-hover:flex hover:scale-110 hover:bg-neutral-700">
+        className="absolute bottom-5 right-5 hidden size-10 items-center justify-center rounded-full border border-neutral-600 bg-neutral-950 transition-all fade-in group-hover:flex hover:scale-110 hover:bg-neutral-700">
         <ArrowRight />
       </Link>
     </div>

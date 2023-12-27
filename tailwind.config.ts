@@ -80,6 +80,8 @@ const config = {
       },
       boxShadow: {
         text: "0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 -5px 25px rgba(255, 255, 255, .3)",
+        item: "inset 0 0 10px rgba(0, 0, 0, .1), 0 4px 16px rgba(0, 0, 0, .25)",
+        glow: "0 2px 25px 2px #fff",
       },
       keyframes: {
         "accordion-down": {

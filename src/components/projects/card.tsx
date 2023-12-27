@@ -18,11 +18,11 @@ const ProjectCard = ({ project }: Props) => (
     variants={FADE_DOWN_ANIMATION_VARIANTS}
     className="relative rounded-3xl border border-neutral-700 bg-gradient-to-b from-neutral-900 to-neutral-950 p-2 shadow-lg"
     key={project.name}>
-    <div className="absolute inset-x-0 bottom-[auto] top-0 z-20 h-px bg-glare opacity-80" />
+    <div className="absolute inset-x-0 -top-px bottom-[auto] z-20 h-px bg-glare opacity-80" />
+    <div className="absolute inset-x-0 top-2 z-20 h-px bg-glare opacity-80" />
     <Link
       href="#"
       className="group relative flex flex-col overflow-hidden rounded-2xl border bg-gradient-to-b from-neutral-800 to-neutral-950 px-6 pt-6 transition-colors hover:border-neutral-700 md:h-[30rem]">
-      <div className="absolute inset-x-0 bottom-[auto] top-0 z-20 h-px bg-glare opacity-80" />
       <div className="z-10 mb-4">
         <h1 className="mb-2 text-xl md:text-4xl">{project.name}</h1>
         <p>{project.tagline}</p>

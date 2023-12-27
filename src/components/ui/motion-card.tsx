@@ -20,7 +20,7 @@ const Card = ({ children }: React.PropsWithChildren) => {
 
   return (
     <div
-      className="group relative overflow-hidden rounded-xl border border-zinc-600 duration-700 hover:border-zinc-400/50 hover:bg-zinc-800/10 md:gap-8 "
+      className="group relative z-40 overflow-hidden rounded-xl border border-neutral-600 duration-700 hover:border-neutral-400/50 hover:bg-zinc-800/10 md:gap-8"
       onMouseMove={onMouseMove}>
       <div className="pointer-events-none">
         <div className="absolute inset-0 z-0 transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />
@@ -29,7 +29,7 @@ const Card = ({ children }: React.PropsWithChildren) => {
           style={style}
         />
         <motion.div
-          className="absolute inset-0 z-10 opacity-0 mix-blend-overlay transition duration-1000 group-hover:opacity-100"
+          className="absolute inset-0 z-auto opacity-0 mix-blend-overlay transition duration-1000 group-hover:opacity-100"
           style={style}
         />
       </div>
