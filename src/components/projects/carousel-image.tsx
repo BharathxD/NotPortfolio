@@ -2,7 +2,7 @@
 
 import { cn } from "~/lib/utils";
 import Image from "next/image";
-import { useState, type ComponentProps } from "react";
+import { memo, useState, type ComponentProps } from "react";
 import { CarouselItem } from "../ui/carousel";
 
 const CarouselImage = ({ src, alt, className, ...props }: ComponentProps<typeof Image>) => {
@@ -20,13 +20,16 @@ const CarouselImage = ({ src, alt, className, ...props }: ComponentProps<typeof 
           className
         )}
         onLoad={handleSetIsLoaded}
-        quality={80}
+        aria-busy={isLoading}
         height={1878}
         width={3380}
+        role="img"
         {...props}
       />
     </CarouselItem>
   );
 };
 
-export default CarouselImage;
+CarouselImage.displayName = "CarouselImage";
+
+export default memo(CarouselImage);
