@@ -14,6 +14,7 @@ const Logo = ({ className, ...rest }: Props) => (
       alt="Logo"
       src={siteConfig.logoUrl}
       className="mask-effect size-12 rounded-sm border"
+      priority
     />
   </Link>
 );

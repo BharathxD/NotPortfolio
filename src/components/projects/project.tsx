@@ -1,3 +1,5 @@
+"use client";
+
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "~/components/ui/carousel";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import type { Project as ProjectMetdata } from "~/types";
@@ -14,7 +16,7 @@ interface Props {
 const Project = ({ project }: Props) => {
   return (
     <motion.section
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-4 p-4 md:p-10"
       initial="hidden"
       whileInView="show"
       variants={FADE_DOWN_ANIMATION_VARIANTS}>
