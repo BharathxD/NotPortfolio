@@ -45,7 +45,7 @@ const biography: Biography = {
     },
     {
       platform: "LinkedIn",
-      url: "https://www.linkedin.com/in/bharath-bandi/",
+      url: "https://www.linkedin.com/in/bharath-bandi?utm_source=porfolio",
     },
     {
       platform: "Twitter",
@@ -64,10 +64,12 @@ const biography: Biography = {
   },
   portfolioProjects: [
     {
+      id: "devcircle",
       name: "DevCircle",
       tagline: "A Collaborative Developer Network",
       projectUrl: "https://devcircle.live/home",
       github: "https://www.github.com/bharathxd/devcircle",
+      noOfPictures: 19,
       points: [
         "Developed DevCircle, an open-source developer community platform that fosters a collaborative environment for developers to exchange expertise and stay up-to-date.",
         "Engineered a production-grade application with Next.js 13's cutting-edge Server-Side Rendering (SSR) and React Server Components (RSC) capabilities, implementing industry-standard SEO practices.",
@@ -93,10 +95,12 @@ const biography: Biography = {
       ],
     },
     {
+      id: "optimizex",
       name: "OptimizeX",
       tagline: "Effortless Image Optimization",
       projectUrl: "https://optimizex.vercel.app/",
       github: "https://github.com/bharathxd/optimizex",
+      noOfPictures: 7,
       points: [
         "Developed and deployed OptimizeX, a scalable SaaS application using NextJS, React, TypeScript, Prisma, and AWS services, enabling efficient bulk-generation of optimized images.",
         "Achieved outstanding performance scores on pagespeed.web.dev, with a score of 90+ in key areas like Performance, Accessibility, Best Practices, and SEO, ensuring a seamless user experience and high search engine visibility.",

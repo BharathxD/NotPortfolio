@@ -1,7 +1,9 @@
+import { type Emoticons } from "~/types";
+
 const NAVBAR_LINKS: { name: string; path: string }[] = [
   {
     name: "Projects",
-    path: "/projects",
+    path: "/project",
   },
   {
     name: "Work",
@@ -33,4 +35,19 @@ const FADE_UP_ANIMATION_VARIANTS = {
   show: { opacity: 1, y: 0, transition: { type: "spring" } },
 };
 
-export { NAVBAR_LINKS, FADE_IN_ANIMATION_SETTINGS, FADE_DOWN_ANIMATION_VARIANTS, FADE_UP_ANIMATION_VARIANTS };
+const EMOTICONS_MAP: Record<Emoticons[number], string> = {
+  angry: ">_<",
+  happy: "^_^",
+  disappointed: "T_T",
+  neutral: "-_-",
+  smile: ":)",
+  star: "*_*",
+};
+
+export {
+  NAVBAR_LINKS,
+  FADE_IN_ANIMATION_SETTINGS,
+  FADE_DOWN_ANIMATION_VARIANTS,
+  FADE_UP_ANIMATION_VARIANTS,
+  EMOTICONS_MAP,
+};

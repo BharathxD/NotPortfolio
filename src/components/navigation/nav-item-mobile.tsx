@@ -10,7 +10,7 @@ interface Props {
 }
 
 const NavItemMobile = ({ item: { name, path } }: Props) => (
-  <li className="border-b p-4">
+  <li className="w-full border-y px-6 py-4">
     <SheetClose asChild>
       <Link
         key={name}

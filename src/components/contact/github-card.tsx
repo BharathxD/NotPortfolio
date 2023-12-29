@@ -24,6 +24,7 @@ const GithubCard = () => {
           className="z-10 object-contain grayscale transition-all duration-700 group-hover:grayscale-0"
           height={600}
           width={600}
+          unoptimized
         />
       </div>
       <div className="relative z-10 flex size-full flex-col items-center justify-center gap-2 px-10">

@@ -27,13 +27,14 @@ const LinkedInCard = () => {
       <div className="absolute inset-x-0 top-0 z-20 h-px bg-glare opacity-40" />
       <div className="absolute inset-x-0 bottom-0 z-20 h-px bg-glare opacity-40" />
       <div className="size-full" />
-      <div className="absolute inset-x-0 bottom-[-20%] md:inset-x-[auto] md:right-[-20%]">
+      <div className="absolute inset-x-0 bottom-[-20%] z-10 md:inset-x-[auto] md:right-[-20%]">
         <Image
           src="/linkedin.webp"
           alt="LinkedIn Profile Page"
           className="z-10 object-contain grayscale transition-all duration-700 group-hover:grayscale-0"
           height={600}
           width={600}
+          unoptimized
         />
       </div>
     </motion.a>

@@ -9,8 +9,11 @@ const MobileNav = () => (
     <SheetTrigger className="block rounded-full border border-neutral-700 bg-neutral-600/40 p-2 text-neutral-300 shadow-item md:hidden">
       <MenuIcon size={25} />
     </SheetTrigger>
-    <SheetContent className="flex max-h-dvh min-w-[100vw] flex-col justify-between bg-neutral-900 p-0">
-      <ul className="flex flex-col" role="list">
+    <SheetContent className="flex max-h-dvh flex-1 flex-col justify-start gap-0 bg-neutral-900 p-0">
+      <SheetClose className="flex h-min w-full items-center justify-end py-6 pr-5 text-neutral-200 outline-none fade-out">
+        <X size={40} />
+      </SheetClose>
+      <ul className="flex flex-col items-end" role="list">
         {[{ name: "Home", path: "/" }]
           .concat(NAVBAR_LINKS)
           .slice()
@@ -19,9 +22,6 @@ const MobileNav = () => (
             <NavItemMobile key={item.name} item={item} />
           ))}
       </ul>
-      <SheetClose className="absolute bottom-0 right-0 mb-4 mr-4 flex aspect-square size-28 items-center justify-center rounded-full text-neutral-200 shadow-item outline-none">
-        <X size={75} />
-      </SheetClose>
     </SheetContent>
   </Sheet>
 );

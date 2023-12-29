@@ -1,13 +1,17 @@
+type UniqueIdentifier = string | number;
+
 interface SocialProfiles {
   platform: string;
   url: string;
 }
 
 interface Project {
+  id: UniqueIdentifier;
   name: string;
   tagline: string;
   projectUrl: string;
   github: string;
+  noOfPictures: number;
   points: string[];
   stack: string[];
 }
@@ -42,4 +46,6 @@ interface Biography {
   professionalCertifications: ProfessionalCertifications[];
 }
 
-export type { Biography, Project, AcademicBackground, SocialProfiles, ProfessionalCertifications };
+type Emoticons = ["angry", "happy", "disappointed", "neutral", "smile", "star"];
+
+export type { Biography, Project, AcademicBackground, SocialProfiles, ProfessionalCertifications, Emoticons };
