@@ -3,7 +3,7 @@
 import { EMOTICONS_MAP } from "~/lib/constants";
 import { type Emoticons } from "~/types";
 import { useRouter } from "next/navigation";
-import { Button } from "./ui/button";
+import YoutubeButton from "./youtube";
 
 interface Props {
   message?: string;
@@ -21,10 +21,7 @@ const EmptyPage = ({
   action,
 }: Props) => {
   const router = useRouter();
-  const handleEvent = () => {
-    if (rickroll) return router.push("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-    router.back();
-  };
+  const handleEvent = () => router.back();
   return (
     <section className="flex size-full min-h-[90dvh] flex-col items-center justify-center px-4 md:px-10">
       <div>
@@ -34,11 +31,15 @@ const EmptyPage = ({
           <span>{message}</span>
         </h1>
         <div className="my-6 w-full text-center">
-          <button
-            className="h-10 overflow-hidden rounded-xl bg-gradient-to-b from-neutral-500 to-neutral-800 px-2 text-base font-medium text-neutral-50 underline-offset-4 shadow-lg shadow-neutral-950 outline-none"
-            onClick={action ?? handleEvent}>
-            <span>{actionName}</span>
-          </button>
+          {rickroll ? (
+            <YoutubeButton />
+          ) : (
+            <button
+              className="h-10 overflow-hidden rounded-xl bg-gradient-to-b from-neutral-500 to-neutral-800 px-2 text-base font-medium text-neutral-50 underline-offset-4 shadow-lg shadow-neutral-950 outline-none"
+              onClick={action ?? handleEvent}>
+              <span>{actionName}</span>
+            </button>
+          )}
         </div>
         <div className="relative z-20 mt-4 h-px bg-glare opacity-80" />
       </div>
