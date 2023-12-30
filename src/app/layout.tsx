@@ -3,12 +3,19 @@ import "~/styles/globals.css";
 import Navbar from "~/components/navigation/navbar";
 import { cn } from "~/lib/utils";
 import ThemeProvider from "~/providers/theme-provider";
+import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: "Bharath Lakshman Kumar",
   description: "Bharath's personal website",
 };
+
+const poppins = Montserrat({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 const clash = localFont({
   src: [
@@ -28,7 +35,11 @@ const RootLayout = ({ children }: Props) => {
   return (
     <html
       lang="en"
-      className={cn("bg-black text-neutral-900 antialiased dark:text-neutral-50", clash.className)}
+      className={cn(
+        "bg-black text-neutral-900 antialiased dark:text-neutral-50",
+        clash.className,
+        poppins.variable
+      )}
       suppressHydrationWarning>
       <body className="relative scrollbar-none dark:bg-spotlight-farthest md:dark:bg-spotlight-closest">
         <ThemeProvider>

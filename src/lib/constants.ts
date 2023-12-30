@@ -42,6 +42,7 @@ const EMOTICONS_MAP: Record<Emoticons[number], string> = {
   neutral: "-_-",
   smile: ":)",
   star: "*_*",
+  404: "404",
 };
 
 export {

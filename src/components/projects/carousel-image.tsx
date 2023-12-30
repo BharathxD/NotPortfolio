@@ -8,18 +8,18 @@ import { CarouselItem } from "../ui/carousel";
 const CarouselImage = ({ src, alt, className, ...props }: ComponentProps<typeof Image>) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const handleSetIsLoaded = () => setIsLoading(false);
+  console.info({ isLoading });
   return (
     <CarouselItem className="relative w-full">
       <Image
         src={src}
         alt={alt}
         className={cn(
-          isLoading
-            ? "animate-skeleton rounded-2xl border bg-gradient-to-r from-neutral-950 via-neutral-700 to-neutral-950 bg-[400%,100%]"
-            : "z-10 w-full rounded-2xl border transition-all duration-700",
+          "z-10 w-full rounded-2xl border data-[loading=true]:animate-skeleton data-[loading=true]:bg-gradient-to-r data-[loading=true]:from-neutral-950 data-[loading=true]:via-neutral-700 data-[loading=true]:to-neutral-950 data-[loading=true]:bg-[400%,100%]",
           className
         )}
         onLoad={handleSetIsLoaded}
+        data-loading={isLoading}
         aria-busy={isLoading}
         height={1878}
         width={3380}
