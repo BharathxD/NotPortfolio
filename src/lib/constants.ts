@@ -35,6 +35,8 @@ const FADE_UP_ANIMATION_VARIANTS = {
   show: { opacity: 1, y: 0, transition: { type: "spring" } },
 };
 
+const RICKROLL_LINK_YT_ID = "dQw4w9WgXcQ";
+
 const EMOTICONS_MAP: Record<Emoticons[number], string> = {
   angry: ">_<",
   happy: "^_^",
@@ -50,5 +52,6 @@ export {
   FADE_IN_ANIMATION_SETTINGS,
   FADE_DOWN_ANIMATION_VARIANTS,
   FADE_UP_ANIMATION_VARIANTS,
+  RICKROLL_LINK_YT_ID,
   EMOTICONS_MAP,
 };

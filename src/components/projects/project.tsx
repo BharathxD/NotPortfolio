@@ -8,8 +8,8 @@ import Link from "next/link";
 import { memo } from "react";
 import BulletPoint from "./bullet-point";
 import Pill from "./pill";
+import ProjectCarousel from "./project-carousel";
 import ProjectHeader from "./project-header";
-import ProjectCarousel from "./project.carousel";
 
 interface Props {
   project: ProjectMetdata;

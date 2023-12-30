@@ -1,6 +1,6 @@
 "use client";
 
-import { EMOTICONS_MAP } from "~/lib/constants";
+import { EMOTICONS_MAP, RICKROLL_LINK_YT_ID } from "~/lib/constants";
 import { type Emoticons } from "~/types";
 import { useRouter } from "next/navigation";
 import YoutubeButton from "./youtube";
@@ -32,7 +32,7 @@ const EmptyPage = ({
         </h1>
         <div className="my-6 w-full text-center">
           {rickroll ? (
-            <YoutubeButton />
+            <YoutubeButton id={RICKROLL_LINK_YT_ID} />
           ) : (
             <button
               className="h-10 overflow-hidden rounded-xl bg-gradient-to-b from-neutral-500 to-neutral-800 px-2 text-base font-medium text-neutral-50 underline-offset-4 shadow-lg shadow-neutral-950 outline-none"

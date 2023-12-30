@@ -3,10 +3,9 @@
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { type Project } from "~/types";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { memo } from "react";
-import CardImage from "./card-image";
+import ImageWithLoader from "./ImageWithLoader";
 
 interface Props {
   project: Pick<Project, "name" | "tagline" | "id">;
@@ -28,7 +27,14 @@ const ProjectCard = ({ project }: Props) => (
         <p>{project.tagline}</p>
       </div>
       <div className="absolute inset-0 z-0 bg-card opacity-0 transition-all duration-500 group-hover:opacity-100" />
-      <CardImage src={`/${project.name.toLowerCase()}.webp`} alt={project.tagline} />
+      <ImageWithLoader
+        className="z-10 object-contain transition-all duration-700 data-[loading=true]:-mb-4 data-[loading=true]:animate-skeleton data-[loading=true]:rounded-lg data-[loading=false]:group-hover:-translate-y-2"
+        src={`/${project.name.toLowerCase()}.webp`}
+        alt={project.tagline}
+        sizes="(max-width: 767px) 75vw, (max-width: 991px) 73vw, (max-width: 1439px) 727.78125px, (max-width: 1919px) 866.375px, 1193.9896240234375px"
+        height={500}
+        width={1000}
+      />
     </Link>
   </motion.li>
 );

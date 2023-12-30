@@ -2,7 +2,11 @@ import { memo, useCallback, useState } from "react";
 import YouTube from "react-youtube";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 
-const YoutubeButton = () => {
+interface Props {
+  id: string;
+}
+
+const YoutubeButton = ({ id }: Props) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const setLoaded = useCallback(() => setIsLoading(false), []);
   const opts = {
@@ -27,7 +31,7 @@ const YoutubeButton = () => {
         />
         <YouTube
           className="overflow-hidden rounded-2xl border"
-          videoId="dQw4w9WgXcQ"
+          videoId={id}
           opts={opts}
           onReady={setLoaded}
         />
