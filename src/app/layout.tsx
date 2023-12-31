@@ -29,7 +29,7 @@ const clash = localFont({
   variable: "--font-clash",
 });
 
-const RootLayout = ({ children }: Props) => {
+const RootLayout = ({ children }: React.PropsWithChildren) => {
   return (
     <html
       lang="en"
