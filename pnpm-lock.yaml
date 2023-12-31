@@ -35,6 +35,9 @@ dependencies:
   lucide-react:
     specifier: ^0.303.0
     version: 0.303.0(react@18.2.0)
+  mobile-detect:
+    specifier: ^1.4.5
+    version: 1.4.5
   next:
     specifier: 14.0.4
     version: 14.0.4(@babel/core@7.23.7)(react-dom@18.2.0)(react@18.2.0)
@@ -2723,6 +2726,10 @@ packages:
   /minipass@7.0.4:
     resolution: {integrity: sha512-jYofLM5Dam9279rdkWzqHozUo4ybjdZmCsDHePy5V/PbBcVMiSZR97gmAy45aqi8CK1lG2ECd356FU86avfwUQ==}
     engines: {node: '>=16 || 14 >=14.17'}
+
+  /mobile-detect@1.4.5:
+    resolution: {integrity: sha512-yc0LhH6tItlvfLBugVUEtgawwFU2sIe+cSdmRJJCTMZ5GEJyLxNyC/NIOAOGk67Fa8GNpOttO3Xz/1bHpXFD/g==}
+    dev: false
 
   /ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
