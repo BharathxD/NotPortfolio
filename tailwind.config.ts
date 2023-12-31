@@ -76,10 +76,15 @@ const config = {
         mask: "url(/mask.png)",
         highlight: "linear-gradient(to bottom, var(#f5f5f5) 50%, transparent 90%)",
         card: "radial-gradient(circle at 50% 0, rgba(255, 255, 255, .3), rgba(0, 0, 0, 0))",
+        "card-blue":
+          "radial-gradient(circle at 50% 0, rgba(127, 207, 255, .2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, #035, rgba(0, 0, 0, 0))",
+        "card-custom":
+          "radial-gradient(circle at 50% 0, rgba(128, 0, 0, .2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, #FFA500, rgba(0, 0, 0, 0)), radial-gradient(circle at 50% 0, #FFFF00, rgba(0, 0, 0, 0))",
         glare:
           "linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, .8) 35%, #fff 50%, rgba(255, 255, 255, .8) 65%, rgba(0, 0, 0, 0) 95%)",
         shine:
           "linear-gradient(45deg, rgba(255,255,255,0) 45%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 55%,rgba(255,255,255,0) 100%)",
+        emphasis: "linear-gradient(to bottom, var(#f2f2f2) 50%, rgba(242, 242, 242, .2))",
       },
       boxShadow: {
         text: "0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 -5px 25px rgba(255, 255, 255, .3)",

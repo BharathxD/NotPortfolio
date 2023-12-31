@@ -12,7 +12,7 @@ const ProjectCarousel = ({ id, noOfPictures, tagline }: Pick<Project, "id" | "no
         <CarouselItem key={i} className="relative w-full">
           <ImageWithLoader
             key={`${i}_${i + 1}`}
-            src={`/projects/${id}/${i + 1}.webp`}
+            src={`/work/${id}/${i + 1}.webp`}
             alt={tagline}
             className="z-10 w-full rounded-2xl border"
             height={1878}

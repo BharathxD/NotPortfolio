@@ -3,7 +3,7 @@ import { type Project } from "~/types";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { memo } from "react";
-import ImageWithLoader from "./image-with-loader";
+import BlurImage from "./blur-image";
 
 interface Props {
   project: Pick<Project, "name" | "tagline" | "id">;
@@ -20,14 +20,14 @@ const ProjectCard = ({ project }: Props) => (
     <div className="absolute inset-x-0 -top-px bottom-[auto] z-20 h-px bg-glare opacity-80" />
     <div className="absolute inset-x-0 top-2 z-20 h-px bg-glare opacity-80" />
     <Link
-      href={`/project/${project.id}`}
+      href={`/work/${project.id}`}
       className="relative flex flex-col overflow-hidden rounded-2xl border bg-gradient-to-b from-neutral-800 to-neutral-950 px-6 pt-6 transition-colors hover:border-neutral-700 md:h-[30rem]">
       <div className="z-10 mb-4">
         <h1 className="mb-2 text-xl md:text-4xl">{project.name}</h1>
         <p>{project.tagline}</p>
       </div>
       <div className="absolute inset-0 z-0 bg-card opacity-0 transition-all duration-500 group-hover:opacity-100" />
-      <ImageWithLoader
+      <BlurImage
         className="z-10 mx-auto mt-2 object-contain transition-all duration-700 data-[loading=true]:h-[500px] data-[loading=true]:w-[700px] data-[loading=true]:animate-skeleton data-[loading=true]:rounded-xl data-[loading=true]:rounded-b-none data-[loading=false]:group-hover:-mt-2"
         src={`/${project.name.toLowerCase()}.webp`}
         alt={project.tagline}

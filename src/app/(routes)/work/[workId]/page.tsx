@@ -4,17 +4,17 @@ import { biography } from "~/lib/config";
 
 interface Props {
   params: {
-    projectId: string;
+    workId: string;
   };
 }
 
-const ProjectPage = ({ params: { projectId } }: Props) => {
-  const project = biography.portfolioProjects.find((project) => project.id === projectId);
+const ProjectPage = ({ params: { workId } }: Props) => {
+  const project = biography.portfolioProjects.find((project) => project.id === workId);
   if (!project)
     return (
       <EmptyPage
         emoticon="disappointed"
-        message={`Alas! No trace of a project bearing the name "${projectId}" exists in the depths of my portfolio.`}
+        message={`Alas! No trace of a project bearing the name "${workId}" exists in the depths of my portfolio.`}
       />
     );
   return <Project project={project} />;
