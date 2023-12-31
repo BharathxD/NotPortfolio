@@ -20,7 +20,7 @@ const GithubCard = () => {
       <ImageWithLoader
         src="/github.webp"
         alt="Github Contribution Page"
-        className="absolute inset-x-0 bottom-[-20%] z-10 h-[352px] w-[600px] rounded-xl object-contain grayscale transition-all duration-700 group-hover:grayscale-0 data-[loading=true]:h-[344px] data-[loading=true]:w-[592px] md:inset-x-[auto] md:left-[-20%]"
+        className="absolute inset-x-0 bottom-[-20%] z-10 h-[352px] w-[600px] rounded-xl object-contain grayscale transition-all duration-700 group-hover:grayscale-0 md:inset-x-[auto] md:left-[-20%]"
         loading="eager"
         height={352}
         width={600}
