@@ -21,10 +21,9 @@ const GithubCard = () => {
         src="/github.webp"
         alt="Github Contribution Page"
         className="absolute inset-x-0 bottom-[-20%] z-10 h-[352px] w-[600px] rounded-xl object-contain grayscale transition-all duration-700 group-hover:grayscale-0 data-[loading=true]:h-[344px] data-[loading=true]:w-[592px] md:inset-x-[auto] md:left-[-20%]"
-        // height={352}
-        // width={600}
-        height={2138}
-        width={3644}
+        loading="eager"
+        height={352}
+        width={600}
       />
       <div className="relative z-10 flex size-full flex-col items-center justify-center gap-2 px-10">
         <div className="inline-flex items-center justify-center">
