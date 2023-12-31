@@ -1,5 +1,3 @@
-"use client";
-
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { type Project } from "~/types";
 import { motion } from "framer-motion";
@@ -16,7 +14,9 @@ const ProjectCard = ({ project }: Props) => (
     initial="hidden"
     whileInView="show"
     variants={FADE_DOWN_ANIMATION_VARIANTS}
-    className="group relative rounded-3xl border border-neutral-700 bg-gradient-to-b from-neutral-900 to-neutral-950 p-2 shadow-lg">
+    className="group relative rounded-3xl border border-neutral-700 bg-gradient-to-b from-neutral-900 to-neutral-950 p-2 shadow-lg"
+    role="listitem"
+    aria-label={`Project ${project.name}`}>
     <div className="absolute inset-x-0 -top-px bottom-[auto] z-20 h-px bg-glare opacity-80" />
     <div className="absolute inset-x-0 top-2 z-20 h-px bg-glare opacity-80" />
     <Link
