@@ -2,12 +2,11 @@
 
 import { cn } from "~/lib/utils";
 import Image from "next/image";
-import { memo, useState, type ComponentProps } from "react";
+import { memo, useCallback, useState, type ComponentProps } from "react";
 
 const ImageWithLoader = ({ src, alt, className, ...props }: ComponentProps<typeof Image>) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const handleSetIsLoaded = () => setIsLoading(false);
-  console.info({ isLoading });
+  const handleSetIsLoaded = useCallback(() => setIsLoading(false), []);
   return (
     <Image
       src={src}

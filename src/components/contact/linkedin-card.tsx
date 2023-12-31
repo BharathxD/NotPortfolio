@@ -30,7 +30,7 @@ const LinkedInCard = () => {
       <ImageWithLoader
         src="/linkedin.webp"
         alt="LinkedIn Profile Page"
-        className="absolute inset-x-0 bottom-[-20%] z-10 rounded-xl object-contain grayscale transition-all duration-700 group-hover:grayscale-0 data-[loading=true]:h-[344px] data-[loading=true]:w-[592px] md:inset-x-[auto] md:right-[-20%]"
+        className="absolute inset-x-0 bottom-[-20%] z-10 rounded-xl object-contain grayscale transition-all duration-700 group-hover:grayscale-0  md:inset-x-[auto] md:right-[-20%]"
         height={352}
         width={600}
       />

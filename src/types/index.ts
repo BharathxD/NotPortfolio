@@ -46,6 +46,6 @@ interface Biography {
   professionalCertifications: ProfessionalCertifications[];
 }
 
-type Emoticons = ["angry", "happy", "disappointed", "neutral", "smile", "star", "404"];
+type Emoticons = ["angry", "happy", "disappointed", "neutral", "smile", "star", "flyaway", "404"];
 
 export type { Biography, Project, AcademicBackground, SocialProfiles, ProfessionalCertifications, Emoticons };
