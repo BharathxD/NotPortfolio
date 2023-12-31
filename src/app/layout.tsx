@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "~/styles/globals.css";
 import Navbar from "~/components/navigation/navbar";
-import { IsSsrMobileContext } from "~/lib/is-ssr-mobile-context";
 import { cn } from "~/lib/utils";
 import ThemeProvider from "~/providers/theme-provider";
-import { AppProps } from "next/app";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 
