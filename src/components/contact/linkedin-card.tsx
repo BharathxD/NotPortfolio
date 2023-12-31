@@ -4,7 +4,7 @@ import { biography } from "~/lib/config";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import ImageWithLoader from "../projects/ImageWithLoader";
+import BlurImage from "../projects/blur-image";
 
 const LinkedInCard = () => {
   return (
@@ -27,7 +27,7 @@ const LinkedInCard = () => {
       <div className="absolute inset-x-0 top-0 z-20 h-px bg-glare opacity-40" />
       <div className="absolute inset-x-0 bottom-0 z-20 h-px bg-glare opacity-40" />
       <div className="size-full px-10" />
-      <ImageWithLoader
+      <BlurImage
         src="/linkedin.webp"
         alt="LinkedIn Profile Page"
         className="absolute inset-x-0 bottom-[-20%] z-10 h-[352px] w-[600px] rounded-xl object-contain grayscale transition-all duration-700 group-hover:grayscale-0 md:inset-x-[auto] md:right-[-20%]"

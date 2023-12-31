@@ -4,7 +4,7 @@ import { biography } from "~/lib/config";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import ImageWithLoader from "../projects/ImageWithLoader";
+import BlurImage from "../projects/blur-image";
 
 const GithubCard = () => {
   return (
@@ -17,7 +17,7 @@ const GithubCard = () => {
       variants={FADE_DOWN_ANIMATION_VARIANTS}
       className="group relative flex h-80 w-full flex-col-reverse items-center justify-center overflow-hidden rounded-xl border border-neutral-700 bg-gradient-to-b from-neutral-900 to-neutral-950 p-2 shadow-lg md:flex-row">
       <div className="size-full px-10" />
-      <ImageWithLoader
+      <BlurImage
         src="/github.webp"
         alt="Github Contribution Page"
         className="absolute inset-x-0 bottom-[-20%] z-10 h-[352px] w-[600px] rounded-xl object-contain grayscale transition-all duration-700 group-hover:grayscale-0 md:inset-x-[auto] md:left-[-20%]"

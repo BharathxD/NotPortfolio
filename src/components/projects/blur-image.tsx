@@ -4,7 +4,7 @@ import { cn } from "~/lib/utils";
 import Image from "next/image";
 import { memo, useCallback, useState, type ComponentProps } from "react";
 
-const ImageWithLoader = ({ src, alt, className, ...props }: ComponentProps<typeof Image>) => {
+const BlurImage = ({ src, alt, className, ...props }: ComponentProps<typeof Image>) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const handleSetIsLoaded = useCallback(() => setIsLoading(false), []);
@@ -26,6 +26,6 @@ const ImageWithLoader = ({ src, alt, className, ...props }: ComponentProps<typeo
   );
 };
 
-ImageWithLoader.displayName = "ImageWithLoader";
+BlurImage.displayName = "BlurImage";
 
-export default memo(ImageWithLoader);
+export default memo(BlurImage);

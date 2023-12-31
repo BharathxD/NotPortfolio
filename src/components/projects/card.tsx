@@ -3,7 +3,7 @@ import { type Project } from "~/types";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { memo } from "react";
-import ImageWithLoader from "./ImageWithLoader";
+import ImageWithLoader from "./image-with-loader";
 
 interface Props {
   project: Pick<Project, "name" | "tagline" | "id">;
