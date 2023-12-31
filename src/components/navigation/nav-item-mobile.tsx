@@ -15,7 +15,7 @@ const NavItemMobile = ({ item: { name, path } }: Props) => (
       <Link
         key={name}
         href={path}
-        className="w-full bg-gradient-to-tr from-neutral-800 to-neutral-950 bg-clip-text text-left text-6xl text-transparent transition-colors duration-500 hover:text-neutral-400 dark:from-neutral-100 dark:to-neutral-300 dark:hover:text-neutral-50"
+        className="to-neutral-300hover:text-neutral-50 w-full from-neutral-100 bg-clip-text text-left text-6xl text-transparent transition-colors duration-500 hover:text-neutral-400"
         aria-label={name}>
         {name}
       </Link>

@@ -10,7 +10,7 @@ const Hero = () => (
     initial="hidden"
     whileInView="show">
     <motion.p
-      className="text-center text-2xl text-neutral-600 md:text-4xl dark:text-neutral-400"
+      className="text-center text-2xl text-neutral-400 md:text-4xl"
       variants={FADE_DOWN_ANIMATION_VARIANTS}>
       Hey, I&apos;m <HighlightedSpan>Bharath Lakshman Kumar</HighlightedSpan> (you can call me Bharath,
       though). I&apos;m a <HighlightedSpan>UI Engineer</HighlightedSpan> and a student based in Hyderabad,

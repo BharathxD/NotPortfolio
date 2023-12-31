@@ -35,16 +35,12 @@ const RootLayout = ({ children }: Props) => {
   return (
     <html
       lang="en"
-      className={cn(
-        "bg-black text-neutral-900 antialiased dark:text-neutral-50",
-        clash.className,
-        poppins.variable
-      )}
+      className={cn("bg-black text-neutral-50 antialiased", clash.className, poppins.variable)}
       suppressHydrationWarning>
-      <body className="relative scrollbar-none dark:bg-spotlight-farthest md:dark:bg-spotlight-closest">
+      <body className="relative bg-spotlight-farthest scrollbar-none md:bg-spotlight-closest">
         <ThemeProvider>
           <div className="pointer-events-auto absolute inset-0 z-0 bg-mask bg-[length:200px] bg-left-top opacity-60 mix-blend-overlay md:opacity-20" />
-          <div className="absolute inset-x-0 top-0 z-0 hidden h-[10dvh] bg-spotlight-linear dark:block" />
+          <div className="absolute inset-x-0 top-0 z-0 block h-[10dvh] bg-spotlight-linear" />
           <header className="relative z-50 m-auto h-[10dvh] max-w-4xl">
             <Navbar />
           </header>

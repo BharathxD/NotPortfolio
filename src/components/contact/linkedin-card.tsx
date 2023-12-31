@@ -2,11 +2,17 @@
 
 import { biography } from "~/lib/config";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
+import { type SocialProfiles } from "~/types";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import ImageWithLoader from "../projects/ImageWithLoader";
 
-const LinkedInCard = () => {
+interface Props {
+  social: SocialProfiles & { blurDataUrl: string };
+}
+
+const LinkedInCard = ({ social }: Props) => {
   return (
     <motion.a
       href={biography.socialProfiles.find((profile) => profile.platform === "LinkedIn")!.url}
@@ -27,12 +33,17 @@ const LinkedInCard = () => {
       <div className="absolute inset-x-0 top-0 z-20 h-px bg-glare opacity-40" />
       <div className="absolute inset-x-0 bottom-0 z-20 h-px bg-glare opacity-40" />
       <div className="size-full px-10" />
-      <ImageWithLoader
-        src="/linkedin.webp"
+      <Image
+        src={social.imageUrl}
+        blurDataURL={social.blurDataUrl}
+        placeholder="blur"
         alt="LinkedIn Profile Page"
-        className="absolute inset-x-0 bottom-[-20%] z-10 rounded-xl object-contain grayscale transition-all duration-700 group-hover:grayscale-0  md:inset-x-[auto] md:right-[-20%]"
-        height={352}
-        width={600}
+        className=" absolute inset-x-0 bottom-[-20%] z-10 h-[352px] w-[600px] rounded-xl object-contain grayscale transition-all duration-700 group-hover:grayscale-0  md:inset-x-[auto] md:right-[-20%]"
+        height={2138}
+        width={3644}
+        style={{ transform: "translate3d(0, 0, 0)" }}
+        // height={352}
+        // width={600}
       />
     </motion.a>
   );

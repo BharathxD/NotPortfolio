@@ -3,6 +3,8 @@ type UniqueIdentifier = string | number;
 interface SocialProfiles {
   platform: string;
   url: string;
+  imageUrl: string;
+  blurDataUrl: string | null;
 }
 
 interface Project {

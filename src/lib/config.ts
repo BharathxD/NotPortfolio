@@ -42,15 +42,21 @@ const biography: Biography = {
     {
       platform: "Github",
       url: "https://www.github.com/bharathxd",
+      imageUrl: "http://localhost:3000/github.webp",
+      blurDataUrl: null,
     },
     {
       platform: "LinkedIn",
       url: "https://www.linkedin.com/in/bharath-bandi?utm_source=porfolio",
+      blurDataUrl: null,
+      imageUrl: "https://i.ibb.co/XCWfqtS/linkedin.webp",
     },
-    {
-      platform: "Twitter",
-      url: "https://twitter.com/Bharath_uwu",
-    },
+    // {
+    //   platform: "Twitter",
+    //   url: "https://twitter.com/Bharath_uwu",
+    //   imageUrl: "http://localhost:3000/twitter.webp",
+    //   blurDataUrl: null,
+    // },
   ],
   resumeLink: "https://bharath-web-bucket.s3.ap-south-1.amazonaws.com/Bharat-Laxman-Kumar-Bandi.pdf",
   personalDescription: `Hey, I'm Bharath Lakshman Kumar (you can call me Bharath, though). I'm a UI Engineer and a student based in Hyderabad, India. I'm working as a software engineering intern at Vertocity, where I contribute to building a variety of AI/Ed SaaS products. My background is in UI development, but I love everything related to Server-Side Engineering. I'm all about clean, detailed documentation, rock-solid processes, and never shying away from asking "why?". Those are the pillars of my work, no matter what project I'm tackling.And speaking of projects, my sweet spot lies in the SaaS space. But if there's a chance to turn a playful idea into reality, consider me on board! Feel free to stick around, explore, and don't hesitate to say hello!`,

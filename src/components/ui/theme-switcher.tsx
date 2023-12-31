@@ -15,7 +15,7 @@ const ThemeSwitcher = () => {
   if (!isMounted) {
     return (
       <button className="rounded-full p-1 font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
-        <Loader size={25} className="animate-spin text-zinc-800 dark:text-zinc-50" />
+        <Loader size={25} className="animate-spin text-zinc-50" />
       </button>
     );
   }
