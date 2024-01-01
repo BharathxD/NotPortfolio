@@ -1,8 +1,9 @@
 import { Mdx } from "~/components/mdx/mdx-components";
-import { allAuthors, allPosts } from "contentlayer/generated";
+import { allAuthors, allPosts, type Post } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import "~/styles/mdx.css";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
+import getPostFromParams from "~/actions/get-post-from-params";
 import MdxPager from "~/components/pagers/mdx-pager";
 import ImageWithLoader from "~/components/projects/image-with-loader";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
@@ -10,34 +11,20 @@ import { buttonVariants } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
 import { Shell } from "~/components/ui/shell";
 import { cn, formatDate } from "~/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 
-interface PostPageProps {
+interface Props {
   params: {
     slug: string[];
   };
 }
-
-const getPostFromParams = (params: PostPageProps["params"]) => {
-  const slug = params?.slug?.join("/");
-  const post = allPosts.find((post) => post.slugAsParams === slug);
-
-  if (!post) {
-    return null;
-  }
-
-  return post;
-};
-
 // eslint-disable-next-line @typescript-eslint/require-await
-export const generateStaticParams = async (): Promise<PostPageProps["params"][]> =>
+export const generateStaticParams = async (): Promise<Props["params"][]> =>
   allPosts.map((post) => ({
     slug: post.slugAsParams.split("/"),
   }));
 
-const PostPage = async ({ params }: PostPageProps) => {
-  // eslint-disable-next-line @typescript-eslint/await-thenable
+const PostPage = async ({ params }: Props) => {
   const post = await getPostFromParams(params);
 
   if (!post) return notFound();
