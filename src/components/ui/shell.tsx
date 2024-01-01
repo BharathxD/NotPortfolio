@@ -2,7 +2,7 @@ import { cn } from "~/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
-const shellVariants = cva("p-5 pt-0 md:p-10", {
+const shellVariants = cva("p-5 md:p-10", {
   variants: {
     variant: {
       landing: "flex h-[90dvh] items-center justify-center",

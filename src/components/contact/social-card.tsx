@@ -54,6 +54,7 @@ const SocialCard = ({ platform, alignImage, label, description }: SocialCardProp
         loading="eager"
         height={352}
         width={600}
+        priority
       />
     </motion.a>
   );

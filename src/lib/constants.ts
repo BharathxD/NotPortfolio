@@ -2,6 +2,10 @@ import { type Emoticons } from "~/types";
 
 const NAVBAR_LINKS: { name: string; path: string }[] = [
   {
+    name: "Home",
+    path: "/",
+  },
+  {
     name: "Work",
     path: "/work",
   },
@@ -10,7 +14,7 @@ const NAVBAR_LINKS: { name: string; path: string }[] = [
     path: "/blog",
   },
   {
-    name: "Let's Talk",
+    name: "Contact",
     path: "/contact",
   },
 ];

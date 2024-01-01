@@ -21,22 +21,22 @@ const MdxPager = ({ currentItem, allItems, className, ...props }: Props) => {
   }
 
   return (
-    <div className={cn("flex items-start md:items-center justify-between flex-col md:flex-row", className)} {...props}>
+    <div className={cn("flex flex-row items-center justify-between", className)} {...props}>
       {pager?.prev ? (
         <Link
           aria-label="Previous post"
           href={pager.prev.slug}
           className={cn(buttonVariants({ variant: "ghost" }))}>
           <ChevronLeftIcon className="mr-2 h-4 w-4" aria-hidden="true" />
-          {pager.prev.title}
+          <span className="hidden md:block">{pager.prev.title}</span>
         </Link>
       ) : null}
       {pager?.next ? (
         <Link
           aria-label="Next post"
           href={pager.next.slug}
-          className={cn(buttonVariants({ variant: "ghost", className: "p-0" }), "md:ml-auto")}>
-          {pager.next.title}
+          className={cn(buttonVariants({ variant: "ghost" }), "md:ml-auto")}>
+          <span className="hidden md:block">{pager.next.title}</span>
           <ChevronRightIcon className="ml-2 h-4 w-4" aria-hidden="true" />
         </Link>
       ) : null}

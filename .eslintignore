@@ -10,3 +10,4 @@ tailwind.config.ts
 **/**/node_modules
 **/**/.next
 **/**/public
+**/**/env.mjs

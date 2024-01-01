@@ -1,24 +1,19 @@
-import PostCard from "~/components/blog/post-card";
+import PostList from "~/components/blog/post-list";
 import { Shell } from "~/components/ui/shell";
+import env from "~/env.mjs";
 import { allPosts } from "contentlayer/generated";
 import { type Metadata } from "next";
-import * as React from "react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: "Blog",
-  description: "Explore the latest news and updates from the community",
 };
 
 const BlogPage = () => {
   const posts = allPosts.filter((post) => post.published).sort((a, b) => b.date.localeCompare(a.date));
   return (
     <Shell variant="spaced">
-      <div className="flex w-full flex-col gap-4">
-        {posts.map((post, i) => (
-          <PostCard key={post.slug} post={post} i={i} />
-        ))}
-      </div>
+      <PostList posts={posts} />
     </Shell>
   );
 };

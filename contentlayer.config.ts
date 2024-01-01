@@ -96,7 +96,7 @@ const source = makeSource({
         // @ts-expect-error rehype-pretty-code has no types
         rehypePrettyCode,
         {
-          theme: "github-dark-dimmed",
+          theme: "slack-dark",
           defaultLang: {
             block: "typescript",
           },

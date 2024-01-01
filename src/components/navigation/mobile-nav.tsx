@@ -22,7 +22,7 @@ const MobileNav = () => (
       </SheetClose>
       <nav>
         <ul className="flex flex-col items-end" role="list">
-          {[{ name: "Home", path: "/" }].concat(NAVBAR_LINKS).map((item) => (
+          {NAVBAR_LINKS.map((item) => (
             <NavItemMobile key={item.name} item={item} />
           ))}
         </ul>
