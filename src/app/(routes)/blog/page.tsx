@@ -14,28 +14,10 @@ const BlogPage = () => {
   const posts = allPosts.filter((post) => post.published).sort((a, b) => b.date.localeCompare(a.date));
   return (
     <Shell variant="spaced">
-      <div className="mx-auto grid grid-cols-1 gap-4 md:grid-cols-3 lg:mx-0">
-        <div className="grid grid-cols-1 gap-4">
-          {posts
-            .filter((_, i) => i % 3 === 0)
-            .map((post, i) => (
-              <PostCard key={post.slug} post={post} i={i} />
-            ))}
-        </div>
-        <div className="grid grid-cols-1 gap-4">
-          {posts
-            .filter((_, i) => i % 3 === 1)
-            .map((post, i) => (
-              <PostCard key={post.slug} post={post} i={i} />
-            ))}
-        </div>
-        <div className="grid grid-cols-1 gap-4">
-          {posts
-            .filter((_, i) => i % 3 === 2)
-            .map((post, i) => (
-              <PostCard key={post.slug} post={post} i={i} />
-            ))}
-        </div>
+      <div className="flex w-full flex-col gap-4">
+        {posts.map((post, i) => (
+          <PostCard key={post.slug} post={post} i={i} />
+        ))}
       </div>
     </Shell>
   );
