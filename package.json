@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "clean": "rm -rf node_modules && rm -rf .next && rm -rf .contentlayer",
+    "build": "contentlayer build && next build",
     "dev": "next dev",
     "fmc": "prettier --check \"**/*.{ts,tsx,mdx}\"",
     "fmw": "prettier --write \"**/*.{ts,tsx,mdx}\"",
