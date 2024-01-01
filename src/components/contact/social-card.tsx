@@ -34,11 +34,11 @@ const SocialCard = ({ platform, alignImage, label, description }: SocialCardProp
         alignImage === "left" ? "md:flex-row-reverse" : "md:flex-row"
       )}>
       <div className="relative z-10 flex size-full flex-col items-center justify-center gap-2 px-10">
-        <div className="inline-flex items-center justify-center bg-gradient-to-tr from-neutral-200 to-neutral-400 bg-clip-text text-transparent">
+        <h5 className="flex items-center justify-end text-2xl font-medium text-neutral-300">
           <span className="text-4xl">{label}</span>
-          <ArrowUpRight size={40} className="text-neutral-400" />
-        </div>
-        <p className="text-neutral-400">{description}</p>
+          <ArrowUpRight size={40} className="text-neutral-300" />
+        </h5>
+        <p className="text-center text-neutral-400">{description}</p>
       </div>
       <div className="absolute inset-0 z-0 bg-card opacity-0 transition-all duration-500 group-hover:opacity-100" />
       <div className="absolute inset-x-0 top-0 z-20 h-px bg-glare opacity-40" />

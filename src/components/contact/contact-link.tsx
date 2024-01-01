@@ -37,12 +37,12 @@ const ContactLink = ({
     <div className="absolute bottom-0 z-20 h-px w-full bg-glare opacity-30" />
     <div className="absolute inset-0 z-0 bg-card transition-all duration-500 group-hover:opacity-50 md:rotate-180 md:opacity-0" />
     <div className="relative z-10 flex size-full flex-col items-center justify-center gap-1 md:items-end">
-      <h5 className="flex items-center justify-end bg-gradient-to-tr from-neutral-200 to-neutral-400 bg-clip-text text-2xl font-medium text-transparent">
+      <h5 className="flex items-center justify-end text-2xl font-medium text-neutral-300">
         <span>{label}</span>
-        <ArrowUpRight size={25} className="text-neutral-400" />
+        <ArrowUpRight size={30} className="text-neutral-300" />
       </h5>
-      <p className={cn("text-center text-sm text-neutral-400", className)}>
-        {bottomText} <Icon className="inline-block  text-neutral-400" size={10} />
+      <p className={cn("inline-block text-center text-sm text-neutral-400", className)}>
+        <span>{bottomText}</span> <Icon className="-mt-px inline-block text-neutral-400" size={10} />
       </p>
     </div>
     <div className="hidden size-full md:block" />

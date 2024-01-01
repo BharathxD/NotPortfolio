@@ -1,11 +1,12 @@
-import ContactLinks from "~/components/contact/contack-links";
+import ContactLinks from "~/components/contact/contact-links";
 import SocialCards from "~/components/contact/social-cards";
+import { Shell } from "~/components/ui/shell";
 
 const ContactPage = () => (
-  <div className="flex flex-col gap-2 p-4 md:p-10">
+  <Shell variant="ordered">
     <ContactLinks />
     <SocialCards />
-  </div>
+  </Shell>
 );
 
 export default ContactPage;
