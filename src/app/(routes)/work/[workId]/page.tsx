@@ -1,5 +1,6 @@
 import EmptyPage from "~/components/empty-page";
 import Project from "~/components/projects/project";
+import { Shell } from "~/components/ui/shell";
 import { biography } from "~/lib/config";
 
 interface Props {
@@ -17,7 +18,11 @@ const ProjectPage = ({ params: { workId } }: Props) => {
         message={`Alas! No trace of a project bearing the name "${workId}" exists in the depths of my portfolio.`}
       />
     );
-  return <Project project={project} />;
+  return (
+    <Shell variant="spaced">
+      <Project project={project} />
+    </Shell>
+  );
 };
 
 export default ProjectPage;
