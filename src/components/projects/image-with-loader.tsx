@@ -13,7 +13,7 @@ const ImageWithLoader = ({ src, alt, className, ...props }: ComponentProps<typeo
       src={src}
       alt={alt}
       className={cn(
-        "will-change-auto data-[loading=true]:animate-skeleton data-[loading=true]:bg-gradient-to-r data-[loading=true]:from-neutral-950 data-[loading=true]:via-neutral-700 data-[loading=true]:to-neutral-950 data-[loading=true]:bg-[400%,100%]",
+        "will-change-auto data-[loading=true]:animate-skeleton data-[loading=true]:bg-gradient-to-r data-[loading=true]:from-neutral-950 data-[loading=true]:via-neutral-700 data-[loading=true]:to-neutral-950 data-[loading=true]:bg-[400%,100%] object-fill",
         className
       )}
       style={{ transform: "translate3d(0, 0, 0)" }}

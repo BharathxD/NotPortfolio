@@ -1,12 +1,10 @@
 ---
-title: Design Locks: Locks managed by a central machine
+title: Locks managed by a central machine
 description: Explore the intricacies of designing locks managed by a central machine in this insightful content. Learn about coordination, remote locks, database integration with Redis, and overcoming potential single points of failure for robust lock management.
 date: "2023-08-27"
 authors:
-  - BharathxD
+  - bharathxd
 ---
-
-# Let's get right into it
 
 The 3 machines co-ordinate through a central lock manager
 
@@ -103,7 +101,8 @@ function releaseLock(q: string) {
 
 ---
 
-(MongoDB transaction uses remote locks on involved rows) Distributed [Redlock] → Distributed locks with Redis
+(MongoDB transaction uses remote locks on involved rows) 
+Distributed [Redlock] → Distributed locks with Redis
 
 Distributed locks are mostly used in systems which need high degree of correction
 

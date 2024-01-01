@@ -2,6 +2,7 @@ node_modules
 commitlint.config.cjs
 prettier.config.js
 postcss.config.js
+next.config.js
 tailwind.config.ts
 
 .eslintrc.cjs

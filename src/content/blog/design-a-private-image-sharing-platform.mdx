@@ -3,10 +3,8 @@ title: Design a private image-sharing platform
 description: Explore the intricacies of a private image-sharing platform.
 date: "2023-10-14"
 authors:
-  - BHarathxD
+  - bharathxd
 ---
-
-# Introduction
 
 In this design system, we will explore the intricacies of a private image-sharing platform. We'll cover various important aspects, such as how images are delivered on the platform, incorporating Gravatar, improving query performance, setting up an API server, utilizing a content delivery network, and adding tags to photos. The design system also sheds light on the platform's database structure, placing emphasis on security considerations and the overall system architecture.
 
@@ -73,30 +71,6 @@ This URL will display your current profile picture.
 - Users can designate one as active.
 - The active picture should be returned as part of the response.
 
-### Brainstorm
-
----
-
-- Schema Design
-
-### Schema
-
----
-
-| Users |
-| ----- |
-| id    |
-| email |
-| hash  |
-
-We'll be adding a new column in the upcoming section. But why do we need the 'hash' column? Let's examine the first query below.
-
-| Photos    |
-| --------- |
-| id        |
-| user_id   |
-| is_active |
-
 ### Query Optimization
 
 ---
@@ -155,11 +129,6 @@ AND photos.is_active = true
 **How can we make the above query much better? (As this query is frequently used)**
 
 Add a column named `active_photo_id`
-
-| Users           |
-| --------------- |
-| ….              |
-| active_photo_id |
 
 **But then we need to update the other queries?** `YES`
 
@@ -220,7 +189,7 @@ To render the active photo for a user, follow these steps:
 
 - Render the Active Photo
 
-  Now that you have the image file, you can render it in your HTML or Markdown content using the following <img> tag:
+  Now that you have the image file, you can render it in your HTML or Markdown content using the following `<img>` tag:
 
   ```html
   <img src="https://api.gravatar.com/photos/{hash}" alt="Active Photo" />
