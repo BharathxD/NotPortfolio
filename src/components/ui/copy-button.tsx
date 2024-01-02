@@ -1,8 +1,8 @@
 "use client";
 
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
-import { useState } from "react";
 import type { ButtonProps } from "~/components/ui/button";
+import { useState } from "react";
 
 const CopyButton = ({ value, ...props }: ButtonProps) => {
   const [isCopied, setIsCopied] = useState(false);
