@@ -93,7 +93,7 @@ const PostPage = async ({ params }: Props) => {
           {post.title}
         </h1>
         {authors?.length && (
-          <div className="flex items-center space-x-4 pb-4">
+          <div className="flex items-center space-x-4">
             {authors.map(
               (author) =>
                 author && (
@@ -121,13 +121,13 @@ const PostPage = async ({ params }: Props) => {
         <ImageWithLoader
           src={post.image}
           alt={post.title}
-          className="rounded-md border bg-muted"
+          className="mt-4 rounded-md border bg-muted"
           height={500}
           width={1000}
           priority
         />
       )}
-      <article className="font-poppins prose prose-neutral prose-invert max-w-4xl prose-img:rounded-md prose-img:border">
+      <article className="prose prose-neutral prose-invert max-w-4xl font-poppins prose-img:rounded-md prose-img:border">
         <Mdx code={post.body.code} />
       </article>
       <Separator className="my-4" />

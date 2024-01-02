@@ -1,6 +1,6 @@
 ---
 title: Design a private image-sharing platform
-description: Explore the intricacies of a private image-sharing platform.
+description: Design a private image-sharing platform, navigating through Gravatar integration, query optimization, and API server setup. Explore tagging photos and enhancing user experience.
 date: "2023-10-14"
 authors:
   - bharathxd
@@ -93,7 +93,9 @@ ON photos.user_id = user.id
 WHERE users.hash = ?
 ```
 
-**Updating the photo to mark it active**
+### Updating the photo to mark it active
+
+---
 
 ```sql
 START TRANSACTION;
@@ -116,7 +118,9 @@ WHERE user_id = ?;
 COMMIT;
 ```
 
-**Getting the active photo**
+### Getting the active photo
+
+---
 
 ```sql
 SELECT * FROM photos
@@ -153,6 +157,8 @@ Uploading a photo api.gravatar.com
 
 **Prepare for upload**
 
+---
+
 - User requests photo upload service for a new upload
 - Photo upload service generates a random id
 - Photo upload service generates signed URL for `S3://gravatar/{user_id}/{random_photo_id}`
@@ -160,9 +166,13 @@ Uploading a photo api.gravatar.com
 
 **Upload Photo**
 
+---
+
 User uploads photo to S3 using pre-signed urls (Learn in-depth about it [here](https://github.com/BharathxD/System-Design/tree/master/Real%20World%20Systems/Design%20a%20Social%20Media%20Network))
 
 **Render the active photo**
+
+---
 
 To render the active photo for a user, follow these steps:
 
@@ -197,15 +207,17 @@ To render the active photo for a user, follow these steps:
 
 ## Using a CDN to Serve Content
 
+---
+
 When it comes to serving content efficiently, Content Delivery Networks (CDNs) can play a crucial role. In this example, we'll configure a CDN for `gravatar.com` to optimize the delivery of images from our API server at `api.gravatar.com/photos`.
 
-**_Step 1: Configure the CDN_**
+**Step 1: Configure the CDN**
 
 To set up the CDN, follow these steps:
 
 1. Configure a CDN with the origin `gravatar.com`, which will point to our actual API server at `api.gravatar.com/photos`.
 
-**_Step 2: Handling Cache Miss_**
+**Step 2: Handling Cache Miss**
 
 In some cases, the CDN may experience a cache miss, meaning it doesn't have the requested content in its cache. In such situations, you can redirect the request to the API server to retrieve the content dynamically. Here's how:
 
@@ -217,9 +229,13 @@ In some cases, the CDN may experience a cache miss, meaning it doesn't have the 
 
 ![overall_arch.png](https://bharath-lakshman-kumar.s3.ap-south-1.amazonaws.com/Design+a+Image+Sharing+Platform/overall_arch.png)
 
-## Tag in photos
+## Tags in photos
+
+---
 
 ### Brainstorm
+
+---
 
 - Who can tag (Authorization)
 - Maximum limit of people tag in a photo
@@ -232,7 +248,7 @@ In some cases, the CDN may experience a cache miss, meaning it doesn't have the 
 
 ---
 
-location = $(320.720, 120/720)$
+Location = $(320.720, 120/720)$
 
 This allows us to handle multiple on-demand transformations, it is really necessary to store relative position of the bounding box (or) co-ordinates, as the size of the picture may differ on different devices (It will be a efficient so long as the aspect ratio of the image doesn’t change)
 

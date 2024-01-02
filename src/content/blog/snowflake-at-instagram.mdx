@@ -1,36 +1,52 @@
 ---
 title: Snowflake at Instagram
-description: Explore various distributed ID generator implementations to understand their unique approaches.
+description: Instagram's distinctive ID generation through the innovative "snowflaking" technique. Witness how it efficiently fulfills sortable ID requirements within the current infrastructure. Delve into the structure of snowflake IDs, incorporating 41 bits for epoch time, 13 bits for DB shard ID, and 10 bits for per-shard sequence numbers. Gain insights into Instagram's practical implementation across logical shards.
 image: https://bharath-lakshman-kumar.s3.ap-south-1.amazonaws.com/Design%20a%20Distributed%20ID%20Generators/didg-6.png
 date: "2023-09-06"
 authors:
   - bharathxd
 ---
 
-### Requirements
+Instagram uses a technique called snowflaking to generate IDs in their databases.
 
-- IDs sortable by time
-  - For pagination and Filter and Batch processing
-- ~64bits to be efficient on index
-- No new service
+## Requirements
 
-### Structure
+---
 
-- 41 Bits - Epoch since Jan 1, 2011
-- 13 Bits - DB shard ID
-- 10 Bits - Per shard sequence number
+Instagram's ID generation system is designed with specific requirements in mind:
 
-Instagram uses a technique called snowflaking in the database during the INSERT process. This technique is used to meet certain requirements that are essential for efficient processing of data. One of the key requirements is the ability to sort IDs by time. This feature is important for pagination, filtering, and batch processing. In order to ensure that the IDs are sortable, they need to be ~64bits in size. This allows for efficient indexing of the data.
+- **IDs Sortable by Time:** Essential for pagination, filtering, and batch processing.
+- **~64 Bits for Efficient Indexing:** Ensuring optimal performance for data indexing.
+- **No New Services Required:** Implementation within the existing infrastructure.
 
-Another important requirement is to avoid introducing any new services. This means that the snowflaking technique needs to be implemented within the existing infrastructure.
+## Structure of Snowflake IDs
 
-The structure of the snowflake ID is composed of three parts. The first part is the epoch since Jan 1, 2011, which is represented by 41 bits. The second part is the DB shard ID, which is represented by 13 bits. Finally, the per shard sequence number is represented by 10 bits.
+---
 
-Instagram has implemented logical shards, which are distributed across physical DB servers. For example, a MySQL server is used as the physical server, and each database created on that server is considered to be a logical shard. By using this approach, Instagram is able to effectively manage large amounts of data while maintaining high levels of performance.
+The core of Instagram's strategy lies in the structure of its snowflake IDs:
 
-Instagram has logical shards (1000s) on Physical DB Servers (10/15)
+- **41 Bits - Epoch since Jan 1, 2011:** Establishing a time reference point.
+- **13 Bits - DB Shard ID:** Identifying the logical shard within the database.
+- **10 Bits - Per Shard Sequence Number:** Ensuring uniqueness within each shard.
 
-Example: MySQL Server → Physical & CREATE DATABASE → Logical
+## Implementation Details
+
+---
+
+To meet these requirements, Instagram's logical shards are distributed across physical DB servers, usually ranging from 10 to 15 servers. Each logical shard corresponds to a database created on a physical server, such as a MySQL server.
+
+Instagram utilizes a technique known as "snowflaking" in its database during the INSERT process to meet specific requirements efficiently. Sorting IDs by time is crucial for tasks like pagination, filtering, and batch processing. To ensure this, the IDs are approximately 64 bits in size for efficient indexing.
+
+Another vital requirement is to implement the snowflaking technique within the existing infrastructure, avoiding the introduction of new services.
+
+The snowflake ID structure consists of three parts: 41 bits for the epoch since Jan 1, 2011, 13 bits for the DB shard ID, and 10 bits for the per-shard sequence number.
+
+Instagram employs logical shards distributed across physical DB servers, typically in the range of 10 to 15 servers. Each logical shard represents a database created on a physical server, such as a MySQL server.
+
+**Example**
+
+- MySQL Server → Physical
+- CREATE DATABASE → Logical
 
 ```sql
 CREATE DATABASE insta5;

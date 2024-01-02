@@ -13,7 +13,7 @@ The 3 machines co-ordinate through a central lock manager
   - Disk
   - Remote Lock
 
-Example: ‘apt-get upgrade’ cannot be run twice concurrently
+**Example:** `apt-get upgrade` cannot be run twice concurrently
 
 ---
 
@@ -41,6 +41,8 @@ Redis would be the Database
 ![Example with Database Involved](https://bharath-lakshman-kumar.s3.ap-south-1.amazonaws.com/Locks/lock-database.png)
 
 ### Consumer’s pseudocode
+
+---
 
 ```sql
 ACQ_LOCK()
@@ -101,7 +103,8 @@ function releaseLock(q: string) {
 
 ---
 
-(MongoDB transaction uses remote locks on involved rows) 
+(MongoDB transaction uses remote locks on involved rows)
+
 Distributed [Redlock] → Distributed locks with Redis
 
 Distributed locks are mostly used in systems which need high degree of correction
@@ -114,13 +117,8 @@ Distributed locks are mostly used in systems which need high degree of correctio
 - If the lock is acquired on >50% then ACQUIRED
 - Else release the lock on acquired instances and return FAILED
 
-<aside>
 💡 We are only doing this is to prevent SPoF
 
-</aside>
+**Read this paper (Google still uses this in production)**
 
-<aside>
-💡 **Read this paper (Google still uses this in production)**
-- Chubby: Lock service of loosely coupled distributed systems
-
-</aside>
+- [Chubby: Lock service of loosely coupled distributed systems](https://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf)
