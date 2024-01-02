@@ -1,10 +1,8 @@
 "use client";
 
 import { CardDescription } from "~/components/ui/card";
-import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { formatDate } from "~/lib/utils";
 import { type Post } from "contentlayer/generated";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 interface Props {

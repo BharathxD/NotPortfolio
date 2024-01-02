@@ -3,6 +3,12 @@
 import ProjectCard from "~/components/projects/card";
 import { Shell } from "~/components/ui/shell";
 import { biography } from "~/lib/config";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Work",
+  description: "A summary of my work, projects and contributions.",
+};
 
 const ProjectPage = () => (
   <Shell variant="spaced">
