@@ -1,7 +1,4 @@
-"use client";
-
 import type { Post } from "contentlayer/generated";
-import { motion } from "framer-motion";
 import PostCard from "./post-card";
 
 interface Props {

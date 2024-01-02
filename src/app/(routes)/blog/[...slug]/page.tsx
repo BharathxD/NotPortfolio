@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import "~/styles/mdx.css";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import getPostFromParams from "~/actions/get-post-from-params";
+import increment from "~/actions/increment";
+import Views from "~/components/blog/views";
 import MdxPager from "~/components/pagers/mdx-pager";
 import ImageWithLoader from "~/components/projects/image-with-loader";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
@@ -14,6 +16,7 @@ import env from "~/env.mjs";
 import { absoluteUrl, cn, formatDate } from "~/lib/utils";
 import { type Metadata } from "next";
 import Link from "next/link";
+import { cache, Suspense } from "react";
 
 interface Props {
   params: {
@@ -61,6 +64,8 @@ const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
   };
 };
 
+const incrementViews = cache(increment);
+
 // eslint-disable-next-line @typescript-eslint/require-await
 const generateStaticParams = async (): Promise<Props["params"][]> =>
   allPosts.map((post) => ({
@@ -88,6 +93,13 @@ const PostPage = async ({ params }: Props) => {
           {post.date && <time dateTime={post.date}>{formatDate(post.date)}</time>}
           {post.date ? <div>•</div> : null}
           <div>{post.readingTime}min</div>
+          {post.readingTime ? <div>•</div> : null}
+          <Suspense
+            fallback={
+              <p className="h-5 w-14 animate-skeleton rounded-sm border bg-gradient-to-r from-neutral-950 via-neutral-700 to-neutral-950 bg-[400%,100%]" />
+            }>
+            <Views slug={post.slug} cachedIncrement={incrementViews} />
+          </Suspense>
         </div>
         <h1 className="inline-block bg-gradient-to-tr from-neutral-100 to-neutral-400 bg-clip-text text-4xl font-medium text-transparent lg:text-5xl">
           {post.title}
