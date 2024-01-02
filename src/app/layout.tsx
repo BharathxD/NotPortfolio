@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "~/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "~/components/navigation/navbar";
 import env from "~/env.mjs";
 import { siteConfig } from "~/lib/config";
@@ -88,6 +89,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => {
           </header>
           <main className="relative z-50 mx-auto min-h-[90dvh] max-w-4xl">{children}</main>
           <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
