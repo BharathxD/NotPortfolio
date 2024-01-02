@@ -48,7 +48,13 @@ const EMOTICONS_MAP: Record<Emoticons[number], string> = {
   404: "404",
 };
 
+const StatusCodes = {
+  INTERNAL_SERVER_ERROR: 500,
+  BAD_REQUEST: 400,
+};
+
 export {
+  StatusCodes,
   NAVBAR_LINKS,
   EMOTICONS_MAP,
   RICKROLL_LINK_YT_ID,
