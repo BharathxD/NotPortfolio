@@ -1,3 +1,4 @@
+import env from "~/env.mjs";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -15,6 +16,6 @@ const formatDate = (
 const truncate = (str: string, length: number) =>
   str.length > length ? `${str.substring(0, length)}...` : str;
 
-const absoluteUrl = (path: string) => `${process.env.NEXT_PUBLIC_APP_URL!}${path}`;
+const absoluteUrl = (path: string) => `${env.NEXT_PUBLIC_APP_URL}${path}`;
 
 export { cn, formatDate, truncate, absoluteUrl };

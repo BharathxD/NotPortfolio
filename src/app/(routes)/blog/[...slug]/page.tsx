@@ -1,5 +1,5 @@
 import { Mdx } from "~/components/mdx/mdx-components";
-import { allAuthors, allPosts, type Post } from "contentlayer/generated";
+import { allAuthors, allPosts } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import "~/styles/mdx.css";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
@@ -10,7 +10,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { buttonVariants } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
 import { Shell } from "~/components/ui/shell";
-import { cn, formatDate } from "~/lib/utils";
+import env from "~/env.mjs";
+import { absoluteUrl, cn, formatDate } from "~/lib/utils";
+import { type Metadata } from "next";
 import Link from "next/link";
 
 interface Props {
@@ -18,8 +20,49 @@ interface Props {
     slug: string[];
   };
 }
+
+const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+  const post = await getPostFromParams(params);
+
+  if (!post) return {};
+
+  const url = env.NEXT_PUBLIC_APP_URL;
+
+  const ogUrl = new URL(`${url}/api/og`);
+  ogUrl.searchParams.set("title", post.title);
+
+  return {
+    metadataBase: new URL(url),
+    title: post.title,
+    description: post.description,
+    authors: post.authors.map((author) => ({
+      name: author,
+    })),
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      url: absoluteUrl(post.slug),
+      images: [
+        {
+          url: ogUrl.toString(),
+          alt: post.title,
+          width: 1920,
+          height: 1080,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [ogUrl.toString()],
+    },
+  };
+};
+
 // eslint-disable-next-line @typescript-eslint/require-await
-export const generateStaticParams = async (): Promise<Props["params"][]> =>
+const generateStaticParams = async (): Promise<Props["params"][]> =>
   allPosts.map((post) => ({
     slug: post.slugAsParams.split("/"),
   }));
@@ -84,7 +127,7 @@ const PostPage = async ({ params }: Props) => {
           priority
         />
       )}
-      <article className="font-poppins prose prose-neutral prose-invert max-w-4xl lg:prose-lg prose-img:rounded-md prose-img:border">
+      <article className="font-poppins prose prose-neutral prose-invert max-w-4xl prose-img:rounded-md prose-img:border">
         <Mdx code={post.body.code} />
       </article>
       <Separator className="my-4" />
@@ -100,4 +143,5 @@ const PostPage = async ({ params }: Props) => {
   );
 };
 
+export { generateMetadata, generateStaticParams };
 export default PostPage;
