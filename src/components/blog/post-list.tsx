@@ -9,26 +9,11 @@ interface Props {
 }
 
 const PostList = ({ posts }: Props) => (
-  <motion.ul
-    className="flex w-full flex-col gap-4"
-    initial="hidden"
-    whileInView="show"
-    role="list"
-    aria-label="List of posts"
-    animate="show"
-    viewport={{ once: true }}
-    variants={{
-      hidden: {},
-      show: {
-        transition: {
-          staggerChildren: 0.05,
-        },
-      },
-    }}>
+  <ul className="flex w-full flex-col gap-4">
     {posts.map((post) => (
       <PostCard key={post.slug} post={post} />
     ))}
-  </motion.ul>
+  </ul>
 );
 
 export default PostList;
