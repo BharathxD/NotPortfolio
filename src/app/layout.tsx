@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import "~/styles/globals.css";
 import Navbar from "~/components/navigation/navbar";
+import env from "~/env.mjs";
+import { siteConfig } from "~/lib/config";
 import { cn } from "~/lib/utils";
 import ThemeProvider from "~/providers/theme-provider";
 import { Montserrat, Poppins } from "next/font/google";
 import localFont from "next/font/local";
-
-export const metadata: Metadata = {
-  title: "Bharath Lakshman Kumar",
-  description: "Bharath's personal website",
-};
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -34,6 +31,41 @@ const clash = localFont({
   ],
   variable: "--font-clash",
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  authors: [
+    {
+      name: "Bharath Lakshman Kumar",
+      url: "https://github.com/BharathxD",
+    },
+  ],
+  creator: "BharathxD",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/og.jpg`],
+    creator: siteConfig.creator,
+  },
+  icons: {
+    icon: "/favicon.ico",
+    ...siteConfig.favicons,
+  },
+};
 
 const RootLayout = ({ children }: React.PropsWithChildren) => {
   return (

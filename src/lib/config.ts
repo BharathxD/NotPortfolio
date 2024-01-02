@@ -1,9 +1,12 @@
+import env from "~/env.mjs";
 import { type Biography } from "~/types";
 
 const siteConfig = {
   name: "Bharath Lakshman Kumar",
-  description: "Personal Portfolio",
+  description: "Software engineer based in Hyderabad",
   logoUrl: "/logo.svg",
+  creator: "@Bharath_uwu",
+  url: env.NEXT_PUBLIC_APP_URL,
   favicons: [
     {
       url: "/public/favicon-16x16.png",
