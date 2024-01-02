@@ -1,5 +1,3 @@
-"use client";
-
 import ProjectCard from "~/components/projects/card";
 import { Shell } from "~/components/ui/shell";
 import { biography } from "~/lib/config";

@@ -159,9 +159,11 @@ Uploading a photo api.gravatar.com
 
 ---
 
+`S3://gravatar/{user_id}/{random_photo_id}`
+
 - User requests photo upload service for a new upload
 - Photo upload service generates a random id
-- Photo upload service generates signed URL for `S3://gravatar/{user_id}/{random_photo_id}`
+- Photo upload service generates signed
 - Photo upload service sends signed URL to user
 
 **Upload Photo**
