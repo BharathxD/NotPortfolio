@@ -1,5 +1,4 @@
 import { type Count } from "~/actions/get-views-count";
-import { Eye } from "lucide-react";
 
 interface Props {
   slug: string;

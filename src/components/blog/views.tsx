@@ -4,7 +4,7 @@ import ViewCounter from "./view-counter";
 
 interface Props {
   slug: string;
-  cachedIncrement?: (slug: string) => Promise<void>;
+  cachedIncrement?: (slug: string) => Promise<number>;
 }
 
 const Views = async ({ slug, cachedIncrement }: Props) => {
