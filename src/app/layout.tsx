@@ -3,7 +3,7 @@ import "~/styles/globals.css";
 import Navbar from "~/components/navigation/navbar";
 import { cn } from "~/lib/utils";
 import ThemeProvider from "~/providers/theme-provider";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 
 export const metadata: Metadata = {
@@ -11,7 +11,13 @@ export const metadata: Metadata = {
   description: "Bharath's personal website",
 };
 
-const poppins = Montserrat({
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
+
+const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
   variable: "--font-montserrat",
@@ -33,7 +39,12 @@ const RootLayout = ({ children }: React.PropsWithChildren) => {
   return (
     <html
       lang="en"
-      className={cn("bg-black text-neutral-50 antialiased", clash.className, poppins.variable)}
+      className={cn(
+        "bg-black text-neutral-50 antialiased",
+        clash.className,
+        montserrat.variable,
+        poppins.variable
+      )}
       suppressHydrationWarning>
       <body className="relative bg-spotlight-farthest scrollbar-none md:bg-spotlight-closest">
         <ThemeProvider>

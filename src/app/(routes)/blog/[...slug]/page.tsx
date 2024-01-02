@@ -84,7 +84,9 @@ const PostPage = async ({ params }: Props) => {
           priority
         />
       )}
-      <Mdx code={post.body.code} />
+      <article className="font-poppins prose prose-neutral prose-invert max-w-4xl lg:prose-lg prose-img:rounded-md prose-img:border">
+        <Mdx code={post.body.code} />
+      </article>
       <Separator className="my-4" />
       <MdxPager currentItem={post} allItems={allPosts} />
       <Link

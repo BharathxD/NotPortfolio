@@ -5,7 +5,7 @@ const PostLoading = () => (
     as="article"
     variant="spaced"
     className="relative space-y-4 bg-gradient-to-b from-neutral-700/50 via-neutral-900 to-neutral-950 md:bg-transparent md:from-transparent md:to-transparent">
-    <div className="flex h-5 w-40 animate-skeleton items-center space-x-2 rounded-md bg-gradient-to-r from-neutral-950 via-neutral-700 to-neutral-950 bg-[400%,100%] text-sm text-muted-foreground" />
+    <div className="flex h-14 w-40 animate-skeleton items-center space-x-2 rounded-md bg-gradient-to-r from-neutral-950 via-neutral-700 to-neutral-950 bg-[400%,100%] text-sm text-muted-foreground" />
     <div className="space-y-4">
       <div className="inline-block h-10 w-full animate-skeleton rounded-md bg-gradient-to-r from-neutral-950 via-neutral-700 to-neutral-950 bg-[400%,100%] lg:text-5xl" />
       <div className="flex flex-row items-center justify-start gap-2">
