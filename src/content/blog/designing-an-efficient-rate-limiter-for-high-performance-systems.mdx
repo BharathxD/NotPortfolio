@@ -1,0 +1,50 @@
+---
+title: Designing an Efficient Rate Limiter for High-Performance Systems
+description: Design a robust rate limiter, limiting requests, offering granular control, and ensuring minimal overhead. Enhance scalability effortlessly.
+date: "2023-8-16"
+authors:
+  - bharathxd
+---
+
+![Arch 1](https://bharath-lakshman-kumar.s3.ap-south-1.amazonaws.com/Rate%20Limiter/rate-limiter-1.png)
+
+Systems break down under tremendous load, and we need to ensure that it doesn’t happen
+
+### Key Objectives
+
+A well-constructed rate limiter should achieve the following goals:
+
+- **Limit Requests:** Control the number of incoming requests within a specified timeframe.
+- **Granular Configuration:** Empower developers with the flexibility to configure thresholds at a granular level.
+  Minimal Overhead: Ensure that the rate limiter implementation does not introduce significant additional overhead.
+
+### Understanding the Rate Limiter
+
+---
+
+The rate limiter functions as the initial defense mechanism for incoming requests. It follows a straightforward process:
+
+- The Rate limiter is the first line of defense
+- Any incoming request is first consulted against the rate limiter
+- If we are under limits, let the request pass-through
+- Otherwise, reject the request with Error **[429](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429)** (Too many requests)
+
+### Implementation as a Library
+
+---
+
+Rather than conceiving the rate limiter as a standalone service, we propose implementing it as a library. This approach centralizes the business logic within a dedicated library, providing a cleaner and more modular solution.
+
+![Arch 1](https://bharath-lakshman-kumar.s3.ap-south-1.amazonaws.com/Rate%20Limiter/rate-limiter-2.png)
+
+By encapsulating the rate limiter within a library, developers gain a seamless way to integrate this crucial functionality into their applications.
+
+### Scaling the Redis Database
+
+---
+
+When considering the scalability of the underlying database, such as Redis, two primary approaches can be explored:
+
+- **Vertical Scaling:** Enhance the performance of the existing database server by upgrading its resources.
+- **Sharding:** Distribute the database load by adding shards, enabling horizontal scaling.
+  By strategically implementing these scaling strategies, the rate limiter can efficiently manage increasing workloads while maintaining optimal performance.

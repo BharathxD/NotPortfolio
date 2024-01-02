@@ -1,0 +1,89 @@
+---
+title: Design a Load Balancer
+description: Learn Load Balancer design essentials, algorithms, and database integration for optimal performance in distributed systems. Get a holistic understanding of the big picture through informative illustrations showcasing the low-level and overall architecture of a Load Balancer.
+date: "2023-08-25"
+authors:
+  - bharathxd
+---
+
+In the dynamic landscape of distributed systems, effective load balancing is important for maintaining optimal performance, ensuring scalability, and achieving high availability. Learn the essential requirements, terminology, and various load balancing algorithms, shedding light on the intricate details of this fundamental component.
+
+### Key Requirements
+
+---
+
+- **Balance the Load:** Achieve an equilibrium in distributing traffic across servers.
+- **Tunable Algorithm:** Implement algorithms that can be fine-tuned based on specific needs.
+- **Scaling beyond One Machine:** Ensure scalability to accommodate increasing workloads and server demands.
+
+### Clarifying Key Terminology
+
+---
+
+- **Load Balancer Server:** The central component responsible for distributing incoming traffic among multiple backend servers.
+- **Backend Server:** The individual servers responsible for processing requests received via the load balancer.
+
+### Comprehensive Brainstorming
+
+---
+
+- **Load Balancer Configurations:** Explore diverse configurations to optimize load balancing efficiency.
+- **Monitoring:** Implement robust monitoring systems to track server health and performance.
+- **Availability:** Ensure continuous availability of services by managing server resources effectively.
+- **Extensibility:** Design load balancing systems with the flexibility to adapt and scale as needed.
+
+## Load Balancing Algorithms
+
+---
+
+### Round Robin [Uniform Infrastructure]
+
+---
+
+- Distribute the load `Iteratively`
+- For Homogenous infrastructure, where every server has same hardware configuration [Hypothetically]
+
+### Weighted Round Robin [Non-uniform infrastructure]
+
+---
+
+- Distribute the load iteratively but as per `weights`
+- Heterogenous Infrastructure
+
+### Least Connections
+
+---
+
+Pick the server having the `least connections` from the load balancer
+
+### Hash Based Routing [Random]
+
+---
+
+Hash of some attribute (ip, userId, url) determines which server to pick (You can configure `stickiness`)
+
+![Demonstration of low-level architecture of Load Balancer](https://bharath-lakshman-kumar.s3.ap-south-1.amazonaws.com/Load%20Balancer/lb-lowlevel-arch.png)
+
+Detailed information about backend servers is stored in the load balancer server's memory. Initially, the load balancer fetches details during initialization and subscribes to a pub/sub for real-time updates.
+
+### Leveraging Databases for Efficiency
+
+- **Key-Value Store (e.g., Redis):**
+  - Stores backend server details.
+  - KVDB server subscribes to Redis pub/sub for immediate updates, ensuring synchronized data.
+
+- **Prometheus for Meta Information:**
+  - Utilize Prometheus to store meta information about servers.
+  - Enables the autoscaling service to make informed decisions on scaling requirements.
+
+### Implementing a Robust Orchestrator
+
+---
+
+Load balancers can be susceptible to a single point of failure. To mitigate this, an orchestrator continuously monitors load balancer servers. In case of a server failure, the orchestrator deploys a backup load balancer. Frequent pulse requests from the load balancer servers ensure real-time communication with the orchestrator.
+
+### Sneak Peek at the Big Picture
+
+---
+
+![Overall Architecture of LB](https://bharath-lakshman-kumar.s3.ap-south-1.amazonaws.com/Load%20Balancer/lb-overall-arch.png)
