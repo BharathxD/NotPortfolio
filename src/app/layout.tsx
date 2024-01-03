@@ -10,31 +10,43 @@ import ThemeProvider from "~/providers/theme-provider";
 import { Montserrat, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 
+/**
+ * Configuration for the Poppins font
+ */
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
   variable: "--font-poppins",
 });
 
+/**
+ * Configuration for the Montserrat font
+ */
 const montserrat = Montserrat({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  weight: ["500"],
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
 
+/**
+ * Configuration for the local Clash font
+ */
 const clash = localFont({
   src: [
-    { path: "../styles/ClashGrotesk-Extralight.otf", weight: "200", style: "normal" },
-    { path: "../styles/ClashGrotesk-Light.otf", weight: "300", style: "normal" },
-    { path: "../styles/ClashGrotesk-Regular.otf", weight: "400", style: "normal" },
-    { path: "../styles/ClashGrotesk-Medium.otf", weight: "500", style: "normal" },
-    { path: "../styles/ClashGrotesk-Semibold.otf", weight: "600", style: "normal" },
-    { path: "../styles/ClashGrotesk-Bold.otf", weight: "700", style: "normal" },
+    { path: "../styles/fonts/ClashGrotesk-Extralight.otf", weight: "200", style: "normal" },
+    { path: "../styles/fonts/ClashGrotesk-Light.otf", weight: "300", style: "normal" },
+    { path: "../styles/fonts/ClashGrotesk-Regular.otf", weight: "400", style: "normal" },
+    { path: "../styles/fonts/ClashGrotesk-Medium.otf", weight: "500", style: "normal" },
+    { path: "../styles/fonts/ClashGrotesk-Semibold.otf", weight: "600", style: "normal" },
+    { path: "../styles/fonts/ClashGrotesk-Bold.otf", weight: "700", style: "normal" },
   ],
   variable: "--font-clash",
 });
 
-export const metadata: Metadata = {
+/**
+ * Metadata for the website
+ */
+const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: {
     default: siteConfig.name,
@@ -50,7 +62,7 @@ export const metadata: Metadata = {
   creator: "BharathxD",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: siteConfig.locale,
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -60,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/og.jpg`],
+    images: [siteConfig.ogUrl],
     creator: siteConfig.creator,
   },
   icons: {
@@ -69,7 +81,13 @@ export const metadata: Metadata = {
   },
 };
 
-const RootLayout = ({ children }: React.PropsWithChildren) => {
+/**
+ * Root layout component
+ * @param {object} props - Component props
+ * @param {React.ReactNode} props.children - Child components
+ * @returns {JSX.Element} Root layout component
+ */
+const RootLayout = ({ children }: React.PropsWithChildren): JSX.Element => {
   return (
     <html
       lang="en"
@@ -96,4 +114,5 @@ const RootLayout = ({ children }: React.PropsWithChildren) => {
   );
 };
 
+export { metadata };
 export default RootLayout;

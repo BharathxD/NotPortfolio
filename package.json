@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "contentlayer build && next build",
+    "check": "pnpm lint && pnpm typecheck && pnpm format:check",
     "clean": "rm -rf node_modules && rm -rf .next && rm -rf .contentlayer && rm pnpm-lock.yaml",
     "dev": "next dev",
     "fmc": "prettier --check \"**/*.{ts,tsx,mdx}\"",
@@ -66,7 +67,6 @@
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-tailwindcss": "^3.13.1",
-    "pnpm": "^8.13.1",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.10",

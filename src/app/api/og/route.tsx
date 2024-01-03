@@ -1,23 +1,39 @@
 import env from "~/env.mjs";
-import { StatusCodes } from "~/lib/constants";
+import { siteConfig } from "~/lib/config";
+import { KAISEI_TOKUMIN_ABS_FONT_URL, STATUS_CODES } from "~/lib/constants";
 import { ogImageSchema } from "~/lib/validations";
+import { type ServerRuntime } from "next";
 import { ImageResponse } from "next/og";
 import { NextResponse, type NextRequest } from "next/server";
 import { ZodError } from "zod";
 
-export const runtime = "edge";
+/**
+ * The runtime environment for the application.
+ * @type {ServerRuntime}
+ */
+export const runtime: ServerRuntime = "edge";
 
-const GET = async (req: NextRequest) => {
+/**
+ * Handles GET requests to generate an image.
+ *
+ * @async
+ * @function
+ * @param {NextRequest} req - The incoming request object.
+ * @returns {Promise<NextResponse|ImageResponse>} The response object.
+ *
+ * @throws {ZodError} When the request parameters fail validation.
+ * @throws {Error} When there's an error generating the image.
+ */
+const GET = async (req: NextRequest): Promise<NextResponse | ImageResponse> => {
   try {
     const { searchParams } = req.nextUrl;
+
     const { title, description } = ogImageSchema.parse({
       title: searchParams.get("title"),
       description: searchParams.get("description"),
     });
-    const fontData = await fetch(
-      new URL("../../../../public/fonts/kaisei-tokumin-bold.ttf", import.meta.url)
-    ).then((res) => res.arrayBuffer());
-    const bgImageUrl = `${env.NEXT_PUBLIC_APP_URL}/og-bg.jpg`;
+
+    const fontData = await fetch(KAISEI_TOKUMIN_ABS_FONT_URL).then((res) => res.arrayBuffer());
 
     return new ImageResponse(
       (
@@ -29,7 +45,7 @@ const GET = async (req: NextRequest) => {
             flexDirection: "column",
             alignItems: "flex-start",
             justifyContent: "center",
-            backgroundImage: `url(${bgImageUrl})`,
+            backgroundImage: `url(${siteConfig.ogBgUrl})`,
           }}>
           <div
             style={{
@@ -78,18 +94,30 @@ const GET = async (req: NextRequest) => {
         ],
       }
     );
-  } catch (error) {
-    if (error instanceof ZodError) {
-      return NextResponse.json(
-        { message: "Failed to generate the image", errors: error.issues.map((issue) => issue.message) },
-        { status: StatusCodes.BAD_REQUEST }
-      );
+  } catch (error: unknown) {
+    switch (true) {
+      case error instanceof ZodError:
+        console.error(
+          "Failed to generate the image due to invalid request parameters: ",
+          (error as { message: string }).message
+        );
+        return NextResponse.json(
+          {
+            message: "Failed to generate the image due to invalid request parameters",
+            errors: error.issues.map((issue) => issue.message),
+          },
+          { status: STATUS_CODES.BAD_REQUEST }
+        );
+      default:
+        console.error(
+          "An unexpected error occurred while generating the image: ",
+          (error as { message: string }).message
+        );
+        return NextResponse.json(
+          { message: "An unexpected error occurred while generating the image" },
+          { status: STATUS_CODES.INTERNAL_SERVER_ERROR }
+        );
     }
-
-    return NextResponse.json(
-      { message: "Failed to generate the image" },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    );
   }
 };
 

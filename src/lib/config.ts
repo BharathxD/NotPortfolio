@@ -6,7 +6,10 @@ const siteConfig = {
   description: "Software engineer based in Hyderabad",
   logoUrl: "/logo.svg",
   creator: "@Bharath_uwu",
+  ogUrl: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
+  ogBgUrl: `${env.NEXT_PUBLIC_APP_URL}/og-bg.jpg`,
   url: env.NEXT_PUBLIC_APP_URL,
+  locale: "en_US",
   favicons: [
     {
       url: "/public/favicon-16x16.png",
@@ -45,14 +48,14 @@ const biography: Biography = {
     {
       platform: "Github",
       url: "https://www.github.com/bharathxd",
-      imageUrl: "/github.webp",
+      imageUrl: "/contact/github.webp",
       blurDataUrl: null,
     },
     {
       platform: "LinkedIn",
       url: "https://www.linkedin.com/in/bharath-bandi?utm_source=porfolio",
       blurDataUrl: null,
-      imageUrl: "/linkedin.webp",
+      imageUrl: "/contact/linkedin.webp",
     },
   ],
   resumeLink: "https://bharath-web-bucket.s3.ap-south-1.amazonaws.com/Bharat-Laxman-Kumar-Bandi.pdf",

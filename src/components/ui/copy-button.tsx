@@ -1,21 +1,19 @@
 "use client";
 
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
-import type { ButtonProps } from "~/components/ui/button";
-import { useState } from "react";
+import { Button, type ButtonProps } from "~/components/ui/button";
+import useCopyToClipboard from "~/hooks/use-hooks";
 
 const CopyButton = ({ value, ...props }: ButtonProps) => {
-  const [isCopied, setIsCopied] = useState(false);
-
+  const [isCopied, copy] = useCopyToClipboard();
   return (
-    <button
+    <Button
       size="sm"
+      variant="outline"
       className="h-6 w-6 px-0"
-      onClick={() => {
+      onClick={async () => {
         if (typeof window === "undefined") return;
-        setIsCopied(true);
-        void window.navigator.clipboard.writeText(value?.toString() ?? "");
-        setTimeout(() => setIsCopied(false), 2000);
+        await copy((value ?? "")?.toString());
       }}
       {...props}>
       {isCopied ? (
@@ -24,7 +22,7 @@ const CopyButton = ({ value, ...props }: ButtonProps) => {
         <CopyIcon className="h-3 w-3" aria-hidden="true" />
       )}
       <span className="sr-only">{isCopied ? "Copied" : "Copy to clipboard"}</span>
-    </button>
+    </Button>
   );
 };
 

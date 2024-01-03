@@ -48,17 +48,20 @@ const EMOTICONS_MAP: Record<Emoticons[number], string> = {
   404: "404",
 };
 
-const StatusCodes = {
+const STATUS_CODES = {
   INTERNAL_SERVER_ERROR: 500,
   BAD_REQUEST: 400,
 };
 
+const KAISEI_TOKUMIN_ABS_FONT_URL = new URL("../styles/fonts/kaisei-tokumin-bold.ttf", import.meta.url);
+
 export {
-  StatusCodes,
+  STATUS_CODES,
   NAVBAR_LINKS,
   EMOTICONS_MAP,
   RICKROLL_LINK_YT_ID,
   FADE_IN_ANIMATION_SETTINGS,
   FADE_UP_ANIMATION_VARIANTS,
+  KAISEI_TOKUMIN_ABS_FONT_URL,
   FADE_DOWN_ANIMATION_VARIANTS,
 };

@@ -1,6 +1,11 @@
 import { siteConfig } from "~/lib/config";
 import type { MetadataRoute } from "next";
 
+/**
+ * Generates a manifest object for the website.
+ *
+ * @returns {MetadataRoute.Manifest} The manifest object.
+ */
 const manifest = (): MetadataRoute.Manifest => ({
   name: siteConfig.name,
   short_name: siteConfig.name,

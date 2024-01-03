@@ -31,7 +31,7 @@ const ProjectCard = ({ project }: Props) => (
       <div className="absolute inset-0 z-0 bg-card opacity-0 transition-all duration-500 group-hover:opacity-100" />
       <BlurImage
         className="z-10 mx-auto mt-2 object-contain transition-all duration-700 data-[loading=true]:w-[700px] data-[loading=true]:animate-skeleton data-[loading=true]:rounded-xl data-[loading=true]:rounded-b-none data-[loading=true]:md:h-[500px] data-[loading=false]:md:group-hover:-mt-2"
-        src={`/${project.name.toLowerCase()}.webp`}
+        src={`/work/${project.name.toLowerCase()}.webp`}
         alt={project.tagline}
         sizes="(max-width: 767px) 75vw, (max-width: 991px) 73vw, (max-width: 1439px) 727.78125px, (max-width: 1919px) 866.375px, 1193.9896240234375px"
         loading="eager"
