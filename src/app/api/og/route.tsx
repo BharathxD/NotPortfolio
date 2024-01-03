@@ -1,4 +1,3 @@
-import env from "~/env.mjs";
 import { siteConfig } from "~/lib/config";
 import { KAISEI_TOKUMIN_ABS_FONT_URL, STATUS_CODES } from "~/lib/constants";
 import { ogImageSchema } from "~/lib/validations";
