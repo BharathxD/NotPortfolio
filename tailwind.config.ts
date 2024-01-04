@@ -72,27 +72,15 @@ const config = {
           "radial-gradient(circle closest-corner at 50% 0, rgba(242, 242, 242, .15), rgba(0, 0, 0, 0))",
         "spotlight-farthest":
           "radial-gradient(circle farthest-side at 50% 0, rgba(242, 242, 242, .25), rgba(0, 0, 0, 0) 80%)",
-        "spotlight-even":
-          "radial-gradient(circle farthest-side at 50% 0, rgba(242, 242, 242, .25), rgba(0, 0, 0, 0) 10%)",
         "spotlight-linear": "linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0))",
         mask: "url(/layers/mask.png)",
         highlight: "linear-gradient(to bottom, var(#f5f5f5) 50%, transparent 90%)",
-        card: "radial-gradient(circle at 50% 0, rgba(255, 255, 255, .3), rgba(0, 0, 0, 0))",
-        "card-even": "radial-gradient(circle at 25% 0, rgba(255, 255, 255, .05), rgba(0, 0, 0, 0))",
-        "card-blue":
-          "radial-gradient(circle at 50% 0, rgba(127, 207, 255, .2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, #035, rgba(0, 0, 0, 0))",
-        "card-custom":
-          "radial-gradient(circle at 50% 0, rgba(128, 0, 0, .2), rgba(0, 0, 0, 0) 80%), radial-gradient(circle at 50% 0, #FFA500, rgba(0, 0, 0, 0)), radial-gradient(circle at 50% 0, #FFFF00, rgba(0, 0, 0, 0))",
         glare:
           "linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, .8) 35%, #fff 50%, rgba(255, 255, 255, .8) 65%, rgba(0, 0, 0, 0) 95%)",
-        shine:
-          "linear-gradient(45deg, rgba(255,255,255,0) 45%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 55%,rgba(255,255,255,0) 100%)",
-        emphasis: "linear-gradient(to bottom, var(#f2f2f2) 50%, rgba(242, 242, 242, .2))",
       },
       boxShadow: {
         text: "0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 -5px 25px rgba(255, 255, 255, .3)",
         item: "inset 0 0 10px rgba(0, 0, 0, .1), 0 4px 16px rgba(0, 0, 0, .25)",
-        glow: "0 2px 25px 2px #fff",
       },
       keyframes: {
         "accordion-down": {
@@ -127,10 +115,8 @@ const config = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
     require("tailwind-scrollbar")({ nocompatible: true }),
-    require("@tailwindcss/typography"),
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
