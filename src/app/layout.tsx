@@ -7,38 +7,16 @@ import env from "~/env.mjs";
 import { siteConfig } from "~/lib/config";
 import { cn } from "~/lib/utils";
 import ThemeProvider from "~/providers/theme-provider";
-import { Montserrat, Poppins } from "next/font/google";
 import localFont from "next/font/local";
-
-/**
- * Configuration for the Poppins font
- */
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
-
-/**
- * Configuration for the Montserrat font
- */
-const montserrat = Montserrat({
-  weight: ["500"],
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
 
 /**
  * Configuration for the local Clash font
  */
 const clash = localFont({
   src: [
-    { path: "../styles/fonts/ClashGrotesk-Extralight.otf", weight: "200", style: "normal" },
-    { path: "../styles/fonts/ClashGrotesk-Light.otf", weight: "300", style: "normal" },
     { path: "../styles/fonts/ClashGrotesk-Regular.otf", weight: "400", style: "normal" },
     { path: "../styles/fonts/ClashGrotesk-Medium.otf", weight: "500", style: "normal" },
     { path: "../styles/fonts/ClashGrotesk-Semibold.otf", weight: "600", style: "normal" },
-    { path: "../styles/fonts/ClashGrotesk-Bold.otf", weight: "700", style: "normal" },
   ],
   variable: "--font-clash",
 });
@@ -91,12 +69,7 @@ const RootLayout = ({ children }: React.PropsWithChildren): JSX.Element => {
   return (
     <html
       lang="en"
-      className={cn(
-        "bg-black text-neutral-50 antialiased",
-        clash.className,
-        montserrat.variable,
-        poppins.variable
-      )}
+      className={cn("bg-black text-neutral-50 antialiased", clash.className)}
       suppressHydrationWarning>
       <body className="relative bg-spotlight-farthest scrollbar-none md:bg-spotlight-closest">
         <ThemeProvider>

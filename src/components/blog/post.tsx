@@ -10,8 +10,18 @@ import { buttonVariants } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
 import { Shell } from "~/components/ui/shell";
 import { cn, formatDate } from "~/lib/utils";
+import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { Suspense } from "react";
+
+/**
+ * Configuration for the Poppins font
+ */
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
 
 interface Props {
   post: Post;
@@ -77,7 +87,11 @@ const Post = ({ post, authors, incrementViews }: Props) => (
         priority
       />
     )}
-    <article className="prose prose-neutral prose-invert max-w-4xl font-poppins prose-img:rounded-md prose-img:border">
+    <article
+      className={cn(
+        "prose prose-neutral prose-invert max-w-4xl prose-img:rounded-md prose-img:border",
+        poppins.className
+      )}>
       <Mdx code={post.body.code} />
     </article>
     <Separator className="my-4" />

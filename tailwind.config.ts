@@ -22,8 +22,6 @@ const config = {
     extend: {
       fontFamily: {
         default: ["var(--font-clash)"],
-        motserrat: ["var(--font-montserrat)", "sans-serif"],
-        poppins: ["var(--font-poppins)", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
