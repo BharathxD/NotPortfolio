@@ -1,9 +1,7 @@
-import PostCardSkeleton from "~/components/blog/post-card-skeleton";
+import PostCard from "~/components/blog/post-card";
 import { Shell } from "~/components/ui/shell";
 import env from "~/env.mjs";
 import { allPosts } from "contentlayer/generated";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
 
 export const metadata = {
   title: "Blog",
@@ -11,17 +9,13 @@ export const metadata = {
   description: "Read my thoughts on software development, design, and more.",
 };
 
-const PostCard = dynamic(() => import("~/components/blog/post-card"), { ssr: false });
-
 const BlogPage = () => {
   const posts = allPosts.filter((post) => post.published).sort((a, b) => b.date.localeCompare(a.date));
   return (
     <Shell variant="spaced">
       <ul className="flex w-full flex-col gap-4">
         {posts.map((post) => (
-          <Suspense fallback={<PostCardSkeleton />} key={post.slug}>
-            <PostCard post={post} />
-          </Suspense>
+          <PostCard post={post} key={post.slug} />
         ))}
       </ul>
     </Shell>

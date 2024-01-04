@@ -1,10 +1,12 @@
-import PostCardListSkeleton from "~/components/blog/post-card-list-skeleton";
+import PostCardSkeleton from "~/components/blog/post-card-skeleton";
 import { Shell } from "~/components/ui/shell";
 
 const BlogPageLoading = () => {
   return (
     <Shell variant="spaced" className="space-y-4">
-      <PostCardListSkeleton />
+      {Array.from({ length: 10 }, (_, i) => (
+        <PostCardSkeleton key={i} />
+      ))}
     </Shell>
   );
 };
