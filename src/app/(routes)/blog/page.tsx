@@ -1,7 +1,9 @@
-import PostList from "~/components/blog/post-list";
+import PostsSkeleton from "~/components/ui/posts-skeleton";
 import { Shell } from "~/components/ui/shell";
 import env from "~/env.mjs";
 import { allPosts } from "contentlayer/generated";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Blog",
@@ -9,11 +11,15 @@ export const metadata = {
   description: "Read my thoughts on software development, design, and more.",
 };
 
+const PostList = dynamic(() => import("~/components/blog/post-list"), { ssr: false });
+
 const BlogPage = () => {
   const posts = allPosts.filter((post) => post.published).sort((a, b) => b.date.localeCompare(a.date));
   return (
     <Shell variant="spaced">
-      <PostList posts={posts} />
+      <Suspense fallback={<PostsSkeleton />}>
+        <PostList posts={posts} />
+      </Suspense>
     </Shell>
   );
 };
