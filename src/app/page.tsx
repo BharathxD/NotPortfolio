@@ -1,9 +1,11 @@
-import Hero from "~/components/hero/hero";
 import { Shell } from "~/components/ui/shell";
+import dynamic from "next/dynamic";
+
+const HeroSSR = dynamic(() => import("~/components/hero/hero"), { ssr: false });
 
 const HeroPage = () => (
   <Shell>
-    <Hero />
+    <HeroSSR />
   </Shell>
 );
 
