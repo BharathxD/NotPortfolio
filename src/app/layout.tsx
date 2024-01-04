@@ -7,6 +7,7 @@ import env from "~/env.mjs";
 import { siteConfig } from "~/lib/config";
 import { cn } from "~/lib/utils";
 import ThemeProvider from "~/providers/theme-provider";
+import dynamic from "next/dynamic";
 import localFont from "next/font/local";
 
 /**
@@ -59,6 +60,8 @@ const metadata: Metadata = {
   },
 };
 
+const TopLoader = dynamic(() => import("~/components/ui/top-loader"), { ssr: false });
+
 /**
  * Root layout component
  * @param {object} props - Component props
@@ -72,6 +75,7 @@ const RootLayout = ({ children }: React.PropsWithChildren): JSX.Element => {
       className={cn("bg-black text-neutral-50 antialiased", clash.className)}
       suppressHydrationWarning>
       <body className="relative bg-spotlight-farthest scrollbar-none md:bg-spotlight-closest">
+        <TopLoader />
         <ThemeProvider>
           <div className="pointer-events-auto absolute inset-0 z-0 bg-mask bg-[length:200px] bg-left-top opacity-60 mix-blend-overlay md:opacity-20" />
           <div className="absolute inset-x-0 top-0 z-0 block h-[10dvh] bg-spotlight-linear" />
