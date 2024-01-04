@@ -2,9 +2,7 @@
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
-
-const HighlightedSpan = dynamic(() => import("~/components/ui/highlighted-span"), { ssr: false });
+import HighlightedSpan from "../ui/highlighted-span";
 
 const Hero = () => (
   <motion.p
