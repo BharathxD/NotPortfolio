@@ -13,6 +13,7 @@ const NavItemDesktop = ({ item: { name, path }, children, ...rest }: Props) => (
     <Link
       key={name}
       href={path}
+      prefetch={name !== "Blog"}
       className="bg-gradient-to-tr from-neutral-100 to-neutral-300 bg-clip-text text-xl text-transparent opacity-60 transition-all duration-500  hover:text-neutral-50 hover:opacity-100"
       aria-label={name}
       {...rest}>

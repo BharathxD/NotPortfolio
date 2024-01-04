@@ -71,6 +71,12 @@ const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
   };
 };
 
+// eslint-disable-next-line @typescript-eslint/require-await
+const generateStaticParams = async (): Promise<Props["params"][]> =>
+  allPosts.map((post) => ({
+    slug: post.slugAsParams.split("/"),
+  }));
+
 const incrementViews = cache(increment);
 
 const PostPage = async ({ params }: Props) => {
@@ -85,5 +91,5 @@ const PostPage = async ({ params }: Props) => {
   return <Post post={post} authors={authors} incrementViews={incrementViews} />;
 };
 
-export { generateMetadata };
+export { generateMetadata, generateStaticParams };
 export default PostPage;
