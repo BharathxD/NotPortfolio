@@ -1,4 +1,4 @@
-import { allAuthors, allPosts } from "contentlayer/generated";
+import { allAuthors, allPosts } from "content-layer/generated";
 import { notFound } from "next/navigation";
 import "~/styles/mdx.css";
 import getPostFromParams from "~/actions/get-post-from-params";

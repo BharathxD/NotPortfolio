@@ -1,5 +1,3 @@
-import { FunctionComponent } from "react";
-
 type UniqueIdentifier = string | number;
 
 interface SocialProfiles {

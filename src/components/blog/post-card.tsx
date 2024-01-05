@@ -1,6 +1,6 @@
 import { CardDescription } from "~/components/ui/card";
 import { formatDate } from "~/lib/utils";
-import { type Post } from "contentlayer/generated";
+import { type Post } from "content-layer/generated";
 import Link from "next/link";
 import { Suspense } from "react";
 import Views from "./views";

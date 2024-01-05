@@ -1,4 +1,4 @@
-import { allPosts, type Post } from "contentlayer/generated";
+import { allPosts, type Post } from "content-layer/generated";
 
 /**
  * This function retrieves a post based on the provided slug parameters.

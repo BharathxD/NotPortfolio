@@ -1,5 +1,5 @@
 import { Mdx } from "~/components/mdx/components";
-import { allPosts, type Author, type Post } from "contentlayer/generated";
+import { allPosts, type Author, type Post } from "content-layer/generated";
 import "~/styles/mdx.css";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Views from "~/components/blog/views";

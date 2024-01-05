@@ -24,7 +24,7 @@
     ],
     "paths": {
       "~/*": ["./src/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "content-layer/generated": ["./.contentlayer/generated"]
     }
   },
   "include": [

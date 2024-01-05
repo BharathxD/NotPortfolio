@@ -1,5 +1,5 @@
 import env from "~/env.mjs";
-import { allPosts } from "contentlayer/generated";
+import { allPosts } from "content-layer/generated";
 import type { MetadataRoute } from "next";
 
 /**

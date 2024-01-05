@@ -1,7 +1,7 @@
 import PostCard from "~/components/blog/post-card";
 import { Shell } from "~/components/ui/shell";
 import env from "~/env.mjs";
-import { allPosts } from "contentlayer/generated";
+import { allPosts } from "content-layer/generated";
 
 export const metadata = {
   title: "Blog",
