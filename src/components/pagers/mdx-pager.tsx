@@ -1,5 +1,5 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import { cn } from "~/lib/utils";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
 
@@ -16,13 +16,11 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 const MdxPager = ({ currentItem, allItems, className, ...props }: Props) => {
   const pager = getPager(currentItem, allItems);
 
-  if (!pager) {
-    return null;
-  }
+  if (!pager) return null;
 
   return (
-    <div className={cn("flex flex-row items-center justify-between", className)} {...props}>
-      {pager?.prev ? (
+    <nav className={cn("flex flex-row items-center justify-between", className)} {...props}>
+      {pager?.prev && (
         <Link
           aria-label="Previous post"
           href={pager.prev.slug}
@@ -30,8 +28,8 @@ const MdxPager = ({ currentItem, allItems, className, ...props }: Props) => {
           <ChevronLeftIcon className="mr-2 h-4 w-4" aria-hidden="true" />
           <span className="hidden md:block">{pager.prev.title}</span>
         </Link>
-      ) : null}
-      {pager?.next ? (
+      )}
+      {pager?.next && (
         <Link
           aria-label="Next post"
           href={pager.next.slug}
@@ -39,8 +37,8 @@ const MdxPager = ({ currentItem, allItems, className, ...props }: Props) => {
           <span className="hidden md:block">{pager.next.title}</span>
           <ChevronRightIcon className="ml-2 h-4 w-4" aria-hidden="true" />
         </Link>
-      ) : null}
-    </div>
+      )}
+    </nav>
   );
 };
 

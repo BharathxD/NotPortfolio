@@ -1,18 +1,19 @@
-import { Mdx } from "~/components/mdx/mdx-components";
+import { Mdx } from "~/components/mdx/components";
 import { allPosts, type Author, type Post } from "contentlayer/generated";
 import "~/styles/mdx.css";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Views from "~/components/blog/views";
-import MdxPager from "~/components/pagers/mdx-pager";
 import ImageWithLoader from "~/components/projects/image-with-loader";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { buttonVariants } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
 import { Shell } from "~/components/ui/shell";
-import { cn, formatDate } from "~/lib/utils";
+import { cn } from "~/lib/utils";
+import dynamic from "next/dynamic";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { Suspense } from "react";
+import PostMeta from "./post-meta";
 
 /**
  * Configuration for the Poppins font
@@ -29,6 +30,8 @@ interface Props {
   incrementViews: (slug: string) => Promise<number>;
 }
 
+const MdxPager = dynamic(() => import("~/components/pagers/mdx-pager"), { ssr: false });
+
 const Post = ({ post, authors, incrementViews }: Props) => (
   <Shell
     as="article"
@@ -38,10 +41,7 @@ const Post = ({ post, authors, incrementViews }: Props) => (
     ">
     <div className="space-y-4">
       <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-        {post.date && <time dateTime={post.date}>{formatDate(post.date)}</time>}
-        {post.date ? <div>•</div> : null}
-        <div>{post.readingTime}min</div>
-        {post.readingTime ? <div>•</div> : null}
+        <PostMeta date={post.date} readingTime={post.readingTime} />
         <Suspense
           fallback={
             <p className="h-5 w-14 animate-skeleton rounded-sm border bg-gradient-to-r from-neutral-950 via-neutral-700 to-neutral-950 bg-[400%,100%]" />
