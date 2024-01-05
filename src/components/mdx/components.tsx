@@ -20,6 +20,11 @@ const components = {
   h4: createHeading("h4"),
   h5: createHeading("h5"),
   h6: createHeading("h6"),
+  a: ({ children, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
+    <a target="_blank" rel="noopener noreferrer" {...props} aria-label={children?.toString()}>
+      {children}
+    </a>
+  ),
   pre: CodeBlock,
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code className={cn("relative rounded-md font-mono text-sm", className)} {...props} />

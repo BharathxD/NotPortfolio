@@ -25,7 +25,6 @@ const SocialCard = ({ platform, alignImage, label, description }: SocialCardProp
     <motion.a
       href={profile.url}
       target="_blank"
-      referrerPolicy="no-referrer"
       initial="hidden"
       whileInView="show"
       variants={FADE_DOWN_ANIMATION_VARIANTS}

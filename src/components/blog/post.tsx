@@ -59,7 +59,6 @@ const Post = ({ post, authors, incrementViews }: Props) => (
               author && (
                 <Link
                   key={author._id}
-                  referrerPolicy="no-referrer"
                   target="_blank"
                   href={`https://linkedin.com/in/${author.linkedin}?utm_source=blog&utm_medium=${author.title}?utm_website=portfolio`}
                   className="flex items-center space-x-2 text-sm">

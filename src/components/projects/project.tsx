@@ -29,7 +29,6 @@ const Project = ({ project }: Props) => (
           href={project.github}
           className="underline-offset-4 transition-all hover:underline"
           target="_blank"
-          referrerPolicy="no-referrer"
           aria-label="Github link">
           Github
         </Link>
@@ -40,7 +39,6 @@ const Project = ({ project }: Props) => (
           href={project.projectUrl}
           className="underline-offset-4 transition-all hover:underline"
           target="_blank"
-          referrerPolicy="no-referrer"
           aria-label="Website link">
           Website
         </Link>

@@ -28,7 +28,6 @@ const ContactLink = ({
   <motion.a
     href={href}
     target="_blank"
-    referrerPolicy="no-referrer"
     initial="hidden"
     whileInView="show"
     variants={FADE_DOWN_ANIMATION_VARIANTS}
