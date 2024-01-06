@@ -9,12 +9,22 @@ import { absoluteUrl } from "~/lib/utils";
 import { type Metadata } from "next";
 import { cache } from "react";
 
+/**
+ * @typedef {Object} Props
+ * @property {Object} params - The parameters for the post.
+ */
 interface Props {
   params: {
     slug: string[];
   };
 }
 
+/**
+ * Generate metadata for the post.
+ *
+ * @param {Props} props - The properties for the post.
+ * @returns {Promise<Metadata>} The metadata for the post.
+ */
 const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
   const post = await getPostFromParams(params);
   const url = new URL(env.NEXT_PUBLIC_APP_URL);
