@@ -1,8 +1,5 @@
-"use client";
-
 import { biography } from "~/lib/config";
 import { CheckCircle, MessageCircle } from "lucide-react";
-import { Fragment } from "react";
 import ContactLink from "./contact-link";
 
 const ContactLinks = () => (
@@ -11,10 +8,10 @@ const ContactLinks = () => (
       href={`mailto:${biography.contactEmail}`}
       icon={MessageCircle}
       label="Mail me"
-      bottomText={
-        <Fragment>
+      description={
+        <>
           Or reach me out <br /> via LinkedIn
-        </Fragment>
+        </>
       }
       className="mr-2"
     />
@@ -22,10 +19,10 @@ const ContactLinks = () => (
       href={biography.resumeLink}
       icon={CheckCircle}
       label="Resume"
-      bottomText={
-        <Fragment>
+      description={
+        <>
           Scanned with <br /> virus total
-        </Fragment>
+        </>
       }
       className="mr-5"
     />

@@ -5,7 +5,6 @@ import type { Project as ProjectMetdata } from "~/types";
 import { motion } from "framer-motion";
 import { Dot } from "lucide-react";
 import Link from "next/link";
-import { memo } from "react";
 import BulletPoint from "./bullet-point";
 import Pill from "./pill";
 import ProjectCarousel from "./project-carousel";
@@ -58,6 +57,4 @@ const Project = ({ project }: Props) => (
   </motion.div>
 );
 
-Project.displayName = "Project";
-
-export default memo(Project);
+export default Project;

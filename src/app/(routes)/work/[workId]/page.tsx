@@ -12,19 +12,22 @@ interface Props {
   };
 }
 
+/**
+ * Generate metadata for the page
+ * @param {Props} props - The properties of the page
+ * @returns {Metadata} - The metadata of the page
+ */
 const generateMetadata = ({ params }: Props): Metadata => {
   const work = biography.portfolioProjects.find((work) => work.id === params.workId);
 
   if (!work) return {};
 
-  const url = env.NEXT_PUBLIC_APP_URL;
-
-  const ogUrl = new URL(`${url}/api/og`);
+  const ogUrl = new URL(`${env.NEXT_PUBLIC_APP_URL}/api/og`);
   ogUrl.searchParams.set("title", work.name);
   ogUrl.searchParams.set("description", work.tagline);
 
   return {
-    metadataBase: new URL(url),
+    metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
     title: work.name,
     description: work.tagline,
     authors: [
@@ -56,8 +59,13 @@ const generateMetadata = ({ params }: Props): Metadata => {
   };
 };
 
+/**
+ * ProjectPage component
+ * @param {Props} props - The properties of the page
+ */
 const ProjectPage = ({ params: { workId } }: Props) => {
   const project = biography.portfolioProjects.find((project) => project.id === workId);
+
   if (!project)
     return (
       <EmptyPage
@@ -65,6 +73,7 @@ const ProjectPage = ({ params: { workId } }: Props) => {
         message={`Alas! No trace of a project bearing the name "${workId}" exists in the depths of my portfolio.`}
       />
     );
+
   return (
     <Shell variant="spaced">
       <Project project={project} />

@@ -1,20 +1,16 @@
-import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
+"use client";
+
+import { DEFAULT_DOT_COLORS, DOTS_COUNT, FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { cn } from "~/lib/utils";
 import { motion } from "framer-motion";
 import { ArrowUpRight, type LucideIcon } from "lucide-react";
 import { type ComponentProps } from "react";
 
-const DOTS_COUNT = 156;
-const DEFAULT_DOT_COLORS: [string, string] = [
-  "bg-neutral-200 group-hover:bg-neutral-400",
-  "bg-neutral-400 group-hover:bg-neutral-200",
-];
-
 interface Props extends ComponentProps<typeof motion.a> {
   dotsColor?: [string, string];
   icon: LucideIcon;
   label: string;
-  bottomText: React.ReactNode;
+  description: React.ReactNode;
 }
 
 const ContactLink = ({
@@ -22,7 +18,7 @@ const ContactLink = ({
   href,
   icon: Icon,
   className,
-  bottomText,
+  description,
   dotsColor = DEFAULT_DOT_COLORS,
 }: Props) => (
   <motion.a
@@ -41,7 +37,7 @@ const ContactLink = ({
         <ArrowUpRight size={30} className="text-neutral-300" />
       </h5>
       <p className={cn("inline-block text-center text-sm text-neutral-400", className)}>
-        <span>{bottomText}</span> <Icon className="-mt-px inline-block text-neutral-400" size={10} />
+        <span>{description}</span> <Icon className="-mt-px inline-block text-neutral-400" size={10} />
       </p>
     </div>
     <div className="hidden size-full md:block" />

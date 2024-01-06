@@ -1,8 +1,7 @@
-import { Fragment } from "react";
 import SocialCard from "./social-card";
 
 const SocialCards = () => (
-  <Fragment>
+  <>
     <SocialCard
       label="LinkedIn"
       description="10K Average Post Impressions"
@@ -15,7 +14,7 @@ const SocialCards = () => (
       alignImage="left"
       platform="Github"
     />
-  </Fragment>
+  </>
 );
 
 export default SocialCards;

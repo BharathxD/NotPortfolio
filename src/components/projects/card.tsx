@@ -37,6 +37,7 @@ const ProjectCard = ({ project }: Props) => (
         loading="eager"
         height={500}
         width={700}
+        priority
       />
     </Link>
   </motion.li>

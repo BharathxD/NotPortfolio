@@ -55,10 +55,19 @@ const STATUS_CODES = {
 
 const KAISEI_TOKUMIN_ABS_FONT_URL = new URL("../styles/fonts/kaisei-tokumin-bold.ttf", import.meta.url);
 
+const DOTS_COUNT = 156;
+
+const DEFAULT_DOT_COLORS: [string, string] = [
+  "bg-neutral-200 group-hover:bg-neutral-400",
+  "bg-neutral-400 group-hover:bg-neutral-200",
+];
+
 export {
+  DOTS_COUNT,
   STATUS_CODES,
   NAVBAR_LINKS,
   EMOTICONS_MAP,
+  DEFAULT_DOT_COLORS,
   RICKROLL_LINK_YT_ID,
   FADE_IN_ANIMATION_SETTINGS,
   FADE_UP_ANIMATION_VARIANTS,
