@@ -29,7 +29,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "contentlayer": "^0.3.4",
-    "embla-carousel-react": "8.0.0-rc18",
+    "embla-carousel-react": "8.0.0-rc17",
     "framer-motion": "^10.17.9",
     "lucide-react": "^0.306.0",
     "mobile-detect": "^1.4.5",
