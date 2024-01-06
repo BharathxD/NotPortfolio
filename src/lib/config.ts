@@ -4,7 +4,7 @@ import { type Biography } from "~/types";
 const siteConfig = {
   name: "Bharath Lakshman Kumar",
   description:
-    "I'm Bharath, a passionate software engineer based in Hyderabad. I turn complex systems into user-friendly experiences, bridging the gap between beautiful design and rock-solid infrastructure. Let's collaborate to build something extraordinary.",
+    "I'm Bharath, a software engineer based in Hyderabad. I transform complex systems into user-friendly experiences, bridging design and robust infrastructure.",
   logoUrl: "/logo.svg",
   creator: "@Bharath_uwu",
   ogUrl: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
