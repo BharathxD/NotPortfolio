@@ -71,6 +71,11 @@ const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
   };
 };
 
+/**
+ * Generate static parameters for the post.
+ *
+ * @returns {Promise<Props["params"][]>} The parameters for the post.
+ */
 // eslint-disable-next-line @typescript-eslint/require-await
 const generateStaticParams = async (): Promise<Props["params"][]> =>
   allPosts.map((post) => ({
@@ -79,6 +84,12 @@ const generateStaticParams = async (): Promise<Props["params"][]> =>
 
 const incrementViews = cache(increment);
 
+/**
+ * The post page component.
+ *
+ * @param {Props} props - The properties for the post.
+ * @returns {JSX.Element} The post page component.
+ */
 const PostPage = async ({ params }: Props) => {
   const post = await getPostFromParams(params);
 

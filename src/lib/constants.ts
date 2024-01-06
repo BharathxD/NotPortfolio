@@ -51,7 +51,7 @@ const EMOTICONS_MAP: Record<Emoticons[number], string> = {
 const STATUS_CODES = {
   INTERNAL_SERVER_ERROR: 500,
   BAD_REQUEST: 400,
-};
+} as const;
 
 const KAISEI_TOKUMIN_ABS_FONT_URL = new URL("../styles/fonts/kaisei-tokumin-bold.ttf", import.meta.url);
 
