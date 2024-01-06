@@ -47,6 +47,9 @@ const metadata: Metadata = {
     description: siteConfig.description,
     siteName: siteConfig.name,
   },
+  alternates: {
+    canonical: "/",
+  },
   robots: {
     index: true,
     follow: true,

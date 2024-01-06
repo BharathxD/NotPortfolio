@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import HighlightedSpan from "../ui/highlighted-span";
 
 const Hero = () => (
-  <motion.p
+  <motion.h1
     className="text-center text-2xl text-neutral-400 md:text-4xl"
     initial="hidden"
     whileInView="show"
@@ -16,7 +16,7 @@ const Hero = () => (
     contribute to building a variety of AI/Ed <HighlightedSpan>SaaS</HighlightedSpan>
     products. My background is in UI development, but I love everything related to
     <HighlightedSpan>Server-Side Engineering</HighlightedSpan>
-  </motion.p>
+  </motion.h1>
 );
 
 export default Hero;
