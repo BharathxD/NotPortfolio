@@ -1,3 +1,5 @@
+"use client";
+
 import { biography } from "~/lib/config";
 import { CheckCircle, MessageCircle } from "lucide-react";
 import ContactLink from "./contact-link";
