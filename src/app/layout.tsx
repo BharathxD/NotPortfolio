@@ -31,13 +31,8 @@ const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
+  keywords: siteConfig.keywords,
   description: siteConfig.description,
-  authors: [
-    {
-      name: "Bharath Lakshman Kumar",
-      url: "https://github.com/BharathxD",
-    },
-  ],
   creator: "BharathxD",
   openGraph: {
     type: "website",

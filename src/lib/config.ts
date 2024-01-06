@@ -1,6 +1,38 @@
 import env from "~/env.mjs";
 import { type Biography } from "~/types";
 
+const keywords = [
+  "Software Engineer",
+  "UI Engineering",
+  "Server-Side Engineering",
+  "DevOps",
+  "System Design",
+  "Hyderabad, India",
+  "UI Developer",
+  "Student",
+  "Vertocity",
+  "AI/Ed SaaS Products",
+  "Internship",
+  "UI Development",
+  "Full Stack Developer",
+  "Web Development",
+  "Tech Enthusiast",
+  "Programming",
+  "Technology",
+  "Innovation",
+  "Professional Portfolio",
+  "Coding Projects",
+  "Creative Solutions",
+  "Software Development",
+  "Technical Skills",
+  "Frontend Development",
+  "Backend Development",
+  "Responsive Design",
+  "Problem Solver",
+  "Collaborative Projects",
+  "Learning Enthusiast",
+];
+
 const siteConfig = {
   name: "Bharath Lakshman Kumar",
   description:
@@ -11,6 +43,7 @@ const siteConfig = {
   ogBgUrl: `${env.NEXT_PUBLIC_APP_URL}/og-bg.jpg`,
   url: env.NEXT_PUBLIC_APP_URL,
   locale: "en_US",
+  keywords,
   favicons: [
     {
       url: "/public/favicon-16x16.png",
