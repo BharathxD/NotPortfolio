@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "~/components/navigation/navbar";
 import Effects from "~/components/ui/effect";
+import InvisibleSocialLinks from "~/components/ui/invisiblesocial-links";
 import env from "~/env.mjs";
 import { siteConfig } from "~/lib/config";
 import { cn } from "~/lib/utils";
@@ -97,6 +98,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
       <main className="relative z-50 mx-auto min-h-[90dvh] max-w-4xl">{children}</main>
       <Analytics />
       <SpeedInsights />
+      <InvisibleSocialLinks />
     </body>
   </html>
 );
