@@ -4,6 +4,7 @@ import ImageWithLoader from "../projects/image-with-loader";
 import { Separator } from "../ui/separator";
 import CodeBlock from "./code-block";
 import Heading, { type HeadingLevel } from "./heading";
+import "~/styles/mdx.css";
 
 const createHeading = (level: HeadingLevel) => {
   const HeadingComponent = ({ ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -42,9 +43,9 @@ interface Props {
 const Mdx = ({ code }: Props) => {
   const Component = useMDXComponent(code);
   return (
-    <div className="mdx">
+    <article className="mdx">
       <Component components={components} />
-    </div>
+    </article>
   );
 };
 

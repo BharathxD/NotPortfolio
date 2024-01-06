@@ -9,10 +9,6 @@ import { absoluteUrl } from "~/lib/utils";
 import { type Metadata } from "next";
 import { cache } from "react";
 
-/**
- * @typedef {Object} Props
- * @property {Object} params - The parameters for the post.
- */
 interface Props {
   params: {
     slug: string[];
@@ -98,7 +94,6 @@ const incrementViews = cache(increment);
  * The post page component.
  *
  * @param {Props} props - The properties for the post.
- * @returns {JSX.Element} The post page component.
  */
 const PostPage = async ({ params }: Props) => {
   const post = await getPostFromParams(params);
