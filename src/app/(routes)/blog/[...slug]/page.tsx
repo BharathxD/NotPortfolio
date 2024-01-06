@@ -88,6 +88,9 @@ const generateStaticParams = async (): Promise<Props["params"][]> =>
     slug: post.slugAsParams.split("/"),
   }));
 
+/**
+ * @usage https://react.dev/reference/react/cache
+ */
 const incrementViews = cache(increment);
 
 /**
