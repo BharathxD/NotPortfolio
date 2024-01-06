@@ -29,7 +29,7 @@ const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   authors: [
@@ -47,6 +47,24 @@ const metadata: Metadata = {
     description: siteConfig.description,
     siteName: siteConfig.name,
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  // verification: {
+  //   google: "",
+  //   yandex: "",
+  //   yahoo: "",
+  //   other: {
+  //     bing: "",
+  //   },
+  // },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
@@ -66,27 +84,24 @@ const TopLoader = dynamic(() => import("~/components/ui/top-loader"), { ssr: fal
  * Root layout component
  * @param {object} props - Component props
  * @param {React.ReactNode} props.children - Child components
- * @returns {JSX.Element} Root layout component
  */
-const RootLayout = ({ children }: React.PropsWithChildren): JSX.Element => {
-  return (
-    <html
-      lang="en"
-      className={cn("bg-black text-neutral-50 antialiased", clash.className)}
-      suppressHydrationWarning>
-      <body className="relative bg-spotlight-farthest scrollbar-none md:bg-spotlight-closest">
-        <TopLoader />
-        <Effects />
-        <header className="relative z-50 m-auto h-[10dvh] max-w-4xl">
-          <Navbar />
-        </header>
-        <main className="relative z-50 mx-auto min-h-[90dvh] max-w-4xl">{children}</main>
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
-  );
-};
+const RootLayout = ({ children }: React.PropsWithChildren) => (
+  <html
+    lang="en"
+    className={cn("bg-black text-neutral-50 antialiased", clash.className)}
+    suppressHydrationWarning>
+    <body className="relative bg-spotlight-farthest scrollbar-none md:bg-spotlight-closest">
+      <TopLoader />
+      <Effects />
+      <header className="relative z-50 m-auto h-[10dvh] max-w-4xl">
+        <Navbar />
+      </header>
+      <main className="relative z-50 mx-auto min-h-[90dvh] max-w-4xl">{children}</main>
+      <Analytics />
+      <SpeedInsights />
+    </body>
+  </html>
+);
 
 export { metadata };
 export default RootLayout;
