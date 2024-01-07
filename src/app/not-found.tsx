@@ -1,4 +1,4 @@
-import EmptyPage from "~/components/empty-page";
+import EmptyPage from "~/components/ui/empty-page";
 import { Shell } from "~/components/ui/shell";
 
 const NotFoundPage = () => (

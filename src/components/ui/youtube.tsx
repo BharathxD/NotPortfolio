@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from "react";
 import YouTube from "react-youtube";
-import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "./dialog";
 
 interface Props {
   id: string;
