@@ -1,4 +1,5 @@
 import env from "~/env.mjs";
+import { ROUTES } from "~/lib/constants";
 import { allPosts } from "content-layer/generated";
 import type { MetadataRoute } from "next";
 
@@ -12,7 +13,7 @@ const sitemap = (): MetadataRoute.Sitemap => {
     lastModified: new Date(post.date),
   }));
 
-  const routes = ["", "/work", "/blog", "/contact"].map((route) => ({
+  const routes = ROUTES.map((route) => ({
     url: `${env.NEXT_PUBLIC_APP_URL}${route}`,
     lastModified: new Date(),
   }));

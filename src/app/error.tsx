@@ -15,7 +15,7 @@ const ErrorPage = ({ error, reset }: Props) => {
   }, [error]);
 
   return (
-    <Shell variant="landing">
+    <Shell>
       <EmptyPage
         emoticon="disappointed"
         message="Whoops! Something went wrong, maybe refresh?"

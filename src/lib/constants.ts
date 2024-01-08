@@ -62,7 +62,10 @@ const DEFAULT_DOT_COLORS: [string, string] = [
   "bg-neutral-400 group-hover:bg-neutral-200",
 ];
 
+const ROUTES = ["", "/work", "/blog", "/contact"];
+
 export {
+  ROUTES,
   DOTS_COUNT,
   STATUS_CODES,
   NAVBAR_LINKS,
