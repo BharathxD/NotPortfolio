@@ -7,7 +7,7 @@ import { z } from "zod";
  */
 const ogImageSchema = z.object({
   title: z.string().min(1),
-  description: z.string().nullable().optional(),
+  subtitle: z.string().nullable().optional(),
 });
 
 export { ogImageSchema };

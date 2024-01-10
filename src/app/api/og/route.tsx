@@ -27,9 +27,9 @@ const GET = async (req: NextRequest): Promise<NextResponse | ImageResponse> => {
   try {
     const { searchParams } = req.nextUrl;
 
-    const { title, description } = ogImageSchema.parse({
+    const { title, subtitle } = ogImageSchema.parse({
       title: searchParams.get("title"),
-      description: searchParams.get("description"),
+      subtitle: searchParams.get("subtitle"),
     });
 
     const fontData = await fetch(KAISEI_TOKUMIN_ABS_FONT_URL).then((res) => res.arrayBuffer());
@@ -61,7 +61,7 @@ const GET = async (req: NextRequest): Promise<NextResponse | ImageResponse> => {
             }}>
             {title}
           </div>
-          {description && (
+          {subtitle && (
             <div
               style={{
                 marginLeft: 100,
@@ -76,7 +76,7 @@ const GET = async (req: NextRequest): Promise<NextResponse | ImageResponse> => {
                 lineHeight: "120px",
                 whiteSpace: "pre-wrap",
               }}>
-              {description}
+              {subtitle}
             </div>
           )}
         </div>

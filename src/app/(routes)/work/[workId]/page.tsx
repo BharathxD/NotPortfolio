@@ -23,8 +23,9 @@ const generateMetadata = ({ params }: Props): Metadata => {
   if (!work) return {};
 
   const ogUrl = new URL(`${env.NEXT_PUBLIC_APP_URL}/api/og`);
+
   ogUrl.searchParams.set("title", work.name);
-  ogUrl.searchParams.set("description", work.tagline);
+  ogUrl.searchParams.set("subtitle", work.tagline);
 
   return {
     metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
