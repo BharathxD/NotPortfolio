@@ -1,8 +1,9 @@
+import getProject from "~/actions/get-project";
 import Project from "~/components/projects/project";
 import EmptyPage from "~/components/ui/empty-page";
 import { Shell } from "~/components/ui/shell";
 import env from "~/env.mjs";
-import { biography, siteConfig } from "~/lib/config";
+import { siteConfig } from "~/lib/config";
 import { absoluteUrl } from "~/lib/utils";
 import { type Metadata } from "next";
 
@@ -17,8 +18,8 @@ interface Props {
  * @param {Props} props - The properties of the page
  * @returns {Metadata} - The metadata of the page
  */
-const generateMetadata = ({ params }: Props): Metadata => {
-  const work = biography.portfolioProjects.find((work) => work.id === params.workId);
+const generateMetadata = ({ params: { workId } }: Props): Metadata => {
+  const work = getProject(workId);
 
   if (!work) return {};
 
@@ -65,9 +66,9 @@ const generateMetadata = ({ params }: Props): Metadata => {
  * @param {Props} props - The properties of the page
  */
 const ProjectPage = ({ params: { workId } }: Props) => {
-  const project = biography.portfolioProjects.find((project) => project.id === workId);
+  const work = getProject(workId);
 
-  if (!project)
+  if (!work)
     return (
       <EmptyPage
         emoticon="disappointed"
@@ -77,7 +78,7 @@ const ProjectPage = ({ params: { workId } }: Props) => {
 
   return (
     <Shell variant="spaced">
-      <Project project={project} />
+      <Project project={work} />
     </Shell>
   );
 };
