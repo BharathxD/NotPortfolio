@@ -1,11 +1,9 @@
 import { cn } from "~/lib/utils";
 import { allPosts, type Post } from "content-layer/generated";
 import { ChevronLeftIcon } from "lucide-react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
+import MdxPager from "../pagers/mdx-pager";
 import { buttonVariants } from "../ui/button";
-
-const MdxPager = dynamic(() => import("~/components/pagers/mdx-pager"), { ssr: false });
 
 interface Props {
   post: Post;
