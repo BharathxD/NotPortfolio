@@ -21,9 +21,9 @@ const Post = ({ post, authors, incrementViews }: Props) => (
       <ImageWithLoader
         src={post.image}
         alt={post.title}
-        className="mt-4 rounded-md border bg-muted"
-        height={500}
         width={1000}
+        height={500}
+        className="mt-4 rounded-md border bg-muted"
         priority
       />
     )}

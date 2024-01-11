@@ -2,10 +2,7 @@ import { Shell } from "~/components/ui/shell";
 import Skeleton from "~/components/ui/skeleton";
 
 const PostLoading = () => (
-  <Shell
-    as="article"
-    variant="spaced"
-    className="relative space-y-4 bg-gradient-to-b from-neutral-700/50 via-neutral-900 to-neutral-950 md:bg-transparent md:from-transparent md:to-transparent">
+  <Shell as="article" variant="spaced">
     <div className="flex w-full flex-row gap-2">
       <Skeleton className="h-5 w-28" />
       <Skeleton className="h-5 w-10" />
