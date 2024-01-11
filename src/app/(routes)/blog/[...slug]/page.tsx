@@ -16,6 +16,11 @@ interface Props {
 }
 
 /**
+ * @usage https://react.dev/reference/react/cache
+ */
+const incrementViews = cache(increment);
+
+/**
  * Generate metadata for the post.
  *
  * @param {Props} props - The properties for the post.
@@ -25,24 +30,24 @@ const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
   const post = await getPostFromParams(params);
   const url = new URL(env.NEXT_PUBLIC_APP_URL);
 
-  if (!post) {
-    return {
-      metadataBase: url,
+  const defaultMetadata = {
+    metadataBase: url,
+    title: "Blog doesn't exist",
+    description: "The blog you are looking for does not exist.",
+    openGraph: {
       title: "Blog doesn't exist",
       description: "The blog you are looking for does not exist.",
-      openGraph: {
-        title: "Blog doesn't exist",
-        description: "The blog you are looking for does not exist.",
-        type: "website",
-        url,
-      },
-      twitter: {
-        card: "summary",
-        title: "Blog doesn't exist",
-        description: "The blog you are looking for does not exist.",
-      },
-    };
-  }
+      type: "website",
+      url,
+    },
+    twitter: {
+      card: "summary",
+      title: "Blog doesn't exist",
+      description: "The blog you are looking for does not exist.",
+    },
+  };
+
+  if (!post) return defaultMetadata;
 
   const ogUrl = new URL(`${env.NEXT_PUBLIC_APP_URL}/api/og`);
   ogUrl.searchParams.set("title", post.title);
@@ -87,11 +92,6 @@ const generateStaticParams = async (): Promise<Props["params"][]> =>
   allPosts.map((post) => ({
     slug: post.slugAsParams.split("/"),
   }));
-
-/**
- * @usage https://react.dev/reference/react/cache
- */
-const incrementViews = cache(increment);
 
 /**
  * The post page component.
