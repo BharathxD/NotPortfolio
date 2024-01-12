@@ -1,10 +1,6 @@
 import { kv } from "@vercel/kv";
 import { unstable_noStore as noStore } from "next/cache";
 
-/**
- * @typedef {Object} Count
- * @property {number} [key] - The key is the name of the page, and the value is the number of views.
- */
 type Count = Record<string, number>;
 
 /**
@@ -18,8 +14,7 @@ type Count = Record<string, number>;
  */
 const getViewsCount = async (): Promise<Count | null> => {
   noStore();
-  const data: Count | null = await kv.hgetall("views");
-  return data;
+  return await kv.hgetall("views");
 };
 
 export type { Count };

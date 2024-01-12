@@ -3,7 +3,7 @@ import { type Project } from "~/types";
 
 /**
  * Find a project by its id
- * @param {string} id - The id of the project
+ * @param {string} projectId - The id of the project
  * @returns {Project} - The project if found, null otherwise
  */
 const getProject = (projectId: string): Project | null =>

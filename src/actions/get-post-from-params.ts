@@ -3,8 +3,6 @@ import { allPosts, type Post } from "content-layer/generated";
 /**
  * This function retrieves a post based on the provided slug parameters.
  *
- * @async
- * @function getPostFromParams
  * @param {Object} params An object containing slug parameters.
  * @param {string[]} params.slug An array of strings representing the slug parameters.
  * @returns {Promise<Post|null>} Returns a Promise that resolves to a Post object if found, or null if not.
