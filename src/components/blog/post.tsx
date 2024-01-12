@@ -2,11 +2,9 @@ import ImageWithLoader from "~/components/projects/image-with-loader";
 import { Separator } from "~/components/ui/separator";
 import { Shell } from "~/components/ui/shell";
 import type { Author as AuthorType, Post as PostType } from "content-layer/generated";
-import dynamic from "next/dynamic";
 import PostContent from "./post-content";
+import PostFooter from "./post-footer";
 import PostHeader from "./post-header";
-
-const PostFooter = dynamic(() => import("./post-footer"), { ssr: false });
 
 interface Props {
   post: PostType;

@@ -6,7 +6,7 @@ import MdxPager from "../pagers/mdx-pager";
 import { buttonVariants } from "../ui/button";
 
 interface Props {
-  post: Post;
+  post: Pick<Post, "title" | "slug">;
 }
 
 const PostFooter = ({ post }: Props) => (
