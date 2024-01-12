@@ -1,7 +1,7 @@
 type UniqueIdentifier = string | number;
 
 interface SocialProfiles {
-  platform: string;
+  platform: "LinkedIn" | "Github";
   url: string;
   imageUrl: string;
   blurDataUrl: string | null;

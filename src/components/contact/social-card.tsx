@@ -4,18 +4,20 @@ import BlurImage from "~/components/projects/blur-image";
 import { biography } from "~/lib/config";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { cn } from "~/lib/utils";
+import { type SocialProfiles } from "~/types";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-interface SocialCardProps extends React.HTMLAttributes<HTMLAnchorElement> {
-  platform: "LinkedIn" | "Github";
+interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
   label: string;
   description: string;
   alignImage: "left" | "right";
+  platform: SocialProfiles["platform"];
 }
 
-const SocialCard = ({ platform, alignImage, label, description }: SocialCardProps) => {
+const SocialCard = ({ platform, alignImage, label, description }: Props) => {
   const profile = biography.socialProfiles.find((profile) => profile.platform === platform);
+
   if (!profile) {
     console.error(`Profile for ${platform} not found`);
     return null;

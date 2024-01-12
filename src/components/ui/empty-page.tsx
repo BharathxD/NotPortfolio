@@ -10,10 +10,10 @@ interface Props {
   message?: string;
   emoticon?: Emoticons[number];
   actionName?: string;
-  action?: () => void;
   rickroll?: boolean;
   retryLink?: string;
   retryLinkText?: string;
+  action?: () => void;
 }
 
 const EmptyPage = ({

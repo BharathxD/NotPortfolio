@@ -13,10 +13,9 @@ const BlurImage = ({ src, alt, className, ...props }: ComponentProps<typeof Imag
       src={src}
       alt={alt}
       className={cn(
-        "data-[loading=false]:scale-100 data-[loading=true]:scale-105 data-[loading=false]:blur-0 data-[loading=true]:blur-md",
+        "data-[loading=false]:scale-100 data-[loading=true]:scale-105 data-[loading=false]:blur-none data-[loading=true]:blur-md",
         className
       )}
-      style={{ transform: "translate3d(0, 0, 0)" }}
       onLoad={handleSetIsLoaded}
       data-loading={isLoading}
       aria-busy={isLoading}

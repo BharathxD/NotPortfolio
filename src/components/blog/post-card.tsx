@@ -1,8 +1,8 @@
-import { CardDescription } from "~/components/ui/card";
 import { formatDate } from "~/lib/utils";
 import { type Post } from "content-layer/generated";
 import Link from "next/link";
 import { Suspense } from "react";
+import Skeleton from "../ui/skeleton";
 import Views from "./views";
 
 interface Props {
@@ -11,13 +11,9 @@ interface Props {
 
 const PostCard = ({ post }: Props) => (
   <li className="list-none" role="listitem" aria-label={`Post card for ${post.title}`}>
-    <Link key={post.slug} href={post.slug} className="w-full">
-      <span className="sr-only">{post.title}</span>
+    <Link key={post.slug} href={post.slug} className="w-full" aria-label={post.title}>
       <article className="relative flex w-full flex-col gap-4 overflow-hidden rounded-xl border bg-neutral-900/80 p-4">
-        <Suspense
-          fallback={
-            <div className="relative z-10 h-5 w-20 animate-skeleton rounded-md bg-gradient-to-r from-neutral-950 via-neutral-700 to-neutral-950 bg-[400%,100%]" />
-          }>
+        <Suspense fallback={<Skeleton className="relative z-10 h-5 w-20 rounded-md" />}>
           <Views slug={post.slug} />
         </Suspense>
         <div className="absolute inset-0 z-0 bg-card-even" />
@@ -29,7 +25,7 @@ const PostCard = ({ post }: Props) => (
         <p className="relative z-10 line-clamp-2 text-sm  duration-1000 group-hover:text-zinc-200">
           {post.description}
         </p>
-        <CardDescription className="relative z-10">{formatDate(post.date)}</CardDescription>
+        <p className="relative z-10 text-sm text-muted-foreground">{formatDate(post.date)}</p>
       </article>
     </Link>
   </li>

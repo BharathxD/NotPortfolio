@@ -13,7 +13,7 @@ const BlogPage = () => {
   const posts = allPosts.filter((post) => post.published).sort((a, b) => b.date.localeCompare(a.date));
   return (
     <Shell variant="spaced">
-      <ul className="flex w-full flex-col gap-4">
+      <ul className="space-y-4">
         {posts.map((post) => (
           <PostCard post={post} key={post.slug} />
         ))}
