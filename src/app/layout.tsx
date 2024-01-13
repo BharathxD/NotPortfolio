@@ -76,7 +76,7 @@ const metadata: Metadata = {
   },
 };
 
-const TopLoader = dynamic(() => import("~/components/ui/top-loader"), { ssr: false });
+const TopLoader = dynamic(() => import("~/components/ui/top-loader"));
 
 /**
  * Root layout component
