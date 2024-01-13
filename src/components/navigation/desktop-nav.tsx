@@ -1,5 +1,4 @@
 import { NAVBAR_LINKS } from "~/lib/constants";
-import { memo } from "react";
 import NavItemDesktop from "./nav-item-desktop";
 
 const DesktopNav = () => (
@@ -10,6 +9,4 @@ const DesktopNav = () => (
   </ul>
 );
 
-DesktopNav.displayName = "DesktopNav";
-
-export default memo(DesktopNav);
+export default DesktopNav;
