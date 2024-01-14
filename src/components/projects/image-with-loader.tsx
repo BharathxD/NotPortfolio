@@ -4,7 +4,9 @@ import { cn } from "~/lib/utils";
 import Image from "next/image";
 import { memo, useCallback, useState, type ComponentProps } from "react";
 
-const ImageWithLoader = ({ src, alt, className, ...props }: ComponentProps<typeof Image>) => {
+interface Props extends ComponentProps<typeof Image> {}
+
+const ImageWithLoader = ({ src, alt, className, ...props }: Props) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const handleSetIsLoaded = useCallback(() => setIsLoading(false), []);
