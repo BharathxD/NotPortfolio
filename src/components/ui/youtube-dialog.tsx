@@ -6,7 +6,7 @@ interface Props {
   id: string;
 }
 
-const YoutubeButton = ({ id }: Props) => {
+const YoutubeDialog = ({ id }: Props) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const setLoaded = useCallback(() => setIsLoading(false), []);
   const opts = {
@@ -41,6 +41,6 @@ const YoutubeButton = ({ id }: Props) => {
   );
 };
 
-YoutubeButton.displayName = "YoutubeButton";
+YoutubeDialog.displayName = "YoutubeDialog";
 
-export default memo(YoutubeButton);
+export default memo(YoutubeDialog);

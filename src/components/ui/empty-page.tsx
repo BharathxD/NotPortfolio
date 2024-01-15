@@ -4,7 +4,7 @@ import { EMOTICONS_MAP, RICKROLL_LINK_YT_ID } from "~/lib/constants";
 import { type Emoticons } from "~/types";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import YoutubeButton from "./youtube";
+import YoutubeDialog from "./youtube-dialog";
 
 interface Props {
   message?: string;
@@ -36,7 +36,7 @@ const EmptyPage = ({
       </h1>
       <div className="my-6 w-full text-center">
         {rickroll ? (
-          <YoutubeButton id={RICKROLL_LINK_YT_ID} />
+          <YoutubeDialog id={RICKROLL_LINK_YT_ID} />
         ) : retryLink ? (
           <Link
             className="overflow-hidden rounded-xl bg-gradient-to-b from-neutral-500 to-neutral-800 px-2 py-2.5 text-base font-medium text-neutral-50 underline-offset-4 shadow-lg shadow-neutral-950 outline-none"
