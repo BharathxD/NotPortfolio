@@ -13,7 +13,7 @@ const PostFooter = ({ post }: Props) => (
   <>
     <MdxPager currentItem={post} allItems={allPosts} as="footer" />
     <Link href="/blog" className={cn(buttonVariants({ variant: "ghost", className: "mx-auto mt-4 w-fit" }))}>
-      <ChevronLeftIcon className="mr-2 h-4 w-4" aria-hidden="true" />
+      <ChevronLeftIcon className="mr-2 size-4" aria-hidden="true" />
       <span>See all posts</span>
       <span className="sr-only">See all posts</span>
     </Link>

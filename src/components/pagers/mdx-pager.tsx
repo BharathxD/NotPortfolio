@@ -24,7 +24,7 @@ const MdxPager = ({ as: Comp = "nav", currentItem, allItems, className, ...props
           aria-label={pager.prev.title.toLowerCase()}
           href={pager.prev.slug}
           className={cn(buttonVariants({ variant: "ghost" }), "truncate")}>
-          <ChevronLeftIcon className="mr-2 h-4 w-4" aria-hidden="true" />
+          <ChevronLeftIcon className="mr-2 size-4" aria-hidden="true" />
           <span className="hidden md:block">{pager.prev.title}</span>
         </Link>
       )}
@@ -34,7 +34,7 @@ const MdxPager = ({ as: Comp = "nav", currentItem, allItems, className, ...props
           href={pager.next.slug}
           className={cn(buttonVariants({ variant: "ghost" }), "truncate md:ml-auto")}>
           <span className="hidden md:block">{pager.next.title}</span>
-          <ChevronRightIcon className="ml-2 h-4 w-4" aria-hidden="true" />
+          <ChevronRightIcon className="ml-2 size-4" aria-hidden="true" />
         </Link>
       )}
     </Comp>

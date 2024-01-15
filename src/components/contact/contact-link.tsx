@@ -47,7 +47,7 @@ const ContactLink = ({
           <li
             key={index}
             className={cn(
-              "h-0.5 w-0.5 rounded-full bg-clip-content transition-colors duration-500",
+              "size-0.5 rounded-full bg-clip-content transition-colors duration-500",
               index % 2 ? dotsColor[0] : dotsColor[1]
             )}
           />
