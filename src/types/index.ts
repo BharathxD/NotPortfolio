@@ -50,4 +50,14 @@ interface Biography {
 
 type Emoticons = ["angry", "happy", "disappointed", "neutral", "smile", "star", "flyaway", "404"];
 
-export type { Biography, Project, AcademicBackground, SocialProfiles, ProfessionalCertifications, Emoticons };
+type Count = Record<string, number>;
+
+export type {
+  Count,
+  Project,
+  Emoticons,
+  Biography,
+  SocialProfiles,
+  AcademicBackground,
+  ProfessionalCertifications,
+};

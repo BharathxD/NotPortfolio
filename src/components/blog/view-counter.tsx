@@ -1,4 +1,4 @@
-import { type Count } from "~/actions/get-views-count";
+import type { Count } from "~/types";
 
 interface Props {
   slug: string;
