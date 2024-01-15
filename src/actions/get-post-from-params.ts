@@ -7,8 +7,8 @@ interface Options {
 /**
  * This function retrieves a post based on the provided slug parameters.
  *
- * @param {Object} params An object containing slug parameters.
- * @param {string[]} params.slug An array of strings representing the slug parameters.
+ * @param {Options} options An object containing slug parameters.
+ * @param {string[]} options.slug An array of strings representing the slug parameters.
  * @returns {Promise<Post|null>} Returns a Promise that resolves to a Post object if found, or null if not.
  *
  * @example
