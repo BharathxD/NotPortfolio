@@ -23,7 +23,7 @@
     "@t3-oss/env-nextjs": "^0.7.3",
     "@vercel/analytics": "^1.1.1",
     "@vercel/kv": "^1.0.1",
-    "@vercel/speed-insights": "^1.0.2",
+    "@vercel/speed-insights": "^1.0.3",
     "axios": "^1.6.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -42,7 +42,7 @@
     "rehype-code-titles": "^1.2.0",
     "rehype-pretty-code": "^0.12.3",
     "rehype-slug": "^6.0.0",
-    "sharp": "^0.33.2",
+    "sharp": "^0.33.1",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4"
