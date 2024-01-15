@@ -1,10 +1,9 @@
 import { allAuthors, allPosts } from "content-layer/generated";
 import { notFound } from "next/navigation";
 import "~/styles/mdx.css";
-import getPostFromParams from "~/actions/get-post-from-params";
-import increment from "~/actions/increment";
 import Post from "~/components/blog/post";
 import env from "~/env.mjs";
+import { getPostFromParams, increment } from "~/lib/actions";
 import { absoluteUrl } from "~/lib/utils";
 import { type Metadata } from "next";
 import { cache } from "react";

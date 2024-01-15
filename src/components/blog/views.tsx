@@ -1,5 +1,5 @@
-import getViewsCount from "~/actions/get-views-count";
 import env from "~/env.mjs";
+import { getViewsCount } from "~/lib/actions";
 import ViewCounter from "./view-counter";
 
 interface Props {
