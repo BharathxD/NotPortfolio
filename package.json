@@ -5,7 +5,7 @@
   "scripts": {
     "build": "contentlayer build && next build",
     "check": "pnpm lint && pnpm typecheck && pnpm format:check",
-    "clean": "rm -rf node_modules .next .contentlayer pnpm-lock.yaml",
+    "clean": "rimraf node_modules .next .contentlayer pnpm-lock.yaml",
     "dev": "next dev",
     "fmc": "prettier --check \"**/*.{ts,tsx,mdx}\"",
     "fmw": "prettier --write \"**/*.{ts,tsx,mdx}\"",
