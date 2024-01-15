@@ -1,5 +1,9 @@
 import { allPosts, type Post } from "content-layer/generated";
 
+interface Options {
+  slug: string[];
+}
+
 /**
  * This function retrieves a post based on the provided slug parameters.
  *
@@ -14,8 +18,8 @@ import { allPosts, type Post } from "content-layer/generated";
  * .catch(err => console.error(err));
  *
  */
-const getPostFromParams = async (params: { slug: string[] }): Promise<Post | null> => {
-  const slug = params?.slug?.join("/");
+const getPostFromParams = async (options: Options): Promise<Post | null> => {
+  const slug = options?.slug?.join("/");
   // eslint-disable-next-line @typescript-eslint/await-thenable
   const post = await allPosts.find((post) => post.slugAsParams === slug);
   if (!post) return null;
