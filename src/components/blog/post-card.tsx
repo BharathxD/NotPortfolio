@@ -22,7 +22,7 @@ const PostCard = ({ post }: Props) => (
         <h2 className="relative z-10 bg-gradient-to-tr from-neutral-50 via-neutral-200 to-neutral-500 bg-clip-text text-xl font-medium text-transparent duration-1000 group-hover:text-white lg:text-3xl">
           {post.title}
         </h2>
-        <p className="relative z-10 line-clamp-2 text-sm  duration-1000 group-hover:text-zinc-200">
+        <p className="relative z-10 line-clamp-2 text-sm duration-1000 group-hover:text-zinc-200">
           {post.description}
         </p>
         <p className="relative z-10 text-sm text-muted-foreground">{formatDate(post.date)}</p>

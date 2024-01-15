@@ -13,7 +13,7 @@ const Author = ({ author }: Props) => {
   const authorUrl = createAuthorUrl(author);
   return (
     <li>
-      <Link target="_blank" href={authorUrl} className="flex items-center space-x-2 text-sm">
+      <Link target="_blank" href={authorUrl.toString()} className="flex items-center space-x-2 text-sm">
         <Avatar>
           <AvatarImage src={avatar} alt={title} />
           <AvatarFallback className="rounded-full border bg-gradient-to-tr from-neutral-800 to-neutral-900" />
