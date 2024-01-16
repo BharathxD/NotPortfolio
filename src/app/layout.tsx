@@ -15,9 +15,21 @@ import localFont from "next/font/local";
  */
 const clash = localFont({
   src: [
-    { path: "../styles/fonts/ClashGrotesk-Regular.otf", weight: "400", style: "normal" },
-    { path: "../styles/fonts/ClashGrotesk-Medium.otf", weight: "500", style: "normal" },
-    { path: "../styles/fonts/ClashGrotesk-Semibold.otf", weight: "600", style: "normal" },
+    {
+      path: "../styles/fonts/ClashGrotesk-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/ClashGrotesk-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/ClashGrotesk-Semibold.otf",
+      weight: "600",
+      style: "normal",
+    },
   ],
   variable: "--font-clash",
 });

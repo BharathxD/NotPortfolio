@@ -113,7 +113,9 @@ const GET = async (req: NextRequest): Promise<NextResponse | ImageResponse> => {
           (error as { message: string }).message
         );
         return NextResponse.json(
-          { message: "An unexpected error occurred while generating the image" },
+          {
+            message: "An unexpected error occurred while generating the image",
+          },
           { status: STATUS_CODES.INTERNAL_SERVER_ERROR }
         );
     }

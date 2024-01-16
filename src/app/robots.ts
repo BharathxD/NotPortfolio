@@ -12,7 +12,6 @@ const generateRobotsTxt = (): MetadataRoute.Robots => ({
     },
   ],
   sitemap: `${siteConfig.url}/sitemap.xml`,
-  host: siteConfig.url,
 });
 
 export default generateRobotsTxt;
