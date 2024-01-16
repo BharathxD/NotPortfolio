@@ -10,8 +10,12 @@ import { cn } from "~/lib/utils";
 import dynamic from "next/dynamic";
 import localFont from "next/font/local";
 
+const TopLoader = dynamic(() => import("~/components/ui/top-loader"));
+
 /**
- * Configuration for the local Clash font
+ * Configuration for the local Clash font.
+ * This configuration includes the paths to the font files, their weights, and styles.
+ * The variable `--font-clash` is used to reference this font in CSS.
  */
 const clash = localFont({
   src: [
@@ -35,7 +39,10 @@ const clash = localFont({
 });
 
 /**
- * Metadata for the website
+ * Metadata for the website.
+ * This includes the base URL, title, keywords, description, creator, Open Graph data,
+ * alternate URLs, robot instructions, Twitter card data, and icon paths.
+ * The metadata is used for SEO and social media sharing purposes.
  */
 const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -67,14 +74,26 @@ const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  // verification: {
-  //   google: "",
-  //   yandex: "",
-  //   yahoo: "",
-  //   other: {
-  //     bing: "",
-  //   },
-  // },
+  /**
+   * For site verification, use Google Search Console and Bing Webmaster Tools.
+   * @see https://search.google.com/search-console/welcome
+   * @see https://www.bing.com/webmasters
+   *
+   * You can either very you ownership through DNS or meta tag.
+   *
+   * @example Using meta tag
+   *
+   * ```json
+   * verification: {
+   *   google: "",
+   *   yandex: "",
+   *   yahoo: "",
+   *   other: {
+   *     bing: "",
+   *   },
+   *  }
+   * ```
+   */
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
@@ -88,12 +107,14 @@ const metadata: Metadata = {
   },
 };
 
-const TopLoader = dynamic(() => import("~/components/ui/top-loader"));
-
 /**
- * Root layout component
+ * Root layout component.
+ * This component serves as the base layout for all pages in the application.
+ * It includes the TopLoader, Effects, Navbar, Analytics, and SpeedInsights components,
+ * as well as the main content passed as children.
+ *
  * @param {object} props - Component props
- * @param {React.ReactNode} props.children - Child components
+ * @param {React.PropsWithChildren} props.children - Child components to be rendered within the main layout
  */
 const RootLayout = ({ children }: React.PropsWithChildren) => (
   <html
