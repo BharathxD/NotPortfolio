@@ -9,8 +9,8 @@ const ContactLinks = () => (
     <ContactLink
       href={`mailto:${biography.contactEmail}`}
       icon={MessageCircle}
-      label="Mail me"
-      description={
+      title="Mail me"
+      subtitle={
         <>
           Or reach me out <br /> via LinkedIn
         </>
@@ -20,8 +20,8 @@ const ContactLinks = () => (
     <ContactLink
       href={biography.resumeLink}
       icon={CheckCircle}
-      label="Resume"
-      description={
+      title="Resume"
+      subtitle={
         <>
           Scanned with <br /> virus total
         </>

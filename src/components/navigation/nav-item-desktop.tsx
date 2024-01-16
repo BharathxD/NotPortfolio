@@ -1,11 +1,9 @@
+import type { NavbarLink } from "~/types";
 import Link from "next/link";
 import { memo, type ComponentProps } from "react";
 
 interface Props extends Omit<ComponentProps<typeof Link>, "href">, React.PropsWithChildren {
-  item: {
-    name?: string;
-    path: string;
-  };
+  item: NavbarLink;
 }
 
 const NavItemDesktop = ({ item: { name, path }, children, ...rest }: Props) => (

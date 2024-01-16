@@ -1,12 +1,10 @@
+import type { NavbarLink } from "~/types";
 import Link from "next/link";
 import { memo } from "react";
 import { SheetClose } from "../ui/sheet";
 
 interface Props {
-  item: {
-    name: string;
-    path: string;
-  };
+  item: NavbarLink;
 }
 
 const NavItemMobile = ({ item: { name, path } }: Props) => (

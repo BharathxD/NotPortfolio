@@ -7,7 +7,7 @@ const BlogNotFoundPage = () => (
       emoticon="flyaway"
       message="The blog you are looking for does not exist"
       retryLink="/blog"
-      retryLinkText="Go to Blog"
+      retryLinkText="Blog Page"
     />
   </Shell>
 );

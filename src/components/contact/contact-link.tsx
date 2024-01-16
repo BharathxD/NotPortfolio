@@ -2,23 +2,24 @@
 
 import { DEFAULT_DOT_COLORS, DOTS_COUNT, FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { cn } from "~/lib/utils";
+import type { ClassValue } from "clsx";
 import { motion } from "framer-motion";
 import { ArrowUpRight, type LucideIcon } from "lucide-react";
-import { type ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
 interface Props extends ComponentProps<typeof motion.a> {
-  dotsColor?: [string, string];
+  dotsColor?: [ClassValue, ClassValue];
   icon: LucideIcon;
-  label: string;
-  description: React.ReactNode;
+  title: string;
+  subtitle: React.ReactNode;
 }
 
 const ContactLink = ({
-  label,
+  title,
   href,
   icon: Icon,
   className,
-  description,
+  subtitle,
   dotsColor = DEFAULT_DOT_COLORS,
 }: Props) => (
   <motion.a
@@ -33,11 +34,11 @@ const ContactLink = ({
     <div className="absolute inset-0 z-0 bg-card transition-all duration-500 group-hover:opacity-50 md:rotate-180 md:opacity-0" />
     <div className="relative z-10 flex size-full flex-col items-center justify-center gap-1 md:items-end">
       <h5 className="flex items-center justify-end text-2xl font-medium text-neutral-300">
-        <span>{label}</span>
+        <span>{title}</span>
         <ArrowUpRight size={30} className="text-neutral-300" />
       </h5>
       <p className={cn("inline-block text-center text-sm text-neutral-400", className)}>
-        <span>{description}</span> <Icon className="-mt-px inline-block text-neutral-400" size={10} />
+        <span>{subtitle}</span> <Icon className="-mt-px inline-block text-neutral-400" size={10} />
       </p>
     </div>
     <div className="hidden size-full md:block" />
@@ -48,7 +49,7 @@ const ContactLink = ({
             key={index}
             className={cn(
               "size-0.5 rounded-full bg-clip-content transition-colors duration-500",
-              index % 2 ? dotsColor[0] : dotsColor[1]
+              dotsColor[index % 2]
             )}
           />
         ))}

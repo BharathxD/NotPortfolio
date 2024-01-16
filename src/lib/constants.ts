@@ -1,12 +1,14 @@
-import { type Emoticons } from "~/types";
+import type { Emoticons, NavbarLink } from "~/types";
+import { type ClassValue } from "clsx";
+import type { MotionProps } from "framer-motion";
 
-const NAVBAR_LINKS: { name: string; path: string }[] = [
+const NAVBAR_LINKS: NavbarLink[] = [
   {
     name: "Home",
     path: "/",
   },
   {
-    name: "Work",
+    name: "Projects",
     path: "/work",
   },
   {
@@ -19,7 +21,7 @@ const NAVBAR_LINKS: { name: string; path: string }[] = [
   },
 ];
 
-const FADE_IN_ANIMATION_SETTINGS = {
+const FADE_IN_ANIMATION_SETTINGS: MotionProps = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   transition: { duration: 0.2 },
@@ -57,7 +59,7 @@ const KAISEI_TOKUMIN_ABS_FONT_URL = new URL("../styles/fonts/kaisei-tokumin-bold
 
 const DOTS_COUNT = 156;
 
-const DEFAULT_DOT_COLORS: [string, string] = [
+const DEFAULT_DOT_COLORS: [ClassValue, ClassValue] = [
   "bg-neutral-200 group-hover:bg-neutral-400",
   "bg-neutral-400 group-hover:bg-neutral-200",
 ];

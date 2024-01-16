@@ -18,14 +18,9 @@ interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
 const SocialCard = ({ platform, alignImage, label, description }: Props) => {
   const profile = biography.socialProfiles.find((profile) => profile.platform === platform);
 
-  if (!profile) {
-    console.error(`Profile for ${platform} not found`);
-    return null;
-  }
-
   return (
     <motion.a
-      href={profile.url}
+      href={profile!.url}
       target="_blank"
       initial="hidden"
       whileInView="show"
@@ -46,7 +41,7 @@ const SocialCard = ({ platform, alignImage, label, description }: Props) => {
       <div className="absolute inset-x-0 bottom-0 z-20 h-px bg-glare opacity-40" />
       <div className="size-full px-10" />
       <BlurImage
-        src={profile.imageUrl}
+        src={profile!.imageUrl}
         alt={platform}
         className={cn(
           "absolute inset-x-0 bottom-[-40%] top-[50%] z-10 h-fit rounded-xl object-contain transition-all duration-700 group-hover:grayscale-0 md:inset-x-[auto] md:bottom-[-20%] md:top-[auto] md:h-[352px] md:w-[600px] md:grayscale",

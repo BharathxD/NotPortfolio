@@ -1,5 +1,5 @@
 import env from "~/env.mjs";
-import { type Biography } from "~/types";
+import type { Biography } from "~/types";
 
 const keywords = [
   "Software Engineer",
@@ -81,13 +81,13 @@ const biography: Biography = {
   socialProfiles: [
     {
       platform: "Github",
-      url: "https://www.github.com/bharathxd",
+      url: "https://www.github.com/bharathxd/?utm_source=portfolio",
       imageUrl: "/contact/github.webp",
       blurDataUrl: null,
     },
     {
       platform: "LinkedIn",
-      url: "https://www.linkedin.com/in/bharath-bandi?utm_source=porfolio",
+      url: "https://www.linkedin.com/in/bharath-bandi/?utm_source=portfolio",
       blurDataUrl: null,
       imageUrl: "/contact/linkedin.webp",
     },
@@ -138,7 +138,7 @@ const biography: Biography = {
       id: "optimizex",
       name: "OptimizeX",
       tagline: "Effortless Image Optimization",
-      projectUrl: "https://optimizex.vercel.app/",
+      projectUrl: "https://optimizex.vercel.app",
       github: "https://github.com/bharathxd/optimizex",
       noOfPictures: 7,
       points: [

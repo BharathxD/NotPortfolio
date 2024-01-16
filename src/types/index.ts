@@ -99,6 +99,11 @@ interface Biography {
   professionalCertifications: ProfessionalCertifications[];
 }
 
+type NavbarLink = {
+  name?: string;
+  path: string;
+};
+
 /**
  * Represents emoticons.
  */
@@ -114,6 +119,7 @@ export type {
   Project,
   Emoticons,
   Biography,
+  NavbarLink,
   SocialProfiles,
   AcademicBackground,
   ProfessionalCertifications,
