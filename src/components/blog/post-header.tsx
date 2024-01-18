@@ -1,5 +1,6 @@
+import { increment } from "~/lib/actions";
 import type { Author as AuthorType, Post } from "content-layer/generated";
-import { Suspense } from "react";
+import { cache, Suspense } from "react";
 import Skeleton from "../ui/skeleton";
 import Author from "./author";
 import PostMeta from "./post-meta";
@@ -8,10 +9,14 @@ import Views from "./views";
 interface Props {
   post: Post;
   authors: (AuthorType | undefined)[];
-  incrementViews: (slug: string) => Promise<number>;
 }
 
-const PostHeader = ({ post, authors, incrementViews }: Props) => (
+/**
+ * @usage https://react.dev/reference/react/cache
+ */
+const incrementViews = cache(increment);
+
+const PostHeader = ({ post, authors }: Props) => (
   <header className="space-y-4">
     <div className="flex items-center space-x-2 text-sm text-muted-foreground">
       <PostMeta date={post.date} readingTime={post.readingTime} />

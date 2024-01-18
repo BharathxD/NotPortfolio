@@ -3,21 +3,15 @@ import { notFound } from "next/navigation";
 import "~/styles/mdx.css";
 import Post from "~/components/blog/post";
 import env from "~/env.mjs";
-import { getPostFromParams, increment } from "~/lib/actions";
+import { getPostFromParams } from "~/lib/actions";
 import { absoluteUrl } from "~/lib/utils";
 import { type Metadata } from "next";
-import { cache } from "react";
 
 interface Props {
   params: {
     slug: string[];
   };
 }
-
-/**
- * @usage https://react.dev/reference/react/cache
- */
-const incrementViews = cache(increment);
 
 /**
  * Generate metadata for the post.
@@ -106,7 +100,7 @@ const PostPage = async ({ params }: Props) => {
     allAuthors.find((a) => a.title === author?.replace(/\r$/, ""))
   );
 
-  return <Post post={post} authors={authors} incrementViews={incrementViews} />;
+  return <Post post={post} authors={authors} />;
 };
 
 export { generateMetadata, generateStaticParams };

@@ -9,12 +9,11 @@ import PostHeader from "./post-header";
 interface Props {
   post: PostType;
   authors: (AuthorType | undefined)[];
-  incrementViews: (slug: string) => Promise<number>;
 }
 
-const Post = ({ post, authors, incrementViews }: Props) => (
+const Post = ({ post, authors }: Props) => (
   <Shell variant="spaced">
-    <PostHeader post={post} authors={authors} incrementViews={incrementViews} />
+    <PostHeader post={post} authors={authors} />
     {post.image && (
       <ImageWithLoader
         src={post.image}
