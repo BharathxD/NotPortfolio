@@ -6,22 +6,13 @@ import { ImageResponse } from "next/og";
 import { NextResponse, type NextRequest } from "next/server";
 import { ZodError } from "zod";
 
-/**
- * The runtime environment for the application.
- * @type {ServerRuntime}
- */
 export const runtime: ServerRuntime = "edge";
 
 /**
  * Handles GET requests to generate an image.
  *
- * @async
- * @function
  * @param {NextRequest} req - The incoming request object.
  * @returns {Promise<NextResponse|ImageResponse>} The response object.
- *
- * @throws {ZodError} When the request parameters fail validation.
- * @throws {Error} When there's an error generating the image.
  */
 const GET = async (req: NextRequest): Promise<NextResponse | ImageResponse> => {
   try {
