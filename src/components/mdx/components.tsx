@@ -5,6 +5,7 @@ import { Separator } from "../ui/separator";
 import CodeBlock from "./code-block";
 import Heading, { type HeadingLevel } from "./heading";
 import "~/styles/mdx.css";
+import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "../ui/table";
 
 const createHeading = (level: HeadingLevel) => {
   const HeadingComponent = ({ ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -33,6 +34,17 @@ const components = {
   hr: ({ className, ...props }: React.HTMLAttributes<HTMLHRElement>) => (
     <Separator className={cn("mb-4 mt-2 border-[var(--tw-prose-hr)]", className)} {...props} />
   ),
+  table: ({ ...props }: React.HTMLAttributes<HTMLTableElement>) => <Table {...props} />,
+  thead: ({ ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => (
+    <TableHeader className="bg-neutral-800" {...props} />
+  ),
+  tbody: ({ ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => <TableBody {...props} />,
+  tr: ({ ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
+    <TableRow className="border-neutral-800" {...props} />
+  ),
+  th: ({ ...props }: React.HTMLAttributes<HTMLTableCellElement>) => <TableHead className="p-2" {...props} />,
+  td: ({ ...props }: React.HTMLAttributes<HTMLTableCellElement>) => <TableCell {...props} />,
+  tfoot: ({ ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => <TableFooter {...props} />,
   Image: ImageWithLoader,
 };
 

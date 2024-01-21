@@ -3,6 +3,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 
 const computedFields: ComputedFields = {
   slug: {
@@ -91,6 +92,7 @@ const source = makeSource({
   contentDirPath: "./src/content",
   documentTypes: [Post, Author],
   mdx: {
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [
       [
         // @ts-expect-error rehype-pretty-code has no types
