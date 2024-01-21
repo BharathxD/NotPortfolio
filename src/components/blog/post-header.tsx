@@ -24,7 +24,7 @@ const PostHeader = ({ post, authors }: Props) => (
         <Views slug={post.slug} cachedIncrement={incrementViews} />
       </Suspense>
     </div>
-    <h1 className="inline-block bg-gradient-to-tr from-neutral-100 to-neutral-400 bg-clip-text text-4xl font-medium text-transparent lg:text-5xl">
+    <h1 className="inline-block w-full text-balance bg-gradient-to-tr from-neutral-100 to-neutral-400 bg-clip-text text-4xl font-medium text-transparent lg:text-5xl">
       {post.title}
     </h1>
     {authors?.length !== 0 && (
