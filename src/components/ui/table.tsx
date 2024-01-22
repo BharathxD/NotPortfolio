@@ -3,8 +3,14 @@ import * as React from "react";
 
 const Table = React.forwardRef<HTMLTableElement, React.HTMLAttributes<HTMLTableElement>>(
   ({ className, ...props }, ref) => (
-    <div className="relative my-8 w-full overflow-auto rounded-xl border border-neutral-800">
-      <table ref={ref} className={cn("my-0 w-full caption-bottom text-sm", className)} {...props} />
+    <div className="relative my-6 w-full overflow-auto rounded-xl border border-neutral-700">
+      <div className="absolute inset-x-0 top-0 z-20 h-px bg-glare opacity-20" />
+      <div className="absolute inset-x-0 bottom-0 z-20 h-px bg-glare opacity-20" />
+      <table
+        ref={ref}
+        className={cn("my-0 w-full caption-bottom text-sm text-neutral-50", className)}
+        {...props}
+      />
     </div>
   )
 );
@@ -12,7 +18,7 @@ Table.displayName = "Table";
 
 const TableHeader = React.forwardRef<HTMLTableSectionElement, React.HTMLAttributes<HTMLTableSectionElement>>(
   ({ className, ...props }, ref) => (
-    <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
+    <thead ref={ref} className={cn("bg-neutral-700 [&_tr]:border-b", className)} {...props} />
   )
 );
 TableHeader.displayName = "TableHeader";
@@ -39,7 +45,7 @@ const TableRow = React.forwardRef<HTMLTableRowElement, React.HTMLAttributes<HTML
   ({ className, ...props }, ref) => (
     <tr
       ref={ref}
-      className={cn("border-b transition-colors data-[state=selected]:bg-muted hover:bg-muted/50", className)}
+      className={cn("border-b bg-muted/50 transition-colors data-[state=selected]:bg-muted", className)}
       {...props}
     />
   )
@@ -51,7 +57,7 @@ const TableHead = React.forwardRef<HTMLTableCellElement, React.ThHTMLAttributes<
     <th
       ref={ref}
       className={cn(
-        "h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "h-10 px-2 text-left align-middle font-medium  [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
         className
       )}
       {...props}

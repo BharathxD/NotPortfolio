@@ -36,11 +36,11 @@ const components = {
   ),
   table: ({ ...props }: React.HTMLAttributes<HTMLTableElement>) => <Table {...props} />,
   thead: ({ ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => (
-    <TableHeader className="bg-neutral-800" {...props} />
+    <TableHeader className="bg-gradient-to-t from-neutral-700 to-neutral-800 text-neutral-50" {...props} />
   ),
   tbody: ({ ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => <TableBody {...props} />,
   tr: ({ ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
-    <TableRow className="border-neutral-800" {...props} />
+    <TableRow className="border-neutral-700" {...props} />
   ),
   th: ({ ...props }: React.HTMLAttributes<HTMLTableCellElement>) => <TableHead className="p-2" {...props} />,
   td: ({ ...props }: React.HTMLAttributes<HTMLTableCellElement>) => <TableCell {...props} />,
