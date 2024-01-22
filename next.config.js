@@ -15,6 +15,9 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    ppr: true,
+  },
 };
 
 module.exports = withContentlayer(nextConfig);
