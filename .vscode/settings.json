@@ -2,6 +2,7 @@
   "tailwindCSS.includeLanguages": {
     "plaintext": "html"
   },
+  "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
