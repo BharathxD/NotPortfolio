@@ -1,7 +1,7 @@
 import { NAVBAR_LINKS } from "~/lib/constants";
 import { MenuIcon, X } from "lucide-react";
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../ui/sheet";
-import NavItemMobile from "./nav-item-mobile";
+import NavItemMobile from "./mobile-nav-item";
 
 const MobileNav = () => (
   <Sheet>
