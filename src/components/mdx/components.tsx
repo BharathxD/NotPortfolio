@@ -1,6 +1,6 @@
 import { cn } from "~/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import ImageWithLoader from "../projects/image-with-loader";
+import ImageWithLoader from "../ui/image-with-loader";
 import { Separator } from "../ui/separator";
 import CodeBlock from "./code-block";
 import Heading, { type HeadingLevel } from "./heading";

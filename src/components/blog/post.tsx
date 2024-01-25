@@ -1,4 +1,4 @@
-import ImageWithLoader from "~/components/projects/image-with-loader";
+import ImageWithLoader from "~/components/ui/image-with-loader";
 import { Separator } from "~/components/ui/separator";
 import { Shell } from "~/components/ui/shell";
 import type { Author as AuthorType, Post as PostType } from "content-layer/generated";

@@ -1,3 +1,5 @@
+"use server";
+
 import { kv } from "@vercel/kv";
 import { biography } from "~/lib/config";
 import { type Count, type Project } from "~/types";

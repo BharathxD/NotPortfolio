@@ -4,6 +4,7 @@ import "~/styles/mdx.css";
 import Post from "~/components/blog/post";
 import env from "~/env.mjs";
 import { getPostFromParams } from "~/lib/actions";
+import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/lib/constants";
 import { absoluteUrl } from "~/lib/utils";
 import { type Metadata } from "next";
 
@@ -61,8 +62,8 @@ const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
         {
           url: ogUrl.toString(),
           alt: post.title,
-          width: 1920,
-          height: 1080,
+          width: OG_IMAGE_WIDTH,
+          height: OG_IMAGE_HEIGHT,
         },
       ],
     },

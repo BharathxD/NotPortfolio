@@ -1,5 +1,5 @@
 import type { Emoticons, NavbarLink } from "~/types";
-import { type ClassValue } from "clsx";
+import type { ClassValue } from "clsx";
 import type { MotionProps } from "framer-motion";
 
 const NAVBAR_LINKS: NavbarLink[] = [
@@ -66,9 +66,14 @@ const DEFAULT_DOT_COLORS: [ClassValue, ClassValue] = [
 
 const ROUTES = ["", "/work", "/blog", "/contact"];
 
+const OG_IMAGE_WIDTH = 1920;
+const OG_IMAGE_HEIGHT = 1080;
+
 export {
   ROUTES,
   DOTS_COUNT,
+  OG_IMAGE_WIDTH,
+  OG_IMAGE_HEIGHT,
   STATUS_CODES,
   NAVBAR_LINKS,
   EMOTICONS_MAP,

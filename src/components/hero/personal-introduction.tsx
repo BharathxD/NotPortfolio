@@ -2,9 +2,9 @@
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { motion } from "framer-motion";
-import HighlightedSpan from "./ui/highlighted-span";
+import HighlightedSpan from "../ui/highlighted-span";
 
-const Hero = () => (
+const PersonalIntroduction = () => (
   <motion.h1
     className="text-center text-2xl text-neutral-400 md:text-4xl"
     initial="hidden"
@@ -19,4 +19,4 @@ const Hero = () => (
   </motion.h1>
 );
 
-export default Hero;
+export default PersonalIntroduction;

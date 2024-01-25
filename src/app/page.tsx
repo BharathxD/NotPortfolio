@@ -1,11 +1,9 @@
+import PersonalIntroduction from "~/components/hero/personal-introduction";
 import { Shell } from "~/components/ui/shell";
-import dynamic from "next/dynamic";
-
-const HeroSSR = dynamic(() => import("~/components/hero"));
 
 const HeroPage = () => (
   <Shell>
-    <HeroSSR />
+    <PersonalIntroduction />
   </Shell>
 );
 

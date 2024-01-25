@@ -11,9 +11,9 @@ const ContactLinks = () => (
       icon={MessageCircle}
       title="Mail me"
       subtitle={
-        <>
+        <span>
           Or reach me out <br /> via LinkedIn
-        </>
+        </span>
       }
       className="mr-2"
     />
@@ -22,9 +22,9 @@ const ContactLinks = () => (
       icon={CheckCircle}
       title="Resume"
       subtitle={
-        <>
+        <span>
           Scanned with <br /> virus total
-        </>
+        </span>
       }
       className="mr-5"
     />

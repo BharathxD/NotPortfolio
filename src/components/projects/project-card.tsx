@@ -5,7 +5,7 @@ import { type Project } from "~/types";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { memo } from "react";
-import BlurImage from "./blur-image";
+import BlurImage from "../ui/blur-image";
 
 interface Props {
   project: Pick<Project, "name" | "tagline" | "id">;

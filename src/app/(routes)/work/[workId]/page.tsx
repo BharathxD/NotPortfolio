@@ -4,6 +4,7 @@ import { Shell } from "~/components/ui/shell";
 import env from "~/env.mjs";
 import { getProject } from "~/lib/actions";
 import { siteConfig } from "~/lib/config";
+import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/lib/constants";
 import { absoluteUrl } from "~/lib/utils";
 import { type Metadata } from "next";
 
@@ -47,8 +48,8 @@ const generateMetadata = ({ params: { workId } }: Props): Metadata => {
         {
           url: ogUrl.toString(),
           alt: work.name,
-          width: 1920,
-          height: 1080,
+          width: OG_IMAGE_WIDTH,
+          height: OG_IMAGE_HEIGHT,
         },
       ],
     },

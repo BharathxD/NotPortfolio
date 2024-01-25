@@ -1,12 +1,12 @@
 "use client";
 
+import BulletPoint from "~/components/ui/bullet-point";
+import Pill from "~/components/ui/pill";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import type { Project as ProjectMetdata } from "~/types";
 import { motion } from "framer-motion";
 import { Dot } from "lucide-react";
 import Link from "next/link";
-import BulletPoint from "./bullet-point";
-import Pill from "./pill";
 import ProjectCarousel from "./project-carousel";
 import ProjectHeader from "./project-header";
 

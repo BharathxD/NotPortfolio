@@ -1,6 +1,6 @@
 "use client";
 
-import BlurImage from "~/components/projects/blur-image";
+import BlurImage from "~/components/ui/blur-image";
 import { biography } from "~/lib/config";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { cn } from "~/lib/utils";
@@ -8,7 +8,7 @@ import { type SocialProfiles } from "~/types";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
+interface Props {
   label: string;
   description: string;
   alignImage: "left" | "right";
