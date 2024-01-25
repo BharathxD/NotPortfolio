@@ -53,7 +53,7 @@ const metadata: Metadata = {
    * @see https://search.google.com/search-console/welcome
    * @see https://www.bing.com/webmasters
    *
-   * You can either very you ownership through DNS or meta tag.
+   * You can either verify your ownership through DNS or meta tag.
    *
    * @example Using meta tag
    *
