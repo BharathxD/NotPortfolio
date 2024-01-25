@@ -1,7 +1,7 @@
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "~/components/ui/sheet";
 import { NAVBAR_LINKS } from "~/lib/constants";
 import { MenuIcon, X } from "lucide-react";
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../ui/sheet";
-import NavItemMobile from "./mobile-nav-item";
+import MobileNavItem from "./mobile-nav-item";
 
 const MobileNav = () => (
   <Sheet>
@@ -22,7 +22,7 @@ const MobileNav = () => (
       <nav>
         <ul className="flex flex-col items-end" role="list">
           {NAVBAR_LINKS.map((item) => (
-            <NavItemMobile key={item.name} item={item} />
+            <MobileNavItem key={item.name} item={item} />
           ))}
         </ul>
       </nav>

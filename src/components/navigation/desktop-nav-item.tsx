@@ -1,7 +1,6 @@
 import { cn } from "~/lib/utils";
 import type { NavbarLink } from "~/types";
 import Link from "next/link";
-import { memo } from "react";
 
 interface Props extends Omit<React.ComponentProps<typeof Link>, "href">, React.PropsWithChildren {
   item: NavbarLink;
@@ -23,6 +22,4 @@ const DesktopNavItem = ({ item: { name, path }, className, children, ...rest }: 
   </li>
 );
 
-DesktopNavItem.displayName = "NavLink";
-
-export default memo(DesktopNavItem);
+export default DesktopNavItem;

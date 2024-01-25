@@ -1,14 +1,13 @@
+import { SheetClose } from "~/components/ui/sheet";
 import { cn } from "~/lib/utils";
 import type { NavbarLink } from "~/types";
 import Link from "next/link";
-import { memo } from "react";
-import { SheetClose } from "../ui/sheet";
 
 interface Props extends Omit<React.ComponentProps<typeof Link>, "href">, React.PropsWithChildren {
   item: NavbarLink;
 }
 
-const NavItemMobile = ({ item: { name, path }, className, children, ...rest }: Props) => (
+const MobileNavItem = ({ item: { name, path }, className, children, ...rest }: Props) => (
   <li className="w-full border-y px-6 py-4">
     <SheetClose asChild>
       <Link
@@ -26,6 +25,4 @@ const NavItemMobile = ({ item: { name, path }, className, children, ...rest }: P
   </li>
 );
 
-NavItemMobile.displayName = "NavLink";
-
-export default memo(NavItemMobile);
+export default MobileNavItem;
