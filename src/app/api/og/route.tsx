@@ -93,7 +93,7 @@ const GET = async (req: NextRequest): Promise<NextResponse | ImageResponse> => {
         return NextResponse.json(
           {
             message: "Failed to generate the image due to invalid request parameters",
-            errors: error.issues.map((issue) => issue.message),
+            errors: error.issues.map((issue, i) => ({ value: issue.path[i], message: issue.message })),
           },
           { status: STATUS_CODES.BAD_REQUEST }
         );
