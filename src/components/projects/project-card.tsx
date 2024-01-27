@@ -29,7 +29,7 @@ const ProjectCard = ({ project }: Props) => (
         <h1 className="mb-2 text-xl md:text-4xl">{project.name}</h1>
         <p>{project.tagline}</p>
       </div>
-      <div className="absolute inset-0 z-0 bg-card opacity-0 transition-all duration-500 group-hover:opacity-100" />
+      <div className="absolute inset-0 z-0 bg-card opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       <ImageWithLoader
         className="z-10 mx-auto mt-2 object-contain transition-all duration-700 data-[loading=true]:w-[660px] data-[loading=true]:animate-skeleton data-[loading=true]:rounded-xl data-[loading=true]:rounded-b-none data-[loading=true]:md:h-[500px] data-[loading=false]:md:group-hover:mt-0"
         src={`/work/${project.name.toLowerCase()}.webp`}
