@@ -6,7 +6,9 @@ import { z } from "zod";
  * @property {z.ZodString} description - An optional string representing the description of the image. It can be null.
  */
 const ogImageSchema = z.object({
-  title: z.string().min(1),
+  title: z
+    .string({ required_error: "Title is required to generate a valid Open Graph image." })
+    .min(1, "Title must be at least 1 character long."),
   subtitle: z.string().nullable().optional(),
 });
 
