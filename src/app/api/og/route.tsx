@@ -18,10 +18,7 @@ const GET = async (req: NextRequest): Promise<NextResponse | ImageResponse> => {
   try {
     const { searchParams } = req.nextUrl;
 
-    const { title, subtitle } = ogImageSchema.parse({
-      title: searchParams.get("title"),
-      subtitle: searchParams.get("subtitle"),
-    });
+    const { title, subtitle } = ogImageSchema.parse(Object.fromEntries(searchParams));
 
     const fontData = await fetch(KAISEI_TOKUMIN_ABS_FONT_URL).then((res) => res.arrayBuffer());
 
