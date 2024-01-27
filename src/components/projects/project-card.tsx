@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { memo } from "react";
 import BlurImage from "../ui/blur-image";
+import ImageWithLoader from "../ui/image-with-loader";
 
 interface Props {
   project: Pick<Project, "name" | "tagline" | "id">;
@@ -29,14 +30,14 @@ const ProjectCard = ({ project }: Props) => (
         <p>{project.tagline}</p>
       </div>
       <div className="absolute inset-0 z-0 bg-card opacity-0 transition-all duration-500 group-hover:opacity-100" />
-      <BlurImage
-        className="z-10 mx-auto mt-2 object-contain transition-all duration-700 data-[loading=true]:w-[700px] data-[loading=true]:animate-skeleton data-[loading=true]:rounded-xl data-[loading=true]:rounded-b-none data-[loading=true]:md:h-[500px] data-[loading=false]:md:group-hover:-mt-2"
+      <ImageWithLoader
+        className="z-10 mx-auto mt-4 object-contain p-1 transition-all duration-700 data-[loading=true]:w-[660px] data-[loading=true]:animate-skeleton data-[loading=true]:rounded-xl data-[loading=true]:rounded-b-none data-[loading=true]:md:h-[500px] data-[loading=false]:md:group-hover:mt-0"
         src={`/work/${project.name.toLowerCase()}.webp`}
         alt={project.tagline}
         sizes="(max-width: 767px) 75vw, (max-width: 991px) 73vw, (max-width: 1439px) 727.78125px, (max-width: 1919px) 866.375px, 1193.9896240234375px"
         loading="eager"
         height={500}
-        width={700}
+        width={660}
         priority
       />
     </Link>

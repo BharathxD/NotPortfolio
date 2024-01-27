@@ -7,6 +7,7 @@ import { cn } from "~/lib/utils";
 import { type SocialProfiles } from "~/types";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import ImageWithLoader from "../ui/image-with-loader";
 
 interface Props {
   label: string;
@@ -40,15 +41,15 @@ const SocialCard = ({ platform, alignImage, label, description }: Props) => {
       <div className="absolute inset-x-0 top-0 z-20 h-px bg-glare opacity-40" />
       <div className="absolute inset-x-0 bottom-0 z-20 h-px bg-glare opacity-40" />
       <div className="size-full px-10" />
-      <BlurImage
+      <ImageWithLoader
         src={profile!.imageUrl}
         alt={platform}
         className={cn(
-          "absolute inset-x-0 bottom-[-40%] top-[50%] z-10 h-fit rounded-xl object-contain transition-all duration-700 group-hover:grayscale-0 md:inset-x-[auto] md:bottom-[-20%] md:top-[auto] md:h-[352px] md:w-[600px] md:grayscale",
+          "absolute inset-x-0 bottom-[-40%] top-[50%] z-10 h-fit rounded-sm object-contain p-0.5 transition-all duration-700 group-hover:grayscale-0 md:inset-x-[auto] md:bottom-[-20%] md:top-[auto] md:h-[340px] md:w-[600px] md:grayscale",
           alignImage === "left" ? "md:left-[-20%]" : "md:right-[-20%]"
         )}
         loading="eager"
-        height={352}
+        height={340}
         width={600}
         priority
       />
