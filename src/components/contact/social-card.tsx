@@ -45,7 +45,7 @@ const SocialCard = ({ platform, alignImage, label, description }: Props) => {
         src={profile!.imageUrl}
         alt={platform}
         className={cn(
-          "absolute inset-x-0 bottom-[-40%] top-[50%] z-10 h-fit rounded-sm object-contain transition-all duration-700 group-hover:grayscale-0 md:inset-x-[auto] md:bottom-[-20%] md:top-[auto] md:h-[340px] md:w-[600px] md:grayscale",
+          "absolute inset-x-0 bottom-[-40%] top-[50%] z-10 h-fit object-contain transition-all duration-700 group-hover:grayscale-0 data-[loading=true]:rounded-xl md:inset-x-[auto] md:bottom-[-20%] md:top-[auto] md:h-[340px] md:w-[600px] md:grayscale",
           alignImage === "left" ? "md:left-[-20%]" : "md:right-[-20%]"
         )}
         loading="eager"
