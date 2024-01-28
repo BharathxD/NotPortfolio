@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import "~/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -7,6 +6,7 @@ import Effects from "~/components/ui/effect";
 import env from "~/env.mjs";
 import { siteConfig } from "~/lib/config";
 import { cn } from "~/lib/utils";
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import localFont from "next/font/local";
 

@@ -1,4 +1,3 @@
-import ImageWithLoader from "~/components/ui/image-with-loader";
 import { Separator } from "~/components/ui/separator";
 import { cn } from "~/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
@@ -42,7 +41,9 @@ const components = {
   hr: ({ className, ...props }: React.HTMLAttributes<HTMLHRElement>) => (
     <Separator className={cn("mb-4 mt-2 border-[var(--tw-prose-hr)]", className)} {...props} />
   ),
-  table: ({ ...props }: React.HTMLAttributes<HTMLTableElement>) => <Table {...props} />,
+  table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
+    <Table className={cn("not-prose", className)} {...props} />
+  ),
   thead: ({ ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => (
     <TableHeader className="bg-gradient-to-t from-neutral-700 to-neutral-800 text-neutral-50" {...props} />
   ),
@@ -53,17 +54,30 @@ const components = {
   th: ({ ...props }: React.HTMLAttributes<HTMLTableCellElement>) => <TableHead className="p-2" {...props} />,
   td: ({ ...props }: React.HTMLAttributes<HTMLTableCellElement>) => <TableCell {...props} />,
   tfoot: ({ ...props }: React.HTMLAttributes<HTMLTableSectionElement>) => <TableFooter {...props} />,
-  Image: ImageWithLoader,
+  img: ({ className, width = 816, height, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      className={cn("not-prose w-[51rem] rounded-md border", className)}
+      src={props.src ?? ""}
+      alt={props.alt ?? "Decorative Image"}
+      loading="lazy"
+      height={height as number}
+      width={(width as number) > 816 ? 816 : (width as number)}
+      {...props}
+    />
+  ),
 };
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   code: string;
 }
 
-const Mdx = ({ code }: Props) => {
+const Mdx = ({ code, className, ...rest }: Props) => {
   const Component = useMDXComponent(code);
   return (
-    <article className="mdx">
+    <article
+      className={cn("mdx prose prose-neutral prose-invert min-w-[51rem] max-w-4xl", className)}
+      {...rest}>
       <Component components={components} />
     </article>
   );

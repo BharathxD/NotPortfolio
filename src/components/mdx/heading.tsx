@@ -10,7 +10,9 @@ interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
 const Heading = ({ as: Comp = "h1", ...props }: Props) => (
   <Comp {...props} id={undefined}>
     <span className="invisible absolute mt-[-120px] pt-[120px]" id={props.id} />
-    <Link href={`#${props.id}`} className="peer relative no-underline underline-offset-4 hover:md:underline">
+    <Link
+      href={`#${props.id}`}
+      className="peer relative !no-underline underline-offset-4 hover:md:!underline">
       {props.children}
     </Link>
     <Link2 className="ml-2 hidden align-middle peer-hover:md:inline-block" />
