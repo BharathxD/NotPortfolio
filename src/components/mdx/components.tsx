@@ -76,7 +76,7 @@ const Mdx = ({ code, className, ...rest }: Props) => {
   const Component = useMDXComponent(code);
   return (
     <article
-      className={cn("mdx prose prose-neutral prose-invert min-w-[51rem] max-w-4xl", className)}
+      className={cn("mdx prose prose-neutral prose-invert md:min-w-[51rem] md:max-w-[51rem]", className)}
       {...rest}>
       <Component components={components} />
     </article>
