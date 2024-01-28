@@ -1,5 +1,5 @@
-import MdxPager from "~/components/pagers/mdx-pager";
 import { buttonVariants } from "~/components/ui/button";
+import MdxPager from "~/features/pagers/mdx-pager";
 import { cn } from "~/lib/utils";
 import { allPosts, type Post } from "content-layer/generated";
 import { ChevronLeftIcon } from "lucide-react";

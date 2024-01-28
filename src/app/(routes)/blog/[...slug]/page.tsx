@@ -1,8 +1,8 @@
 import { allAuthors, allPosts } from "content-layer/generated";
 import { notFound } from "next/navigation";
 import "~/styles/mdx.css";
-import Post from "~/components/blog/post";
 import env from "~/env.mjs";
+import Post from "~/features/blog/post";
 import { getPostFromParams } from "~/lib/actions";
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/lib/constants";
 import { absoluteUrl } from "~/lib/utils";

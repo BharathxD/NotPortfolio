@@ -1,7 +1,7 @@
-import Project from "~/components/projects/project";
 import EmptyPage from "~/components/ui/empty-page";
 import { Shell } from "~/components/ui/shell";
 import env from "~/env.mjs";
+import Project from "~/features/projects/project";
 import { getProject } from "~/lib/actions";
 import { siteConfig } from "~/lib/config";
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/lib/constants";

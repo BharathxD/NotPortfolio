@@ -1,6 +1,6 @@
-import PostCard from "~/components/blog/post-card";
 import { Shell } from "~/components/ui/shell";
 import env from "~/env.mjs";
+import PostCard from "~/features/blog/post-card";
 import { allPosts } from "content-layer/generated";
 
 export const metadata = {
