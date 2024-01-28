@@ -1,6 +1,5 @@
 "use client";
 
-import BlurImage from "~/components/ui/blur-image";
 import ImageWithLoader from "~/components/ui/image-with-loader";
 import { biography } from "~/lib/config";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
