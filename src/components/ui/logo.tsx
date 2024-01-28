@@ -9,13 +9,14 @@ import { memo } from "react";
 const montserrat = Montserrat({
   weight: ["500"],
   subsets: ["latin"],
+  preload: false,
   variable: "--font-montserrat",
 });
 
 interface Props extends React.HTMLAttributes<HTMLAnchorElement> {}
 
 const Logo = ({ className, ...rest }: Props) => (
-  <Link href="/" {...rest} className={cn("font-extrabold shadow-item", className, montserrat.className)}>
+  <Link href="/" {...rest} className={cn("shadow-item", className, montserrat.className)}>
     <span className="mask-effect size-12 rounded-sm border bg-neutral-950 px-2 text-4xl font-medium">B</span>
   </Link>
 );

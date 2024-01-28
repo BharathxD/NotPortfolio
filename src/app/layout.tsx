@@ -7,8 +7,8 @@ import Effects from "~/components/ui/effect";
 import env from "~/env.mjs";
 import { siteConfig } from "~/lib/config";
 import { cn } from "~/lib/utils";
-import localFont from "next/dist/compiled/@next/font/dist/local";
 import dynamic from "next/dynamic";
+import localFont from "next/font/local";
 
 const TopLoader = dynamic(() => import("~/components/ui/top-loader"));
 
