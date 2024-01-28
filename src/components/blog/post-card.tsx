@@ -1,8 +1,8 @@
+import Skeleton from "~/components/ui/skeleton";
 import { formatDate } from "~/lib/utils";
 import { type Post } from "content-layer/generated";
 import Link from "next/link";
 import { Suspense } from "react";
-import Skeleton from "../ui/skeleton";
 import Views from "./views";
 
 interface Props {

@@ -1,12 +1,11 @@
 "use client";
 
+import ImageWithLoader from "~/components/ui/image-with-loader";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { type Project } from "~/types";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { memo } from "react";
-import BlurImage from "../ui/blur-image";
-import ImageWithLoader from "../ui/image-with-loader";
 
 interface Props {
   project: Pick<Project, "name" | "tagline" | "id">;

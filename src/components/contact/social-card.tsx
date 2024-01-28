@@ -1,13 +1,13 @@
 "use client";
 
 import BlurImage from "~/components/ui/blur-image";
+import ImageWithLoader from "~/components/ui/image-with-loader";
 import { biography } from "~/lib/config";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { cn } from "~/lib/utils";
 import { type SocialProfiles } from "~/types";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import ImageWithLoader from "../ui/image-with-loader";
 
 interface Props {
   label: string;

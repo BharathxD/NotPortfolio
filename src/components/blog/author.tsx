@@ -1,7 +1,7 @@
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { createAuthorUrl } from "~/lib/utils";
 import type { Author as AuthorType } from "content-layer/generated";
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 interface Props {
   author: Pick<AuthorType, "avatar" | "title" | "linkedin"> | undefined;

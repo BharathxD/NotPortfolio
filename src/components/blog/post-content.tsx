@@ -1,7 +1,7 @@
+import { Mdx } from "~/components/mdx/components";
 import { poppins } from "~/lib/fonts";
 import { cn } from "~/lib/utils";
 import type { Post } from "content-layer/generated";
-import { Mdx } from "../mdx/components";
 
 interface Props {
   post: Post;

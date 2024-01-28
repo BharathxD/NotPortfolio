@@ -1,8 +1,8 @@
 "use client";
 
+import HighlightedSpan from "~/components/ui/highlighted-span";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { domAnimation, LazyMotion, m } from "framer-motion";
-import HighlightedSpan from "../ui/highlighted-span";
 
 const PersonalIntroduction = () => (
   <LazyMotion features={domAnimation}>

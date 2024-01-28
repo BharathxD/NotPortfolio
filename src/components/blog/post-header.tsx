@@ -1,7 +1,7 @@
+import Skeleton from "~/components/ui/skeleton";
 import { increment } from "~/lib/actions";
 import type { Author as AuthorType, Post } from "content-layer/generated";
 import { cache, Suspense } from "react";
-import Skeleton from "../ui/skeleton";
 import Author from "./author";
 import PostMeta from "./post-meta";
 import Views from "./views";

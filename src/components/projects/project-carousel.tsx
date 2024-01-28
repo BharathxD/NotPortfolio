@@ -1,7 +1,13 @@
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "~/components/ui/carousel";
+import ImageWithLoader from "~/components/ui/image-with-loader";
 import { type Project } from "~/types";
 import { memo } from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
-import ImageWithLoader from "../ui/image-with-loader";
 
 const ProjectCarousel = ({ id, noOfPictures, tagline }: Pick<Project, "id" | "noOfPictures" | "tagline">) => (
   <Carousel className="relative rounded-3xl border border-neutral-700 bg-neutral-950 p-2 shadow-lg">

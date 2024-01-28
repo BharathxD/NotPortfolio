@@ -1,9 +1,9 @@
+import MdxPager from "~/components/pagers/mdx-pager";
+import { buttonVariants } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 import { allPosts, type Post } from "content-layer/generated";
 import { ChevronLeftIcon } from "lucide-react";
 import Link from "next/link";
-import MdxPager from "../pagers/mdx-pager";
-import { buttonVariants } from "../ui/button";
 
 interface Props {
   post: Pick<Post, "title" | "slug">;

@@ -1,11 +1,19 @@
+import ImageWithLoader from "~/components/ui/image-with-loader";
+import { Separator } from "~/components/ui/separator";
 import { cn } from "~/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import ImageWithLoader from "../ui/image-with-loader";
-import { Separator } from "../ui/separator";
 import CodeBlock from "./code-block";
 import Heading, { type HeadingLevel } from "./heading";
 import "~/styles/mdx.css";
-import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "../ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "~/components/ui/table";
 
 const createHeading = (level: HeadingLevel) => {
   const HeadingComponent = ({ ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (

@@ -1,8 +1,8 @@
+import { buttonVariants } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 import type { Post } from "content-layer/generated";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
-import { buttonVariants } from "../ui/button";
 
 type PostWithRequiredFields = Pick<Post, "title" | "slug">;
 
