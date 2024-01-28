@@ -6,11 +6,37 @@ import Navbar from "~/components/navigation/header";
 import Effects from "~/components/ui/effect";
 import env from "~/env.mjs";
 import { siteConfig } from "~/lib/config";
-import { clash } from "~/lib/fonts";
 import { cn } from "~/lib/utils";
+import localFont from "next/dist/compiled/@next/font/dist/local";
 import dynamic from "next/dynamic";
 
 const TopLoader = dynamic(() => import("~/components/ui/top-loader"));
+
+/**
+ * Configuration for the local Clash font.
+ * This configuration includes the paths to the font files, their weights, and styles.
+ * The variable `--font-clash` is used to reference this font in CSS.
+ */
+const clash = localFont({
+  src: [
+    {
+      path: "../styles/fonts/ClashGrotesk-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/ClashGrotesk-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../styles/fonts/ClashGrotesk-Semibold.otf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-clash",
+});
 
 /**
  * Metadata for the website.
