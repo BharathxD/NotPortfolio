@@ -30,7 +30,7 @@ const ProjectCard = ({ project }: Props) => (
       </div>
       <div className="absolute inset-0 z-0 bg-card opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       <ImageWithLoader
-        className="z-10 mx-auto mt-2 object-contain transition-all duration-700 data-[loading=true]:w-[660px] data-[loading=true]:animate-skeleton data-[loading=true]:rounded-xl data-[loading=true]:rounded-b-none data-[loading=true]:md:h-[500px] data-[loading=false]:md:group-hover:mt-0"
+        className="z-10 mx-auto mt-2 object-contain transition-all duration-700 data-[loading=true]:h-[180.5px] data-[loading=true]:w-[660px] data-[loading=true]:animate-skeleton data-[loading=true]:rounded-sm data-[loading=true]:rounded-b-none data-[loading=true]:md:h-[500px] data-[loading=false]:md:group-hover:mt-0"
         src={`/_work/${project.name.toLowerCase()}.webp`}
         alt={project.tagline}
         sizes="(max-width: 767px) 75vw, (max-width: 991px) 73vw, (max-width: 1439px) 727.78125px, (max-width: 1919px) 866.375px, 1193.9896240234375px"
