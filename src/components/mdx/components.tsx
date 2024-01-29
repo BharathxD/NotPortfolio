@@ -83,4 +83,4 @@ const Mdx = ({ code, className, ...rest }: Props) => {
   );
 };
 
-export { Mdx };
+export default Mdx;

@@ -27,13 +27,11 @@ const PostHeader = ({ post, authors }: Props) => (
     <h1 className="inline-block w-full text-balance bg-gradient-to-tr from-neutral-100 to-neutral-400 bg-clip-text text-4xl font-medium text-transparent lg:text-5xl">
       {post.title}
     </h1>
-    {authors?.length !== 0 && (
-      <ul className="flex items-center justify-start space-x-4" role="list">
-        {authors.map((author) => (
-          <Author key={author?._id} author={author} />
-        ))}
-      </ul>
-    )}
+    <ul className="flex items-center justify-start space-x-4" role="list">
+      {authors.map((author) => (
+        <Author key={author?._id} author={author} />
+      ))}
+    </ul>
   </header>
 );
 

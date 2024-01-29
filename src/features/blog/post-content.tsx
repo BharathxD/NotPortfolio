@@ -1,4 +1,4 @@
-import { Mdx } from "~/components/mdx/components";
+import Mdx from "~/components/mdx/components";
 import type { Post } from "content-layer/generated";
 import { Poppins } from "next/font/google";
 

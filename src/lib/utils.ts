@@ -52,12 +52,12 @@ const absoluteUrl = (path: string): string => `${env.NEXT_PUBLIC_APP_URL}${path}
  * @param {string} title - The title of the author.
  * @returns {URL} - The URL of the author's LinkedIn profile with additional query parameters.
  */
-const createAuthorUrl = ({ linkedin, title }: Pick<Author, "linkedin" | "title">): URL => {
+const createAuthorUrl = ({ linkedin, title }: Pick<Author, "linkedin" | "title">): string => {
   const authorUrl = new URL(`https://linkedin.com/in/${linkedin}`);
   authorUrl.searchParams.set("utm_source", "blog");
   authorUrl.searchParams.set("utm_medium", title);
   authorUrl.searchParams.set("utm_website", "portfolio");
-  return authorUrl;
+  return authorUrl.toString();
 };
 
 export { cn, formatDate, truncate, absoluteUrl, createAuthorUrl };

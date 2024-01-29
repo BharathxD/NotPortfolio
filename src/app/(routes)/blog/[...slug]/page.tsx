@@ -1,12 +1,12 @@
-import { allAuthors, allPosts } from "content-layer/generated";
-import { notFound } from "next/navigation";
-import "~/styles/mdx.css";
 import env from "~/env.mjs";
 import Post from "~/features/blog/post";
 import { getPostFromParams } from "~/lib/actions";
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/lib/constants";
 import { absoluteUrl } from "~/lib/utils";
+import { allAuthors, allPosts } from "content-layer/generated";
 import { type Metadata } from "next";
+import { notFound } from "next/navigation";
+import "~/styles/mdx.css";
 
 interface Props {
   params: {
