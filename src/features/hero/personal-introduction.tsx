@@ -1,11 +1,12 @@
 "use client";
 
 import HighlightedSpan from "~/components/ui/highlighted-span";
+import LazyMotionProvider from "~/components/ui/lazy-motion-provider";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
-import { domAnimation, LazyMotion, m } from "framer-motion";
+import { m } from "framer-motion";
 
 const PersonalIntroduction = () => (
-  <LazyMotion features={domAnimation}>
+  <LazyMotionProvider>
     <m.h1
       className="text-center text-2xl text-neutral-400 md:text-4xl"
       initial="hidden"
@@ -18,7 +19,7 @@ const PersonalIntroduction = () => (
       products. My background is in UI development, but I love everything related to
       <HighlightedSpan>Server-Side Engineering</HighlightedSpan>
     </m.h1>
-  </LazyMotion>
+  </LazyMotionProvider>
 );
 
 export default PersonalIntroduction;
