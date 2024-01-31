@@ -15,9 +15,10 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    ppr: true,
-  },
+  // Disable experimental features in production, as they are not yet stable and introduces bugs
+  // experimental: {
+  //   ppr: true,
+  // },
 };
 
 module.exports = withContentlayer(nextConfig);
