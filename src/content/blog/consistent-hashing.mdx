@@ -1,0 +1,118 @@
+---
+title: Consistent Hashing
+description: Learn the magic of consistent hashing, the algorithm that keeps your data in the right hands when your system scales. Learn how it minimizes data movement during server changes and why it's the bedrock of distributed storage.
+date: "2023-08-20"
+authors:
+  - bharathxd
+---
+
+Consistent hashing is one of the most brilliant algorithms out there. The only problem it solves is data ownership, yet it is immensely popular. By using a hash function to determine data ownership, consistent hashing ensures that only a small subset of keys need to be remapped when nodes are added or removed. This makes it perfect for horizontally scalable storage systems.
+
+> 💡 Hashing logic is **NOT** a 'service’, but just a simple code running in the load balancer’s code (It’s a simple function)
+
+## Hash Based Ownership
+
+---
+
+Say we have a load balancer. When a request comes in, it uses the hash of the access token to decide which backend server to forward the request to:
+
+```py
+hash(token1) = x
+server = x % 3 = i
+```
+
+> SHA-256 or SHA-128 are popular choices
+
+## Load balancers are stateless
+
+---
+
+- The API servers are stateless, so every server is equally capable of handling requests. It doesn't matter if a request that was previously handled by Server 1 now goes to Server 0.
+- This hash based routing is one of the most common ways to route traffic for stateless backends like load balancers and API servers.
+
+## Hash based ‘Routing’ (Ownership) for distributed storage
+
+---
+
+![Hash based routing for distributed storage](https://bharath-lakshman-kumar.s3.ap-south-1.amazonaws.com/Consistent%20Hashing/hash-based-routing.png)
+
+Say we want to share 6 keys (k1, k2, k3, k4, k5, and k6) across 3 storage nodes:
+
+```rs
+k1 → hash(k1) % 3 = 2
+
+k1 → hash(k2) % 3 = 0
+
+k1 → hash(k3) % 3 = 1
+
+k1 → hash(k4) % 3 = 2
+
+k1 → hash(k5) % 3 = 1
+
+k1 → hash(k6) % 3 = 0
+```
+
+The challenge is that if a storage node is added or removed, the proxy cannot just forward requests to any arbitrary node, because that node won't have the data. Now, all the keys would need to be re-evaluated and moved to the correct node, which involves a lot of data transfer.
+
+## Can we minimize the data movement?
+
+---
+
+This is where **consistent hashing** comes in
+
+**_What is consistent hashing?_**
+
+Consistent hashing is an algorithm that determines data ownership - it decides who owns which data.
+
+### What Consistent Hashing is Not
+
+---
+
+1. It does not transfer data itself - it just decides ownership
+2. It is not a service - just a simple hashing algorithm
+
+## Visualizing the Hash Function (SHA 128)
+
+---
+
+Given that hash functions are cyclic, we can visualize them as a ring of integers. Each node occupies one slot, calculated by passing the node's IP into the hash.
+
+![Circular Hash Demonstration](https://bharath-lakshman-kumar.s3.ap-south-1.amazonaws.com/Consistent%20Hashing/circular-hash.png)
+
+We don't need any complex data structures - just a simple array that can be part of a proxy. The logic is:
+
+```txt
+k1 → hash → 0 → node to the right → which is node 0
+
+k2 → hash → 10 → node to right → which is node 3
+```
+
+### Scaling up
+
+---
+
+When adding a new node, say Node 3 hashes to slot 1:
+
+- Say Node 3 (Which is a new node) hashes to slot 1
+- The keys that hashed between slot 12 and slot 1 will now be ‘owned’ by node 3 instead of node 0
+- Other keys continue to remain at the respective nodes
+  - **Minimal Data Movement!**
+- Operationally, you just have to:
+  1. Snapshot Node 0
+  2. Create Node 3
+  3. Delete unused keys
+
+### Scaling down
+
+---
+
+Say we scale down and remove node 0
+
+    - All the keys that were owned by Node 0 will now be owned by Node 2 (next in the ring)
+        - **Minimal Data Transfer!**
+
+- Operationally, you just have to:
+  1. Copy everything from Node 0 to Node 2
+  2. Remove Node 0 from the ring
+
+In summary, consistent hashing enables horizontal scaling with minimal data movement. It is a simple but powerful algorithm that forms the foundation for many distributed systems.
