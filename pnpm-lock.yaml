@@ -29,9 +29,6 @@ dependencies:
   '@vercel/kv':
     specifier: ^1.0.1
     version: 1.0.1
-  '@vercel/speed-insights':
-    specifier: ^1.0.9
-    version: 1.0.9(next@14.1.0)(react@18.2.0)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -2151,34 +2148,6 @@ packages:
     engines: {node: '>=14.6'}
     dependencies:
       '@upstash/redis': 1.25.1
-    dev: false
-
-  /@vercel/speed-insights@1.0.9(next@14.1.0)(react@18.2.0):
-    resolution: {integrity: sha512-f+XFP0O+aZ4Olj9h+BitkB1b4NJQaxtyCb69wWuDxytJHY6Pa4QtZPdBUftHOcajUCHRVeq062fk3MKXKtjNVQ==}
-    requiresBuild: true
-    peerDependencies:
-      '@sveltejs/kit': ^1 || ^2
-      next: '>= 13'
-      react: ^18 || ^19
-      svelte: ^4
-      vue: ^3
-      vue-router: ^4
-    peerDependenciesMeta:
-      '@sveltejs/kit':
-        optional: true
-      next:
-        optional: true
-      react:
-        optional: true
-      svelte:
-        optional: true
-      vue:
-        optional: true
-      vue-router:
-        optional: true
-    dependencies:
-      next: 14.1.0(@babel/core@7.23.9)(@opentelemetry/api@1.7.0)(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
     dev: false
 
   /acorn-jsx@5.3.2(acorn@8.11.3):
