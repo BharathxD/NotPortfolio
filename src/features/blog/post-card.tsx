@@ -13,7 +13,7 @@ const PostCard = ({ post }: Props) => (
   <li className="list-none" role="listitem" aria-label={`Post card for ${post.title}`}>
     <Link key={post.slug} href={post.slug} className="w-full" aria-label={post.title}>
       <article className="relative flex w-full flex-col gap-4 overflow-hidden rounded-xl border bg-neutral-900/80 p-4">
-        <Suspense fallback={<Skeleton className="relative z-10 h-5 w-20 rounded-md" />}>
+        <Suspense fallback={<Skeleton className="relative z-10 h-5 w-16" />}>
           <Views slug={post.slug} />
         </Suspense>
         <div className="absolute inset-0 z-0 bg-card-even" />
