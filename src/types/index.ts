@@ -1,3 +1,5 @@
+import { type Post } from "content-layer/generated";
+
 /**
  * A unique identifier can be either a string or a number.
  */
@@ -114,12 +116,20 @@ type Emoticons = ["angry", "happy", "disappointed", "neutral", "smile", "star", 
  */
 type Count = Record<string, number>;
 
+/**
+ * Represents a post with views.
+ */
+type PostWithViewCount = Post & {
+  views: number;
+};
+
 export type {
   Count,
   Project,
   Emoticons,
   Biography,
   NavbarLink,
+  PostWithViewCount,
   SocialProfiles,
   AcademicBackground,
   ProfessionalCertifications,

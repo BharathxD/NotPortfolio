@@ -2,7 +2,7 @@
 
 import { kv } from "@vercel/kv";
 import { biography } from "~/lib/config";
-import { type Count, type Project } from "~/types";
+import { type Count, type PostWithViewCount, type Project } from "~/types";
 import { allPosts, type Post } from "content-layer/generated";
 import { unstable_noStore as noStore } from "next/cache";
 
@@ -36,9 +36,9 @@ const increment = async (slug: string): Promise<number> => {
  *
  * @returns {Promise<Count | null>} A promise that resolves to an object containing the count of views for all pages, or null if no data is found.
  */
-const getViewsCount = async (): Promise<Count | null> => {
+const getViewsCount = async (): Promise<Count> => {
   noStore();
-  return await kv.hgetall("views");
+  return (await kv.hgetall("views")) ?? {};
 };
 
 /**
@@ -75,4 +75,27 @@ const getPostFromParams = async (options: GetPostFromParamsOptions): Promise<Pos
   return post;
 };
 
-export { increment, getViewsCount, getProject, getPostFromParams };
+/**
+ * Fetches all posts with their respective views count.
+ *
+ * @returns {Promise<PostWithViewCount>} An array of all posts with their views count.
+ */
+const getAllPostsWithViewCount = async (): Promise<PostWithViewCount[]> => {
+  const views = await getViewsCount();
+
+  return allPosts
+    .filter((post) => post.published)
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map((post) => ({
+      ...post,
+      views: views[post.slug] || 0,
+    }));
+};
+
+export {
+  increment,
+  getViewsCount,
+  getProject,
+  getPostFromParams,
+  getAllPostsWithViewCount as getAllPostsWithViews,
+};
