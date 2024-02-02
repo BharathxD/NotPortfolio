@@ -68,6 +68,9 @@ interface Biography {
   professionalCertifications: ProfessionalCertifications[];
 }
 
+/**
+ * Represents a link in the navigation bar.
+ */
 type NavbarLink = {
   name?: string;
   path: string;
