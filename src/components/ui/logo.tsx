@@ -7,7 +7,10 @@ import { memo } from "react";
  * Configuration for the Montserrat font
  */
 const montserrat = Montserrat({
-  weight: ["500"],
+  weight: "500",
+  preload: true,
+  style: "normal",
+  display: "swap",
   subsets: ["latin"],
   variable: "--font-montserrat",
 });

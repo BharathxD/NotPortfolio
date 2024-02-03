@@ -9,7 +9,6 @@ body,
 :root {
   box-sizing: border-box;
   color-scheme: dark;
-  /* border: 1px solid green; */
 }
 
 @layer base {
