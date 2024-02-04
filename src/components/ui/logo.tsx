@@ -21,7 +21,7 @@ const Logo = ({ className, ...rest }: Props) => (
   <Link href="/" {...rest} className={cn("shadow-item", className)}>
     <span
       className={cn(
-        "size-12 max-h-12 max-w-12 rounded-sm border bg-neutral-950 px-2 text-4xl font-medium",
+        "mask-effect size-12 max-h-12 max-w-12 rounded-sm border bg-neutral-950 px-2 text-4xl font-medium",
         montserrat.className
       )}>
       B
