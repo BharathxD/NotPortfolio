@@ -25,7 +25,7 @@ const MdxPager = ({ as: Comp = "nav", currentItem, allItems, className, ...props
           href={pager.prev.slug}
           className={cn(buttonVariants({ variant: "ghost" }), "truncate")}>
           <ChevronLeftIcon className="mr-2 size-4" aria-hidden="true" />
-          <span className="hidden md:block">{pager.prev.title}</span>
+          <span className={cn("md:block", pager.next && "hidden")}>{pager.prev.title}</span>
         </Link>
       )}
       {pager?.next && (
@@ -33,7 +33,7 @@ const MdxPager = ({ as: Comp = "nav", currentItem, allItems, className, ...props
           aria-label={pager.next.title.toLowerCase()}
           href={pager.next.slug}
           className={cn(buttonVariants({ variant: "ghost" }), "truncate md:ml-auto")}>
-          <span className="hidden md:block">{pager.next.title}</span>
+          <span className={cn("md:block", pager.prev && "hidden")}>{pager.next.title}</span>
           <ChevronRightIcon className="ml-2 size-4" aria-hidden="true" />
         </Link>
       )}
@@ -50,8 +50,10 @@ const getPager = (
 } => {
   const flattenedLinks = allItems.flat();
   const activeIndex = flattenedLinks.findIndex((link) => currentItem.slug === link?.slug);
-  const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null;
-  const next = activeIndex !== flattenedLinks.length - 1 ? flattenedLinks[activeIndex + 1] : null;
+  const prev = (activeIndex !== 0 ? flattenedLinks.at(activeIndex - 1) : flattenedLinks.at(-1)) ?? null;
+  const next =
+    (activeIndex !== flattenedLinks.length - 1 ? flattenedLinks.at(activeIndex + 1) : flattenedLinks.at(0)) ??
+    null;
   return {
     prev,
     next,
