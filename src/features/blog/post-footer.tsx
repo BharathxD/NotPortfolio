@@ -12,7 +12,9 @@ interface Props {
 const PostFooter = ({ post }: Props) => (
   <footer>
     <MdxPager currentItem={post} allItems={allPosts} as="footer" />
-    <Link href="/blog" className={cn(buttonVariants({ variant: "ghost", className: "mx-auto mt-4 w-fit" }))}>
+    <Link
+      href="/blog"
+      className={cn(buttonVariants({ variant: "ghost", className: "mx-auto mt-4 w-fit md:p-0" }))}>
       <ChevronLeftIcon className="mr-2 size-4" aria-hidden="true" />
       <span>See all posts</span>
       <span className="sr-only">See all posts</span>
