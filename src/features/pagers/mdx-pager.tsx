@@ -25,7 +25,7 @@ const MdxPager = ({ as: Comp = "nav", currentItem, allItems, className, ...props
         <Link
           aria-label={prev.title.toLowerCase()}
           href={prev.slug}
-          className={cn(buttonVariants({ variant: "ghost" }), "truncate md:p-0")}>
+          className="inline-flex w-full items-center justify-start truncate px-4 py-2 hover:brightness-125 md:ml-auto md:p-0">
           <ChevronLeftIcon className="mr-2 size-4" aria-hidden="true" />
           <span className={cn("md:block", next && "hidden")}>{prev.title}</span>
         </Link>
@@ -34,7 +34,7 @@ const MdxPager = ({ as: Comp = "nav", currentItem, allItems, className, ...props
         <Link
           aria-label={next.title.toLowerCase()}
           href={next.slug}
-          className={cn(buttonVariants({ variant: "ghost" }), "truncate md:ml-auto md:p-0")}>
+          className="inline-flex w-full items-center justify-end truncate px-4 py-2 hover:brightness-125 md:ml-auto md:p-0">
           <span className={cn("md:block", prev && "hidden")}>{next.title}</span>
           <ChevronRightIcon className="ml-2 size-4" aria-hidden="true" />
         </Link>
