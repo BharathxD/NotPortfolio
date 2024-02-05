@@ -13,7 +13,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const MdxPager = ({ as: Comp = "nav", currentItem, allItems, className, ...props }: Props) => {
-  const pager = getPager(currentItem, allItems);
+  const pager: GetPagerReturnType = getPager(currentItem, allItems);
 
   if (!pager) return null;
 
@@ -43,13 +43,15 @@ const MdxPager = ({ as: Comp = "nav", currentItem, allItems, className, ...props
   );
 };
 
+type GetPagerReturnType = {
+  prev: PostWithRequiredFields | null;
+  next: PostWithRequiredFields | null;
+};
+
 const getPager = (
   currentItem: PostWithRequiredFields,
   allItems: PostWithRequiredFields[]
-): {
-  prev: PostWithRequiredFields | null;
-  next: PostWithRequiredFields | null;
-} => {
+): GetPagerReturnType => {
   const flattenedLinks = allItems.flat();
   const activeIndex = flattenedLinks.findIndex((link) => currentItem.slug === link?.slug);
   const prev = (activeIndex !== 0 ? flattenedLinks.at(activeIndex - 1) : flattenedLinks.at(-1)) ?? null;
