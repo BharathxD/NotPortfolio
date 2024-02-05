@@ -77,7 +77,7 @@ const getPostFromParams = async (options: GetPostFromParamsOptions): Promise<Pos
 
 /**
  * Fetches all posts with their respective views count.
- *
+ *F
  * @returns {Promise<PostWithViewCount>} An array of all posts with their views count.
  */
 const getAllPostsWithViewCount = async (): Promise<PostWithViewCount[]> => {
@@ -92,10 +92,4 @@ const getAllPostsWithViewCount = async (): Promise<PostWithViewCount[]> => {
     }));
 };
 
-export {
-  increment,
-  getViewsCount,
-  getProject,
-  getPostFromParams,
-  getAllPostsWithViewCount as getAllPostsWithViews,
-};
+export { increment, getViewsCount, getProject, getPostFromParams, getAllPostsWithViewCount };

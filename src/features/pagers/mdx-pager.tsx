@@ -17,23 +17,25 @@ const MdxPager = ({ as: Comp = "nav", currentItem, allItems, className, ...props
 
   if (!pager) return null;
 
+  const { prev, next } = pager;
+
   return (
     <Comp className={cn("flex flex-row items-center justify-between", className)} {...props}>
-      {pager?.prev && (
+      {prev && (
         <Link
-          aria-label={pager.prev.title.toLowerCase()}
-          href={pager.prev.slug}
+          aria-label={prev.title.toLowerCase()}
+          href={prev.slug}
           className={cn(buttonVariants({ variant: "ghost" }), "truncate md:p-0")}>
           <ChevronLeftIcon className="mr-2 size-4" aria-hidden="true" />
-          <span className={cn("md:block", pager.next && "hidden")}>{pager.prev.title}</span>
+          <span className={cn("md:block", next && "hidden")}>{prev.title}</span>
         </Link>
       )}
-      {pager?.next && (
+      {next && (
         <Link
-          aria-label={pager.next.title.toLowerCase()}
-          href={pager.next.slug}
+          aria-label={next.title.toLowerCase()}
+          href={next.slug}
           className={cn(buttonVariants({ variant: "ghost" }), "truncate md:ml-auto md:p-0")}>
-          <span className={cn("md:block", pager.prev && "hidden")}>{pager.next.title}</span>
+          <span className={cn("md:block", prev && "hidden")}>{next.title}</span>
           <ChevronRightIcon className="ml-2 size-4" aria-hidden="true" />
         </Link>
       )}
