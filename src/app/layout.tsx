@@ -1,7 +1,7 @@
 import "~/styles/globals.css";
-import { Analytics } from "@vercel/analytics/react";
 import Navbar from "~/components/navigation/header";
 import Effects from "~/components/ui/effect";
+import VercelAnalytics from "~/components/ui/vercel-analytics";
 import env from "~/env.mjs";
 import { siteConfig } from "~/lib/config";
 import { cn } from "~/lib/utils";
@@ -127,7 +127,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
         <Navbar />
       </header>
       <main className="relative z-50 mx-auto min-h-[90dvh] max-w-4xl">{children}</main>
-      <Analytics />
+      <VercelAnalytics />
     </body>
   </html>
 );
