@@ -5,7 +5,7 @@ import LazyMotionProvider from "~/components/ui/lazy-motion-provider";
 import { biography } from "~/lib/config";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { cn } from "~/lib/utils";
-import { type SocialProfiles } from "~/types";
+import type { SocialProfiles } from "~/types";
 import { m } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 

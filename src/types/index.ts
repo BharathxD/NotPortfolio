@@ -1,4 +1,4 @@
-import { type Post } from "content-layer/generated";
+import type { Post } from "content-layer/generated";
 
 /**
  * A unique identifier can be either a string or a number.

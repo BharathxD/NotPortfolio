@@ -2,7 +2,7 @@
 
 import { kv } from "@vercel/kv";
 import { biography } from "~/lib/config";
-import { type Count, type PostWithViewCount, type Project } from "~/types";
+import type { Count, PostWithViewCount, Project } from "~/types";
 import { allPosts, type Post } from "content-layer/generated";
 import { unstable_noStore as noStore } from "next/cache";
 

@@ -3,7 +3,7 @@
 import ImageWithLoader from "~/components/ui/image-with-loader";
 import LazyMotionProvider from "~/components/ui/lazy-motion-provider";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
-import { type Project } from "~/types";
+import type { Project } from "~/types";
 import { m } from "framer-motion";
 import Link from "next/link";
 import { memo } from "react";

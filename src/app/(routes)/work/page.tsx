@@ -1,7 +1,7 @@
 import { Shell } from "~/components/ui/shell";
 import ProjectCard from "~/features/projects/project-card";
 import { biography } from "~/lib/config";
-import { type Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Work",

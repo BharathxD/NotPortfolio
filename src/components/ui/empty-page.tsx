@@ -1,7 +1,7 @@
 "use client";
 
 import { EMOTICONS_MAP, RICKROLL_LINK_YT_ID } from "~/lib/constants";
-import { type Emoticons } from "~/types";
+import type { Emoticons } from "~/types";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import YoutubeDialog from "./youtube-dialog";

@@ -6,7 +6,7 @@ import {
   CarouselPrevious,
 } from "~/components/ui/carousel";
 import ImageWithLoader from "~/components/ui/image-with-loader";
-import { type Project } from "~/types";
+import type { Project } from "~/types";
 import { memo } from "react";
 
 const ProjectCarousel = ({ id, noOfPictures, tagline }: Pick<Project, "id" | "noOfPictures" | "tagline">) => (

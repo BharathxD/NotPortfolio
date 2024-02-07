@@ -1,6 +1,6 @@
 import env from "~/env.mjs";
 import { clsx, type ClassValue } from "clsx";
-import { type Author } from "content-layer/generated";
+import type { Author } from "content-layer/generated";
 import { twMerge } from "tailwind-merge";
 
 /**

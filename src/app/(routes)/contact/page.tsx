@@ -1,7 +1,7 @@
 import { Shell } from "~/components/ui/shell";
 import ContactLinks from "~/features/contact/contact-links";
 import SocialCard from "~/features/contact/social-card";
-import { type Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",

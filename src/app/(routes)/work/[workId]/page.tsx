@@ -6,7 +6,7 @@ import { getProject } from "~/lib/actions";
 import { siteConfig } from "~/lib/config";
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/lib/constants";
 import { absoluteUrl } from "~/lib/utils";
-import { type Metadata } from "next";
+import type { Metadata } from "next";
 
 interface Props {
   params: {
