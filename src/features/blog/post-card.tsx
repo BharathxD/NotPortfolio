@@ -10,7 +10,7 @@ interface Props {
 }
 
 const PostCard = ({ post }: Props) => {
-  const { slug, title } = post;
+  const { slug, title, date, description } = post;
   return (
     <li className="list-none" role="listitem" aria-label={`Post card for ${title}`}>
       <Link key={slug} href={slug} className="w-full" aria-label={title}>
@@ -25,9 +25,9 @@ const PostCard = ({ post }: Props) => {
             {title}
           </h2>
           <p className="relative z-10 line-clamp-2 text-sm duration-1000 group-hover:text-zinc-200">
-            {post.description}
+            {description}
           </p>
-          <p className="relative z-10 text-sm text-muted-foreground">{formatDate(post.date)}</p>
+          <time className="relative z-10 text-sm text-muted-foreground">{formatDate(date)}</time>
         </article>
       </Link>
     </li>
