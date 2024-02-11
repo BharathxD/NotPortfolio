@@ -28,7 +28,7 @@
     "contentlayer": "^0.3.4",
     "embla-carousel-react": "8.0.0-rc22",
     "framer-motion": "^11.0.3",
-    "lucide-react": "^0.323.0",
+    "lucide-react": "^0.324.0",
     "next": "14.1.0",
     "next-contentlayer": "^0.3.4",
     "nextjs-toploader": "^1.6.6",
@@ -62,7 +62,7 @@
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "tailwind-scrollbar": "^3.0.5",
+    "tailwind-scrollbar": "^3.1.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
