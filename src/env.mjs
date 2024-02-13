@@ -20,7 +20,7 @@ const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_APP_URL: z.string().url().min(1),
+    NEXT_PUBLIC_APP_URL: z.string().url().min(1).startsWith("https://"),
   },
 
   /**
