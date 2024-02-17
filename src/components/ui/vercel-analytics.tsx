@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const Analytics = dynamic(() => import("@vercel/analytics/react").then((module) => module.Analytics), {
+const Analytics = dynamic(() => import("@vercel/analytics/next").then((module) => module.Analytics), {
   ssr: false,
 });
 
