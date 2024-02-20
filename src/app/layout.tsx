@@ -115,7 +115,7 @@ const metadata: Metadata = {
  * @param {object} props - Component props
  * @param {React.PropsWithChildren} props.children - Child components to be rendered within the main layout
  */
-const RootLayout = ({ children }: React.PropsWithChildren) => (
+const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (
   <html
     lang="en"
     className={cn("bg-black text-neutral-50 antialiased", clash.className)}
