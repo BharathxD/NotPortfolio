@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import YouTube from "react-youtube";
 import { Dialog, DialogContent, DialogTrigger } from "./dialog";
 
@@ -9,15 +9,18 @@ interface Props {
 const YoutubeDialog = ({ id }: Props) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const setLoaded = useCallback(() => setIsLoading(false), []);
-  const opts = {
-    height: "100%",
-    width: "100%",
-    playerVars: {
-      autoplay: 1,
-      controls: 0,
-      modestbranding: 1,
-    },
-  };
+  const opts = useMemo(
+    () => ({
+      height: "100%",
+      width: "100%",
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        modestbranding: 1,
+      },
+    }),
+    []
+  );
   return (
     <Dialog>
       <DialogTrigger className="h-10 overflow-hidden rounded-xl bg-gradient-to-b from-neutral-500 to-neutral-800 px-2 text-base font-medium text-neutral-50 underline-offset-4 shadow-lg shadow-neutral-950 outline-none">
