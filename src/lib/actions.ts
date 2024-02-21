@@ -42,12 +42,12 @@ const getViewsCount = async (): Promise<Count> => {
 };
 
 /**
- * Find a project by its id
- * @param {string} projectId - The id of the project
+ * Find a project by its name
+ * @param {string} projectName - The name of the project
  * @returns {Project} - The project if found, null otherwise
  */
-const getProject = (projectId: string): Project | null =>
-  biography.portfolioProjects.find((project) => project.id === projectId) ?? null;
+const getProjectName = (projectName: string): Project | null =>
+  biography.portfolioProjects.find((project) => project.name === projectName) ?? null;
 
 interface GetPostFromParamsOptions {
   slug: string[];
@@ -92,4 +92,4 @@ const getAllPostsWithViewCount = async (): Promise<PostWithViewCount[]> => {
     }));
 };
 
-export { increment, getViewsCount, getProject, getPostFromParams, getAllPostsWithViewCount };
+export { increment, getViewsCount, getProjectName, getPostFromParams, getAllPostsWithViewCount };

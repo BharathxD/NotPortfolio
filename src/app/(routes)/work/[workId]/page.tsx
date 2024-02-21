@@ -2,7 +2,7 @@ import EmptyPage from "~/components/ui/empty-page";
 import { Shell } from "~/components/ui/shell";
 import env from "~/env.mjs";
 import Project from "~/features/projects/project";
-import { getProject } from "~/lib/actions";
+import { getProjectName } from "~/lib/actions";
 import { siteConfig } from "~/lib/config";
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/lib/constants";
 import { absoluteUrl } from "~/lib/utils";
@@ -20,7 +20,7 @@ interface Props {
  * @returns {Metadata} - The metadata of the page
  */
 const generateMetadata = ({ params: { workId } }: Props): Metadata => {
-  const work = getProject(workId);
+  const work = getProjectName(workId);
 
   if (!work) return {};
 
@@ -43,7 +43,7 @@ const generateMetadata = ({ params: { workId } }: Props): Metadata => {
       title: work.name,
       description: work.tagline,
       type: "article",
-      url: absoluteUrl(`/work/${work.id}`),
+      url: absoluteUrl(`/work/${work.name.toLocaleLowerCase()}`),
       images: [
         {
           url: ogUrl.toString(),
@@ -67,7 +67,7 @@ const generateMetadata = ({ params: { workId } }: Props): Metadata => {
  * @param {Props} props - The properties of the page
  */
 const ProjectPage = ({ params: { workId } }: Props) => {
-  const work = getProject(workId);
+  const work = getProjectName(workId);
 
   if (!work)
     return (

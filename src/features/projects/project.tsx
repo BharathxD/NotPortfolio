@@ -45,7 +45,7 @@ const Project = ({ project }: Props) => (
           </Link>
         </li>
       </ul>
-      <ProjectCarousel id={project.name} noOfPictures={project.noOfPictures} tagline={project.tagline} />
+      <ProjectCarousel name={project.name} noOfPictures={project.noOfPictures} tagline={project.tagline} />
       <ul>
         {project.points.map((point, i) => (
           <BulletPoint key={i}>{point}</BulletPoint>
