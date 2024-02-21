@@ -73,7 +73,7 @@ const siteConfig = {
   ],
 };
 
-const biography: Biography = {
+const biography: Readonly<Biography> = {
   fullName: "Bharath Lakshman Kumar",
   profession: "UI Engineer",
   contactEmail: "Bharath.lkb@outlook.com",
