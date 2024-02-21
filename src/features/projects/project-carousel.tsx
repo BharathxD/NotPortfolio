@@ -22,7 +22,7 @@ const ProjectCarousel = ({
         <CarouselItem key={i} className="relative w-full">
           <ImageWithLoader
             key={`${i}_${i + 1}`}
-            src={`/_work/${name.toLocaleLowerCase()}/${i + 1}.webp`}
+            src={`/_work/${name.toLowerCase()}/${i + 1}.webp`}
             alt={tagline}
             className="z-10 w-full rounded-2xl border"
             height={1878}

@@ -47,7 +47,7 @@ const getViewsCount = async (): Promise<Count> => {
  * @returns {Project} - The project if found, null otherwise
  */
 const getProjectName = (projectName: string): Project | null =>
-  biography.portfolioProjects.find((project) => project.name === projectName) ?? null;
+  biography.portfolioProjects.find((project) => project.name.toLowerCase() === projectName) ?? null;
 
 interface GetPostFromParamsOptions {
   slug: string[];

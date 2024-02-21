@@ -43,7 +43,7 @@ const generateMetadata = ({ params: { workId } }: Props): Metadata => {
       title: work.name,
       description: work.tagline,
       type: "article",
-      url: absoluteUrl(`/work/${work.name.toLocaleLowerCase()}`),
+      url: absoluteUrl(`/work/${work.name.toLowerCase()}`),
       images: [
         {
           url: ogUrl.toString(),

@@ -24,7 +24,7 @@ const ProjectCard = ({ project }: Props) => (
       <div className="absolute inset-x-0 -top-px bottom-[auto] z-20 h-px bg-glare opacity-80" />
       <div className="absolute inset-x-0 top-2 z-20 h-px bg-glare opacity-80" />
       <Link
-        href={`/work/${project.name.toLocaleLowerCase()}`}
+        href={`/work/${project.name.toLowerCase()}`}
         className="relative flex flex-col overflow-hidden rounded-2xl border bg-gradient-to-b from-neutral-800 to-neutral-950 px-6 pt-6 transition-colors hover:border-neutral-700 md:h-[30rem]">
         <div className="z-10 mb-4">
           <h1 className="mb-2 text-xl md:text-4xl">{project.name}</h1>
