@@ -1,11 +1,6 @@
 import type { Post } from "content-layer/generated";
 
 /**
- * A unique identifier can be either a string or a number.
- */
-type UniqueIdentifier = string | number;
-
-/**
  * Represents social profiles of a user.
  */
 interface SocialProfiles {
@@ -18,7 +13,6 @@ interface SocialProfiles {
  * Represents a project.
  */
 interface Project {
-  id: UniqueIdentifier;
   name: string;
   tagline: string;
   projectUrl: string;

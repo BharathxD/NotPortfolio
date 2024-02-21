@@ -102,7 +102,6 @@ const biography: Readonly<Biography> = {
   },
   portfolioProjects: [
     {
-      id: "devcircle",
       name: "DevCircle",
       tagline: "A Collaborative Developer Network",
       projectUrl: "https://devcircle.live/home",
@@ -133,7 +132,6 @@ const biography: Readonly<Biography> = {
       ],
     },
     {
-      id: "optimizex",
       name: "OptimizeX",
       tagline: "Effortless Image Optimization",
       projectUrl: "https://optimizex.vercel.app",
