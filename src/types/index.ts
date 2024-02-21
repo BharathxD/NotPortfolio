@@ -12,7 +12,6 @@ interface SocialProfiles {
   platform: "LinkedIn" | "Github";
   url: string;
   imageUrl: string;
-  blurDataUrl: string | null;
 }
 
 /**

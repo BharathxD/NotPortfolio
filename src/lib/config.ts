@@ -83,12 +83,10 @@ const biography: Readonly<Biography> = {
       platform: "Github",
       url: "https://www.github.com/bharathxd/?utm_source=portfolio",
       imageUrl: "/_contact/github.webp",
-      blurDataUrl: null,
     },
     {
       platform: "LinkedIn",
       url: "https://www.linkedin.com/in/bharath-bandi/?utm_source=portfolio",
-      blurDataUrl: null,
       imageUrl: "/_contact/linkedin.webp",
     },
   ],
