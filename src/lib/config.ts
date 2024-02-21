@@ -71,7 +71,7 @@ const siteConfig = {
       type: "image/png",
     },
   ],
-};
+} as const;
 
 const biography: Readonly<Biography> = {
   fullName: "Bharath Lakshman Kumar",
