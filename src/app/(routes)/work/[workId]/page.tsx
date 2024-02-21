@@ -71,10 +71,12 @@ const ProjectPage = ({ params: { workId } }: Props) => {
 
   if (!work)
     return (
-      <EmptyPage
-        emoticon="disappointed"
-        message={`Alas! No trace of a project bearing the name "${workId}" exists in the depths of my portfolio.`}
-      />
+      <Shell variant="centered">
+        <EmptyPage
+          emoticon="disappointed"
+          message={`Alas! No trace of a project bearing the name "${workId}" exists in the depths of my portfolio.`}
+        />
+      </Shell>
     );
 
   return (
