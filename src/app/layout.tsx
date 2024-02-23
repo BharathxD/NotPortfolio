@@ -43,7 +43,7 @@ const clash = localFont({
  * alternate URLs, robot instructions, Twitter card data, and icon paths.
  * The metadata is used for SEO and social media sharing purposes.
  */
-const metadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: {
     default: siteConfig.name,
@@ -132,5 +132,4 @@ const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (
   </html>
 );
 
-export { metadata };
 export default RootLayout;
