@@ -1,7 +1,7 @@
 "use client";
 
 import LazyMotionProvider from "~/components/ui/lazy-motion-provider";
-import { DEFAULT_DOT_COLORS, DOTS_COUNT, FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
+import { FADE_DOWN_ANIMATION_VARIANTS } from "~/lib/constants";
 import { cn } from "~/lib/utils";
 import type { ClassValue } from "clsx";
 import { m } from "framer-motion";
@@ -14,6 +14,13 @@ interface Props extends ComponentProps<typeof m.a> {
   title: string;
   subtitle: React.ReactNode;
 }
+
+const DOTS_COUNT = 156;
+
+const DEFAULT_DOT_COLORS: [ClassValue, ClassValue] = [
+  "bg-neutral-200 group-hover:bg-neutral-400",
+  "bg-neutral-400 group-hover:bg-neutral-200",
+];
 
 const ContactLink = ({
   title,

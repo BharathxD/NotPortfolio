@@ -57,13 +57,6 @@ const STATUS_CODES = {
 
 const KAISEI_TOKUMIN_ABS_FONT_URL = new URL("../styles/fonts/kaisei-tokumin-bold.ttf", import.meta.url);
 
-const DOTS_COUNT = 156;
-
-const DEFAULT_DOT_COLORS: [ClassValue, ClassValue] = [
-  "bg-neutral-200 group-hover:bg-neutral-400",
-  "bg-neutral-400 group-hover:bg-neutral-200",
-];
-
 const ROUTES = ["", "/work", "/blog", "/contact"];
 
 const OG_IMAGE_WIDTH = 1920;
@@ -71,13 +64,11 @@ const OG_IMAGE_HEIGHT = 1080;
 
 export {
   ROUTES,
-  DOTS_COUNT,
   OG_IMAGE_WIDTH,
   OG_IMAGE_HEIGHT,
   STATUS_CODES,
   NAVBAR_LINKS,
   EMOTICONS_MAP,
-  DEFAULT_DOT_COLORS,
   RICKROLL_LINK_YT_ID,
   FADE_IN_ANIMATION_SETTINGS,
   FADE_UP_ANIMATION_VARIANTS,
