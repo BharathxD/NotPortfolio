@@ -1,5 +1,4 @@
 import type { Emoticons, NavbarLink } from "~/types";
-import type { ClassValue } from "clsx";
 import type { MotionProps } from "framer-motion";
 
 const NAVBAR_LINKS: NavbarLink[] = [
