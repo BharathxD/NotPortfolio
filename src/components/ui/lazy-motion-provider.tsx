@@ -2,7 +2,7 @@
 
 import { domAnimation, LazyMotion } from "framer-motion";
 
-const LazyMotionProvider = ({ children }: React.PropsWithChildren) => (
+const LazyMotionProvider = ({ children }: Readonly<React.PropsWithChildren>) => (
   <LazyMotion features={domAnimation} strict>
     {children}
   </LazyMotion>

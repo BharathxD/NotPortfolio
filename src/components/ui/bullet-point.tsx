@@ -1,7 +1,7 @@
 import { Dot } from "lucide-react";
 import { memo } from "react";
 
-const BulletPoint = ({ ...props }: React.PropsWithChildren) => (
+const BulletPoint = ({ ...props }: Readonly<React.PropsWithChildren>) => (
   <li>
     <p className="inline-flex items-start justify-start gap-2 text-lg">
       <span>
