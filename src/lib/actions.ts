@@ -46,7 +46,8 @@ const getViewsCount = async (): Promise<Count> => {
  * @param {string} projectName - The name of the project
  * @returns {Project} - The project if found, null otherwise
  */
-const getProjectName = (projectName: string): Project | null =>
+// eslint-disable-next-line @typescript-eslint/require-await
+const getProjectName = async (projectName: string): Promise<Project | null> =>
   biography.portfolioProjects.find((project) => project.name.toLowerCase() === projectName) ?? null;
 
 interface GetPostFromParamsOptions {

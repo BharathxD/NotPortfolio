@@ -19,8 +19,8 @@ interface Props {
  * @param {Props} props - The properties of the page
  * @returns {Metadata} - The metadata of the page
  */
-const generateMetadata = ({ params: { workId } }: Props): Metadata => {
-  const work = getProjectName(workId);
+const generateMetadata = async ({ params: { workId } }: Props): Promise<Metadata> => {
+  const work = await getProjectName(workId);
 
   if (!work) return {};
 
@@ -66,8 +66,8 @@ const generateMetadata = ({ params: { workId } }: Props): Metadata => {
  * ProjectPage component
  * @param {Props} props - The properties of the page
  */
-const ProjectPage = ({ params: { workId } }: Props) => {
-  const work = getProjectName(workId);
+const ProjectPage = async ({ params: { workId } }: Props) => {
+  const work = await getProjectName(workId);
 
   if (!work)
     return (
