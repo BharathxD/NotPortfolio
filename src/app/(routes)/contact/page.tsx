@@ -19,7 +19,7 @@ const ContactPage = () => (
     />
     <SocialCard
       label="Github"
-      description="300+ days streak with over 3000 commits"
+      description="400+ days streak with over 6500+ commits"
       alignImage="left"
       platform="Github"
     />
