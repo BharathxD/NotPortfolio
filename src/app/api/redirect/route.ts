@@ -14,3 +14,4 @@ export const GET = (req: Request) => {
 
   return NextResponse.redirect(new URL("/", req.url));
 };
+w;
