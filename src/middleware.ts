@@ -15,11 +15,8 @@ const getRedirectUrl = async (req: Request) => {
 const middleware = (req: Request, ev: NextFetchEvent) => {
   const isBot = detectBot(req);
 
-  if (isBot) {
-    return NextResponse.json({ error: "Bot detected" }, { status: 403 });
-  }
-
   console.log("======== INSIDE MIDDLEWARE INT ========");
+  console.log({ isBot });
   console.log(req.headers);
   console.log("======== INSIDE MIDDLEWARE OUT ========");
 
