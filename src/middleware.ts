@@ -5,8 +5,9 @@ import { NextResponse, type NextFetchEvent } from "next/server";
 const getRedirectUrl = async (req: Request) => {
   await new Promise((resolve) => {
     const isBot = detectBot(req);
+    console.log("======== INSIDE PROMISE INT ========");
     console.log(req.headers);
-    console.info("isBot:inner", { isBot });
+    console.log("======== INSIDE PROMISE OUT ========");
     resolve(true);
   });
 };
@@ -18,9 +19,10 @@ const middleware = (req: Request, ev: NextFetchEvent) => {
     return NextResponse.json({ error: "Bot detected" }, { status: 403 });
   }
 
-  console.log("redirecting to /");
-  console.log("req.url", req.url);
-  console.log("isBot", isBot);
+  console.log("======== INSIDE MIDDLEWARE INT ========");
+  console.log(req.headers);
+  console.log("======== INSIDE MIDDLEWARE OUT ========");
+
   ev.waitUntil(getRedirectUrl(req));
 
   return NextResponse.next();
