@@ -1,15 +1,5 @@
-import { waitUntil } from "@vercel/functions/wait-until";
 import { detectBot } from "~/lib/detect-bot";
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import { NextResponse } from "next/server";
-
-const getRedirectUrl = async (req: Request) => {
-  await new Promise((resolve) => {
-    const isBot = detectBot(req);
-    console.info("isBot:inner", { isBot });
-    resolve(true);
-  });
-};
 
 export const GET = (req: Request) => {
   const isBot = detectBot(req);
@@ -21,7 +11,6 @@ export const GET = (req: Request) => {
   console.log("redirecting to /");
   console.log("req.url", req.url);
   console.log("isBot", isBot);
-  waitUntil(getRedirectUrl(req));
 
   return NextResponse.redirect(new URL("/", req.url));
 };
