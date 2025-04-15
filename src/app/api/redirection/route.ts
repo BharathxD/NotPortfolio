@@ -1,7 +1,7 @@
 import { detectBot } from "~/lib/detect-bot";
-import { NextResponse } from "next/server";
+import { NextResponse, type NextFetchEvent } from "next/server";
 
-export const GET = (req: Request) => {
+export const GET = (req: Request, ev: NextFetchEvent) => {
   const isBot = detectBot(req);
 
   if (isBot) {
@@ -11,6 +11,13 @@ export const GET = (req: Request) => {
   console.log("redirecting to /");
   console.log("req.url", req.url);
   console.log("isBot", isBot);
+  ev.waitUntil(
+    new Promise((resolve) => {
+      const isBot = detectBot(req);
+      console.info("isBot:inner", { isBot });
+      resolve(true);
+    })
+  );
 
   return NextResponse.redirect(new URL("/", req.url));
 };
