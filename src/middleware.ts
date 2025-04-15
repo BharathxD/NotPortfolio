@@ -5,6 +5,7 @@ import { NextResponse, type NextFetchEvent } from "next/server";
 const getRedirectUrl = async (req: Request) => {
   await new Promise((resolve) => {
     const isBot = detectBot(req);
+    console.dir(req.headers, { depth: Infinity });
     console.info("isBot:inner", { isBot });
     resolve(true);
   });
