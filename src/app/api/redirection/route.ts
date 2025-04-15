@@ -1,5 +1,6 @@
 import { detectBot } from "~/lib/detect-bot";
-import { NextResponse, type NextFetchEvent } from "next/server";
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import { NextFetchEvent, NextResponse } from "next/server";
 
 const getRedirectUrl = async (req: Request) => {
   await new Promise((resolve) => {
