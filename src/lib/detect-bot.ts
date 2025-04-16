@@ -12,8 +12,7 @@ export const detectBot = (req: Request) => {
   // Check ua
   const ua = userAgent(req);
 
-  console.log("ua.isBot", ua.isBot);
-  console.log("ua.ua", ua.ua);
+  console.info({ ua });
 
   if (ua) {
     return ua.isBot || UA_BOTS.some((bot) => new RegExp(bot, "i").test(ua.ua));
