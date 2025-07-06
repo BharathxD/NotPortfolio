@@ -23,7 +23,7 @@ const PersonalIntroduction = () => (
         className="mt-6 text-center text-xl leading-relaxed text-neutral-300 md:text-2xl"
         variants={FADE_DOWN_ANIMATION_VARIANTS}
         custom={1}>
-        (But you can just call me <i>Bharath</i>). As a <HighlightedSpan>Founding Engineer</HighlightedSpan>{" "}
+        (But you can just call me <i>Bharath</i>). As a <HighlightedSpan>Software Engineer II</HighlightedSpan>{" "}
         at Callensights (Now Acquired), I blend vision with execution, building the future of B2B software. My
         approach combines <HighlightedSpan>technical craft</HighlightedSpan> with a relentless{" "}
         <HighlightedSpan>drive</HighlightedSpan> to deliver. I don&apos;t just solve problems—I{" "}
@@ -35,3 +35,4 @@ const PersonalIntroduction = () => (
 );
 
 export default PersonalIntroduction;
+
