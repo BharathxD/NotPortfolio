@@ -45,6 +45,13 @@ body,
   }
 }
 
+/* Utility class for hero background styling */
+.bg-hero {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .mask-effect {
   mask-image: linear-gradient(60deg, black 25%, rgba(0, 0, 0, 0.2) 50%, black 75%);
   mask-size: 400%;
@@ -56,3 +63,4 @@ body,
     mask-position 1s ease,
     -webkit-mask-position 1s ease;
 }
+

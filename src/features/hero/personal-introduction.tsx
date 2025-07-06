@@ -12,17 +12,20 @@ const PersonalIntroduction = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-100px" }}
-      variants={FADE_DOWN_ANIMATION_VARIANTS}>
+      variants={FADE_DOWN_ANIMATION_VARIANTS}
+    >
       <m.h1
-        className="text-center text-2xl font-medium leading-relaxed text-neutral-300 md:text-4xl lg:text-5xl"
-        variants={FADE_DOWN_ANIMATION_VARIANTS}>
+        className="text-center text-4xl font-bold leading-tight text-neutral-100 md:text-6xl lg:text-7xl"
+        variants={FADE_DOWN_ANIMATION_VARIANTS}
+      >
         Hey, {`I'm`} <HighlightedSpan>Bharath Lakshman Kumar</HighlightedSpan>
       </m.h1>
 
       <m.p
-        className="mt-6 text-center text-xl leading-relaxed text-neutral-300 md:text-2xl"
+        className="mt-8 text-center text-lg leading-relaxed text-neutral-300 md:text-2xl md:leading-[1.7] lg:text-3xl lg:leading-[1.6]"
         variants={FADE_DOWN_ANIMATION_VARIANTS}
-        custom={1}>
+        custom={1}
+      >
         (But you can just call me <i>Bharath</i>). As a <HighlightedSpan>Founding Engineer</HighlightedSpan>{" "}
         at Callensights (Now Acquired), I blend vision with execution, building the future of B2B software. My
         approach combines <HighlightedSpan>technical craft</HighlightedSpan> with a relentless{" "}
@@ -35,3 +38,4 @@ const PersonalIntroduction = () => (
 );
 
 export default PersonalIntroduction;
+

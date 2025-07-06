@@ -79,6 +79,7 @@ const config = {
         highlight: "linear-gradient(to bottom, var(#f5f5f5) 50%, transparent 90%)",
         glare:
           "linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, .8) 35%, #fff 50%, rgba(255, 255, 255, .8) 65%, rgba(0, 0, 0, 0) 95%)",
+        hero: "url('/hero-bg.jpg')",
       },
       boxShadow: {
         text: "0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 -5px 25px rgba(255, 255, 255, .3)",
@@ -135,3 +136,4 @@ const config = {
 } satisfies Config;
 
 export default config;
+
