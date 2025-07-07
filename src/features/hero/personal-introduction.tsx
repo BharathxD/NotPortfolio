@@ -14,13 +14,13 @@ const PersonalIntroduction = () => (
       viewport={{ once: true, margin: "-100px" }}
       variants={FADE_DOWN_ANIMATION_VARIANTS}>
       <m.h1
-        className="text-center text-2xl font-medium leading-relaxed text-neutral-300 md:text-4xl lg:text-5xl"
+        className="text-center text-base font-medium leading-relaxed text-neutral-300 md:text-2xl lg:text-3xl"
         variants={FADE_DOWN_ANIMATION_VARIANTS}>
         Hey, {`I'm`} <HighlightedSpan>Bharath Lakshman Kumar</HighlightedSpan>
       </m.h1>
 
       <m.p
-        className="mt-6 text-center text-xl leading-relaxed text-neutral-300 md:text-2xl"
+        className="mt-4 text-center text-sm leading-relaxed text-neutral-300 md:text-lg"
         variants={FADE_DOWN_ANIMATION_VARIANTS}
         custom={1}>
         (But you can just call me <i>Bharath</i>). As a <HighlightedSpan>Founding Engineer</HighlightedSpan>{" "}
@@ -35,3 +35,4 @@ const PersonalIntroduction = () => (
 );
 
 export default PersonalIntroduction;
+
