@@ -61,11 +61,14 @@ const config = {
       textShadow: {
         sm: "0 5px 15px rgba(0, 87, 255, .1), 0 -5px 15px rgba(255, 90, 0, .08), 0 0 30px rgba(255, 255, 255, .2)",
         lg: "0 8px 16px rgba(0, 87, 255, .1), 0 -8px 16px rgba(255, 90, 0, .08), 0 0 40px rgba(255, 255, 255, .2)",
+        glow: "0 2px 8px rgba(0, 87, 255, 0.25), 0 1px 1px rgba(255,255,255,0.15)",
+        subtle: "0 1px 2px rgba(0,0,0,0.10)",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        card: "1.5rem",
       },
       backgroundImage: {
         "spotlight-closest":
@@ -75,14 +78,19 @@ const config = {
         "spotlight-linear": "linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0))",
         card: "radial-gradient(circle at 50% 0, rgba(255, 255, 255, .3), rgba(0, 0, 0, 0))",
         "card-even": "radial-gradient(circle at 25% 0, rgba(255, 255, 255, .05), rgba(0, 0, 0, 0))",
+        "radial-spotlight": "radial-gradient(ellipse at 60% 20%, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.05) 100%)",
+        "soft-gradient": "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
         mask: "url(/layers/mask.png)",
-        highlight: "linear-gradient(to bottom, var(#f5f5f5) 50%, transparent 90%)",
+        highlight: "linear-gradient(to bottom, #f5f5f5 50%, transparent 90%)",
         glare:
           "linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, .8) 35%, #fff 50%, rgba(255, 255, 255, .8) 65%, rgba(0, 0, 0, 0) 95%)",
       },
       boxShadow: {
         text: "0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 -5px 25px rgba(255, 255, 255, .3)",
         item: "inset 0 0 10px rgba(0, 0, 0, .1), 0 4px 16px rgba(0, 0, 0, .25)",
+        card: "0 4px 32px 0 rgba(0,0,0,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08)",
+        "card-hover": "0 8px 40px 0 rgba(0,0,0,0.18), 0 2px 8px 0 rgba(0,0,0,0.12)",
+        "card-glow": "0 0 16px 2px rgba(0, 87, 255, 0.10), 0 0 32px 8px rgba(0, 87, 255, 0.08)",
       },
       keyframes: {
         "accordion-down": {
@@ -102,9 +110,21 @@ const config = {
           },
         },
         tilt: {
-          "0%, 50%, 100%": { transform: "rotate(0deg)" },
-          "25%": { transform: "rotate(0.5deg)" },
-          "75%": { transform: "rotate(-0.5deg)" },
+          "0%, 100%": { transform: "rotate(0deg) scale(1)" },
+          "10%": { transform: "rotate(-1deg) scale(1.01)" },
+          "20%": { transform: "rotate(1deg) scale(1.01)" },
+          "30%": { transform: "rotate(-1.5deg) scale(1.02)" },
+          "40%": { transform: "rotate(1.5deg) scale(1.02)" },
+          "50%": { transform: "rotate(0deg) scale(1.03)" },
+          "60%": { transform: "rotate(-1deg) scale(1.01)" },
+          "70%": { transform: "rotate(1deg) scale(1.01)" },
+          "80%": { transform: "rotate(-1.5deg) scale(1.02)" },
+          "90%": { transform: "rotate(1.5deg) scale(1.02)" },
+        },
+        "card-hover": {
+          "0%": { transform: "scale(1) rotate(0deg)" },
+          "50%": { transform: "scale(1.025) rotate(1deg)" },
+          "100%": { transform: "scale(1) rotate(0deg)" },
         },
       },
       animation: {
@@ -112,6 +132,7 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         skeleton: "skeleton-loading 8s ease-in-out infinite",
+        "card-hover": "card-hover 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
       },
     },
   },
@@ -135,3 +156,4 @@ const config = {
 } satisfies Config;
 
 export default config;
+
